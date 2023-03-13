@@ -1,0 +1,18 @@
+----- Hoàng -----
+- Đăng nhập.
+- Đăng ký.
+- Thông tin tài khoản.
+
+----- Hùng & Như ------
+- Trang admin, thống kê.
+- trang sản phẩm.
+
+----- Khoa -----
+- Giỏ hàng.
+- Thanh toán.
+- Thông tin sản phẩm.
+
+Deadline (3/4/2023): 80% UI (HTML, CSS, JS).
+
+deadline 2 (17/4/2023): 100% UI & 60% Function.
+
