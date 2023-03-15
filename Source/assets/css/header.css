@@ -22,7 +22,7 @@
     position: absolute;
     width: 50.59px;
     height: 40px;
-    left: 7px;
+    left: 12px;
     top: 4px;
 }
 
@@ -59,8 +59,8 @@
     /* Label/Large */
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: normal;
+    font-size: 16px;
     line-height: 20px;
     /* identical to box height, or 100% */
     letter-spacing: 0.1px;
@@ -83,7 +83,7 @@
     position: absolute;
     width: 337px;
     height: 24px;
-    left: 1010px;
+    left: 990px;
     top: 13px;
 }
 
@@ -105,7 +105,7 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 20px;
     /* identical to box height, or 100% */
     letter-spacing: 0.1px;
