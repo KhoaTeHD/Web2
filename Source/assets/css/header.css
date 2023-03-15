@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#bar-header {
+    /* Bar */
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    left: 0px;
+    top: 0px;
+    /* Primary/Primary */
+    background: #6750A4;
+}
+
+#logo-header {
+    /* Logo */
+
+    background-image: url(../icons/Logo.png);
+    position: absolute;
+    width: 50.59px;
+    height: 40px;
+    left: 7px;
+    top: 4px;
+}
+
+#menu-header {
+    /* Menu */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 15px;
+
+    position: absolute;
+    width: 465px;
+    height: 20px;
+    left: 90px;
+    top: 15px;
+}
+
+.line-header {
+    width: 12.37px;
+    height: 0px;
+    /* Surfaces/S1 */
+    border: 1px solid #FFFBFE;
+    transform: rotate(-90deg);
+    /* Inside auto layout */
+    flex: none;
+    flex-grow: 0;
+}
+
+.child-menu-header {
+    height: 20px;
+    /* Label/Large */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    /* identical to box height, or 100% */
+    letter-spacing: 0.1px;
+    /* Surfaces/S1 */
+    color: #FFFBFE;
+    /* Inside auto layout */
+    flex: none;
+    flex-grow: 0;
+}
+
+#avt-and-icons {
+    /* Avt & icons */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 15px;
+    position: absolute;
+    width: 337px;
+    height: 24px;
+    left: 1010px;
+    top: 13px;
+}
+
+.icon-header {
+    /* search */
+    width: 24px;
+    height: 24px;
+    /* Inside auto layout */
+    flex: none;
+    flex-grow: 0;
+}
+
+#login-signup,
+#login-signup a {
+    /* Đăng nhập/Đăng ký */
+    width: 178px;
+    height: 20px;
+    /* Label/Large */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    /* identical to box height, or 100% */
+    letter-spacing: 0.1px;
+    /* Surfaces/S1 */
+    color: #FFFBFE;
+    /* Inside auto layout */
+    flex: none;
+    order: 6;
+    flex-grow: 0;
+    text-decoration-line: none;
+}
