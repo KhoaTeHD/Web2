@@ -2,6 +2,7 @@
 - Đăng nhập.
 - Đăng ký.
 - Thông tin tài khoản.
+- Trang chủ.
 
 ----- Hùng & Như ------
 - Trang admin, thống kê.
