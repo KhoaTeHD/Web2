@@ -19,7 +19,7 @@ function createHeader() {
         <img class="line-header" src=".//assets/img/Line.png" style="order: 3;" alt="">
         <img class="icon-header" src=".//assets/img/add_shopping_cart.png" style="order: 4;" alt="">
         <img class="line-header" src=".//assets/img/Line.png" style="order: 5;" alt="">
-        <p id="login-signup" style="order: 6;"> <a href="#">Đăng nhập</a>/<a href="#">Đăng ký</a></p>
+        <p id="login-signup" style="order: 6;"> <a href="#">Đăng nhập</a></p>
     </div>
         `;
     return header;

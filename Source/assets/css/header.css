@@ -81,9 +81,10 @@
     padding: 0px;
     gap: 15px;
     position: absolute;
-    width: 337px;
+    width: auto;
     height: 24px;
-    left: 990px;
+    
+    right: 16px;
     top: 13px;
 }
 
@@ -99,12 +100,11 @@
 #login-signup,
 #login-signup a {
     /* Đăng nhập/Đăng ký */
-    width: 178px;
+    width: auto;
     height: 20px;
     /* Label/Large */
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 500;
     font-size: 16px;
     line-height: 20px;
     /* identical to box height, or 100% */
