@@ -3,7 +3,7 @@ function createHeader() {
     header.innerHTML = `
     <div id="logo-header"></div>
     <div id="menu-header">
-        <p class="child-menu-header" style="width: 88px;order: 1;">Đăng nhập</p>
+        <p class="child-menu-header" style="order: 1;">VŨ TRỤ DI ĐỘNG</p>
 
     </div>
     <div id="avt-and-icons">
