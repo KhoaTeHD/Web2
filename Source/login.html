@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href=".//assets/css/login.css">
-    <link rel="stylesheet" href=".//assets/css/header_login.css">
+    <link rel="stylesheet" href=".//assets/css/header.css">
     <link rel="stylesheet" href=".//assets/css/footer.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap&amp;_cacheOverride=1679484892371" data-tag="font">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" data-tag="font">
@@ -15,12 +15,26 @@
 <body>
     <!--Start: Header-->
     <div id="bar-header"></div>
-    <script src=".//assets/js/header_login.js"></script>
+    <script src=".//assets/js/header.js"></script>
     <script>
       const myHeader = document.querySelector("#bar-header");
       myHeader.appendChild(createHeader());
     </script>
     <!--End: Header-->
+
+    <!--Script đổi màu-->
+    <script type='text/javascript'>
+$(document).ready(function(){
+$('input[type^=text]').focur(function(){
+$(this).css({'border':'2px solid red'});
+
+});
+$('input[type^=text]').blur(function(){
+$(this).css({'border':'1px solid while'});
+
+});
+);
+</script>
 
     <div id="body" style=" height: 600px;" >
         <div class="containerlogin-containerlogin">
@@ -38,19 +52,21 @@
                 </span>
                 <span class="containerlogin-text04"><span>Đăng ký</span></span>
               </div>
-              <input type="text" style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #ccc; border-radius: 8px;" placeholder="Tên đăng nhập/Số điện thoại">
-              <img src="public/playground_assets/rectangle43772-vvx-200h.png" alt="Rectangle43772" class="containerlogin-rectangle4">
-              <img src="public/playground_assets/rectangle53772-6qka-200h.png" alt="Rectangle53772" class="containerlogin-rectangle5">
+              <input class="containerlogin-text08 LabelSmall" type="text" style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;" placeholder="Tên đăng nhập/Số điện thoại">
+              <!-- <img src="public/playground_assets/rectangle43772-vvx-200h.png" alt="Rectangle43772" class="containerlogin-rectangle4"> -->
+              <input class="containerlogin-text10 LabelSmall" type="text" style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;" placeholder="Mật khẩu">
+              <!-- <img src="public/playground_assets/rectangle53772-6qka-200h.png" alt="Rectangle53772" class="containerlogin-rectangle5"> -->
               <img src="public/playground_assets/rectangle63772-oop-200h.png" alt="Rectangle63772" class="containerlogin-rectangle6">
-              <span class="containerlogin-text06 LabelLarge">
+              <span id="btnSubmitLogin" class="containerlogin-text06 LabelLarge" onclick="submitLogin();">
                 <span>Đăng nhập</span>
               </span>
-              <span class="containerlogin-text08 LabelSmall">
+              <!-- <span class="containerlogin-text08 LabelSmall">
                 <span>Tên đăng nhập/Số điện thoại</span>
+              </span> -->
+              <!-- <span class="containerlogin-text10 LabelSmall">
+                <span>Mật khẩu</span> -->
               </span>
-              <span class="containerlogin-text10 LabelSmall">
-                <span>Mật khẩu</span>
-              </span>
+              <div id="container-eyes"></div>
               <img src="public/playground_assets/closedeye3772-x074-200h.png" alt="ClosedEye3772" class="containerlogin-closed-eye">
               <div class="containerlogin-frame11">
                 <span class="containerlogin-text12">
@@ -99,5 +115,12 @@
       myFooter.appendChild(createFooter());
     </script>
     <!--End: Footer-->
+
+    <script>
+      function submitLogin(){
+        alert("Đăng nhập thành công");
+        window.location = ".//index.html";
+      }
+    </script>
 </body>
 </html>
