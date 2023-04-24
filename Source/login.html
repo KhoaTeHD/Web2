@@ -22,26 +22,13 @@
     </script>
     <!--End: Header-->
 
-    <!--Script đổi màu-->
-    <script type='text/javascript'>
-$(document).ready(function(){
-$('input[type^=text]').focur(function(){
-$(this).css({'border':'2px solid red'});
-
-});
-$('input[type^=text]').blur(function(){
-$(this).css({'border':'1px solid while'});
-
-});
-);
-</script>
-
     <div id="body" style=" height: 600px;" >
         <div class="containerlogin-containerlogin">
             <img src="public/playground_assets/rectangle23772-m91-500w.png" alt="Rectangle23772" class="containerlogin-rectangle2">
             <div class="containerlogin-frame12">
               <div class="containerlogin-frame10"></div>
             </div>
+            <form action=".//php_of_Hoang/xuly.php" method="POST">
             <div class="containerlogin-group1">
               <span class="containerlogin-text LabelMedium">
                 <span>ĐĂNG NHẬP</span>
@@ -52,14 +39,13 @@ $(this).css({'border':'1px solid while'});
                 </span>
                 <span class="containerlogin-text04"><span>Đăng ký</span></span>
               </div>
-              <input class="containerlogin-text08 LabelSmall" type="text" style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;" placeholder="Tên đăng nhập/Số điện thoại">
+              <input name="userName" class="containerlogin-text08 LabelSmall" type="text" style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;" placeholder="Tên đăng nhập/Số điện thoại">
               <!-- <img src="public/playground_assets/rectangle43772-vvx-200h.png" alt="Rectangle43772" class="containerlogin-rectangle4"> -->
-              <input class="containerlogin-text10 LabelSmall" type="text" style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;" placeholder="Mật khẩu">
+              <input name="passWord" class="containerlogin-text10 LabelSmall" type="text" style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;" placeholder="Mật khẩu">
               <!-- <img src="public/playground_assets/rectangle53772-6qka-200h.png" alt="Rectangle53772" class="containerlogin-rectangle5"> -->
               <img src="public/playground_assets/rectangle63772-oop-200h.png" alt="Rectangle63772" class="containerlogin-rectangle6">
-              <span id="btnSubmitLogin" class="containerlogin-text06 LabelLarge" onclick="submitLogin();">
-                <span>Đăng nhập</span>
-              </span>
+              <input type="submit" id="btnSubmitLogin" class="containerlogin-text06 LabelLarge" value="Đăng nhập">
+              
               <!-- <span class="containerlogin-text08 LabelSmall">
                 <span>Tên đăng nhập/Số điện thoại</span>
               </span> -->
@@ -93,6 +79,7 @@ $(this).css({'border':'1px solid while'});
               <img src="public/playground_assets/google3772-6cym-200h.png" alt="Google3772" class="containerlogin-google">
               <img src="public/playground_assets/twitter3772-qqo-200h.png" alt="Twitter3772" class="containerlogin-twitter">
             </div>
+          </form>
             <img src="public/playground_assets/z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772-vito-300h.png" alt="z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772" class="containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2">
             <span class="containerlogin-text24 TitleMedium">
               <span>VŨ TRỤ DI ĐỘNG</span>

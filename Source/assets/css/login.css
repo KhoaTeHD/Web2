@@ -191,6 +191,7 @@ p, li, ul, pre, div, h1, h2, h3, h4, h5, h6, figure, blockquote, figcaption {
     top: 209px;
     left: 117px;
     color: rgba(255, 255, 255, 1);
+    background-color: #674FA3;
     height: auto;
     position: absolute;
     align-self: auto;
