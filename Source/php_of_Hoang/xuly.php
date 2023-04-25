@@ -1,9 +1,24 @@
+
+<?php
+$link = new mysqli('localhost', 'root', '', 'vutrudidongdb') or die('Kết nối thất bại!');
+
+$sql = sprintf("SELECT * FROM user");
+$result = mysqli_query($link, $sql);
+$rows = mysqli_fetch_assoc($result);//1 dòng
+//$rows = mysqli_fetch_all($result);//all dòng trong bảng
+
+//foreach ($rows as $value) {var_dump($value[1]) ;}
+var_dump($rows["FullName"]);
+
+echo "</br>";echo "-------------------------------------";echo "</br>";
+
+?>
 <?php
 
 $name = "Hoàng";
 $age = 21;
 echo ("Xin chào $name. Bạn $age tuổi hả? <br/>");
-$mang = [1,2,3];
+$mang = [1, 2, 3];
 $thanhphan1 = $mang[0];
 echo ("Phần tử đầu tiên của mảng là: $thanhphan1. <br/>");
 
@@ -18,7 +33,7 @@ $mangkhongtuantu["key3"] = "world";
 
 //mang da chieu
 $mangdachieu = [
-    "key1" => 1, 
+    "key1" => 1,
     "key2" => "hello",
     "key3" => [
         "sub_child" => "test"
@@ -34,21 +49,21 @@ echo ($html);
 //     echo "<h2 style="."color:pink;>$x</h2>"."<br/>";
 // }
 
-$colors = array("red","green","blue","yellow");
-foreach($colors as $value){
+$colors = array("red", "green", "blue", "yellow");
+foreach ($colors as $value) {
     echo "Màu $value đây rồi <br/>";
 }
-foreach($colors as $key => $value){
-    echo $key.'_'.$value."<br/>";
+foreach ($colors as $key => $value) {
+    echo $key . '_' . $value . "<br/>";
 }
 
 echo '----------------------------------';
 
 //pthuc $_GET và $_POST 
 
-if (isset($_POST["userName"]) && isset($_POST["passWord"])){
-    echo "Welcome ".$_POST['userName']."<br/>";
-    echo "Your password is ".$_POST['passWord']."<br/>";
+if (isset($_POST["userName"]) && isset($_POST["passWord"])) {
+    echo "Welcome " . $_POST['userName'] . "<br/>";
+    echo "Your password is " . $_POST['passWord'] . "<br/>";
     die();
 }
 ?>

@@ -18,9 +18,9 @@
 #logo-header {
     /* Logo */
 
-    background-image: url(../icons/Logo.png);
+    background-image: url(../img/hoangImg/logo/logo_and_text.png);
     position: absolute;
-    width: 50.59px;
+    width: 69px;
     height: 40px;
     left: 12px;
     top: 4px;
@@ -39,7 +39,7 @@
     position: absolute;
     width: 465px;
     height: 20px;
-    left: 90px;
+    left: 80px;
     top: 15px;
 }
 
@@ -52,6 +52,7 @@
     /* Inside auto layout */
     flex: none;
     flex-grow: 0;
+
 }
 
 .child-menu-header {

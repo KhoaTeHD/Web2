@@ -1,3 +1,6 @@
+<?php
+require_once('.//php_of_Hoang/lib_session.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +20,11 @@
 </head>
 <body>
     <!--Start: Header-->
-  <div id="bar-header"></div>
-  <script src=".//assets/js/header.js"></script>
-  <script>
-    const myHeader = document.querySelector("#bar-header");
-    myHeader.appendChild(createHeader());
-  </script>
+    <div id="bar-header">
+    <?php
+      include(".//php_of_Hoang/bar.php");
+    ?>
+  </div>
   <!--End: Header-->
   <div id="main-user" >
     <div id="imagelogo">
@@ -30,7 +32,7 @@
     </div>
     <div id="main-content">
         <div id="tab-bar-user">
-            <p class="content-tab-bar-userr">Xin chào, Hoang!</p>
+            <p class="content-tab-bar-userr">Xin chào, <?php echo ("$_SESSION[current_username]"); ?>!</p>
             <p class="content-tab-bar-user">Thông tin tài khoản</p>
             <p class="content-tab-bar-user">Quản lý đơn hàng</p>
         </div>
@@ -38,7 +40,7 @@
             <div id="user-infor-and-address-user">
                 <div id="user-infor">
                     <p style="font-size: 20px;">Thông tin cá nhân | <a href="#" style="font-size: 20px;">Chỉnh sửa</a></p>
-                    <p>Họ và tên: Thiều Việt Hoàng</p>
+                    <p>Họ và tên: <?php var_dump("$_SESSION[current_fullName]")?></p>
                     <p>Ngày sinh: 09/03/2002</p>
                     <p>Email: tvhoang@gmai.com</p>
                     <p>Số điện thoại: 0378765123</p>

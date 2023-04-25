@@ -24,3 +24,5 @@ function createHeader() {
         `;
     return header;
 }
+//<p id="login-signup" style="order: 6;"> <a href=".//login.html">Đăng nhập</a></p>
+//<img id="123456" src=".//assets/img/Samsung.jpg" width="34" height="34" style="border-radius:25px;order: 6;" alt="">
