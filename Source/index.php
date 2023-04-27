@@ -1,5 +1,5 @@
 <?php
-require_once('.//php_of_Hoang/lib_session.php');
+require_once('lib_session.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +32,7 @@ require_once('.//php_of_Hoang/lib_session.php');
   </script> -->
   <div id="bar-header">
     <?php
-    include(".//php_of_Hoang/bar.php");
+    include("bar.php");
     ?>
   </div>
   <!--End: Header-->

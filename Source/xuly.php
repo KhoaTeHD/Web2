@@ -1,6 +1,7 @@
 
 <?php
-$link = new mysqli('localhost', 'root', '', 'vutrudidongdb') or die('Kết nối thất bại!');
+
+ $link = new mysqli('localhost', 'root', '', 'vutrudongho') or die('Kết nối thất bại!');
 
 $sql = sprintf("SELECT * FROM user");
 $result = mysqli_query($link, $sql);
@@ -9,6 +10,10 @@ $rows = mysqli_fetch_assoc($result);//1 dòng
 
 //foreach ($rows as $value) {var_dump($value[1]) ;}
 var_dump($rows["FullName"]);
+$sql2 = sprintf("SELECT COUNT(*)FROM user;");
+$result2 = mysqli_query($link, $sql2);
+$rows2 = mysqli_fetch_assoc($result2);//1 dòng
+echo ($rows2["COUNT(*)"]);
 
 echo "</br>";echo "-------------------------------------";echo "</br>";
 

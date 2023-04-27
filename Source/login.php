@@ -1,5 +1,5 @@
 <?php
-require_once('.//php_of_Hoang/lib_session.php');
+require_once('lib_session.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +32,7 @@ require_once('.//php_of_Hoang/lib_session.php');
   <div id="bar-header">
     <?php
 
-      include(".//php_of_Hoang/bar.php");      
+      include("bar.php");      
 
     ?>
   </div>
@@ -49,7 +49,7 @@ require_once('.//php_of_Hoang/lib_session.php');
       <img src="public/playground_assets/rectangle23772-m91-500w.png" alt="Rectangle23772"
         class="containerlogin-rectangle2">
       <div class="containerlogin-frame12">
-        <div class="containerlogin-frame10"><p>Nhấn vào <a href=".//php_of_Hoang/logout.php?isAdmin=1">đây</a> nếu bạn muốn đăng xuất!</p></div>
+        <div class="containerlogin-frame10"><p>Nhấn vào <a href="logout.php?isAdmin=1">đây</a> nếu bạn muốn đăng xuất!</p></div>
       </div>
         ';
       }
@@ -60,7 +60,7 @@ require_once('.//php_of_Hoang/lib_session.php');
       <div class="containerlogin-frame12">
         <div class="containerlogin-frame10"></div>
       </div>
-        <form name="" id="" action=".//php_of_Hoang/xulydangnhap.php" method="POST">
+        <form name="frm" id="" action="xulydangnhap.php" method="POST">
         <div class="containerlogin-group1">
           <span class="containerlogin-text LabelMedium">
             <span>ĐĂNG NHẬP</span>
@@ -69,13 +69,13 @@ require_once('.//php_of_Hoang/lib_session.php');
             <span class="containerlogin-text02">
               <span>Bạn chưa có tài khoản?</span>
             </span>
-            <span class="containerlogin-text04"><span>Đăng ký</span></span>
+            <span class="containerlogin-text04"><a href="formdangky.php">Đăng ký</a></span>
           </div>
           <input name="userName" class="containerlogin-text08 LabelSmall" type="text"
             style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;"
-            placeholder="Tên đăng nhập/Số điện thoại">
+            placeholder="Số điện thoại">
           <!-- <img src="public/playground_assets/rectangle43772-vvx-200h.png" alt="Rectangle43772" class="containerlogin-rectangle4"> -->
-          <input name="passWord" class="containerlogin-text10 LabelSmall" type="text"
+          <input name="passWord" class="containerlogin-text10 LabelSmall" type="password"
             style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;"
             placeholder="Mật khẩu">
           <!-- <img src="public/playground_assets/rectangle53772-6qka-200h.png" alt="Rectangle53772" class="containerlogin-rectangle5"> -->
@@ -90,8 +90,8 @@ require_once('.//php_of_Hoang/lib_session.php');
                 <span>Mật khẩu</span> -->
           </span>
           <div id="container-eyes"></div>
-          <img src="public/playground_assets/closedeye3772-x074-200h.png" alt="ClosedEye3772"
-            class="containerlogin-closed-eye">
+          <img id="btn-eyes" src="public/playground_assets/closedeye3772-x074-200h.png" alt="ClosedEye3772"
+            class="containerlogin-closed-eye" onclick ="showHidePass();">
           <div class="containerlogin-frame11">
             <span class="containerlogin-text12">
               <span>Quên mật khẩu?</span>
@@ -152,9 +152,18 @@ require_once('.//php_of_Hoang/lib_session.php');
   <!--End: Footer-->
 
   <script>
-    function submitLogin() {
-      alert("Đăng nhập thành công");
-      window.location = ".//index.html";
+    var btn_eye = document.querySelector('#btn-eyes');
+    var passwordtxt = document.frm.passWord;
+    var flag_eye = false;
+    function showHidePass() {
+      if(flag_eye == false){
+          passwordtxt.type = 'text';
+          flag_eye = true;
+      }
+      else{
+        passwordtxt.type = 'password';
+          flag_eye = false;
+      }
     }
   </script>
 </body>

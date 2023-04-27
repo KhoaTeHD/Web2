@@ -6,7 +6,7 @@ echo '
 <div id="logo-header"></div>
 <div id="menu-header">
     <img class="line-header" src=".//assets/img/Line.png" style="order: 0;" alt="">
-    <p class="child-menu-header" style="width: auto;order: 1;"><a style="color: white; text-decoration: none;" href=".//index.php">Trang chủ</a></p>
+    <p class="child-menu-header" style="width: auto;order: 1;"><a style="color: white; text-decoration: none;" href="index.php">Trang chủ</a></p>
     <img class="line-header" src=".//assets/img/Line.png" style="order: 2;" alt="">
     <p class="child-menu-header" style="width: auto;order: 3;">Sản phẩm</p>
     <img class="line-header" src=".//assets/img/Line.png" style="order: 4;" alt="">
@@ -26,7 +26,7 @@ echo '
 <?php
 //var_dump(isAdminLogged());
 if (isAdminLogged()) {
-    echo ' <img id="avt_user" onclick="avtClicked();" src=".//assets/img/Samsung.jpg" width="34" height="34" style="border-radius:25px;order: 6;" alt="">
+    echo ' <img id="avt_user" onclick="avtClicked();" src=".//assets/img/hoangImg/icons/icons8-user-64.png" width="34" height="34" style="order: 6;" alt="">
    <div id="menu-options-user" style="position: absolute;
                                       top:37px;
                                       right:0;
@@ -50,10 +50,10 @@ if (isAdminLogged()) {
               line-height: 40px;
               letter-spacing: 0.1px;
               ">
-   <li style="padding-left:8px;"><a href=".//user.php">Thông tin tài khoản</a></li>
+   <li style="padding-left:8px;"><a href="user.php">Thông tin tài khoản</a></li>
    <li style="padding-left:8px;">Đơn hàng của tôi</li>
    <li><hr></li>
-   <li style="padding-left:8px;"><a class="nav-link" href=".//php_of_Hoang/logout.php?isAdmin=1">Đăng xuat</a></li>
+   <li style="padding-left:8px;"><a class="nav-link" href="logout.php?isAdmin=1">Đăng xuat</a></li>
    </ul>
    </div>
    <script lang="javascript">
@@ -75,7 +75,7 @@ if (isAdminLogged()) {
    ';
 
 } else {
-    echo ('<p id="login-signup" style="order: 6;"> <a href=".//login.php">Đăng nhập</a></p>
+    echo ('<p id="login-signup" style="order: 6;"> <a href="login.php">Đăng nhập</a></p>
     ');
 }
 ?>

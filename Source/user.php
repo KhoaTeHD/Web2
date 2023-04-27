@@ -1,5 +1,5 @@
 <?php
-require_once('.//php_of_Hoang/lib_session.php');
+require_once('lib_session.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@ require_once('.//php_of_Hoang/lib_session.php');
     <!--Start: Header-->
     <div id="bar-header">
     <?php
-      include(".//php_of_Hoang/bar.php");
+      include("bar.php");
     ?>
   </div>
   <!--End: Header-->
@@ -32,25 +32,22 @@ require_once('.//php_of_Hoang/lib_session.php');
     </div>
     <div id="main-content">
         <div id="tab-bar-user">
-            <p class="content-tab-bar-userr">Xin chào, <?php echo ("$_SESSION[current_username]"); ?>!</p>
-            <p class="content-tab-bar-user">Thông tin tài khoản</p>
+            <p class="content-tab-bar-userr">Xin chào, <?php echo ("$_SESSION[current_fullName]"); ?>!</p>
+            <p class="content-tab-bar-user" style="color:darkviolet;">Thông tin tài khoản</p>
             <p class="content-tab-bar-user">Quản lý đơn hàng</p>
         </div>
         <div id="content-user">
             <div id="user-infor-and-address-user">
                 <div id="user-infor">
                     <p style="font-size: 20px;">Thông tin cá nhân | <a href="#" style="font-size: 20px;">Chỉnh sửa</a></p>
-                    <p>Họ và tên: <?php var_dump("$_SESSION[current_fullName]")?></p>
-                    <p>Ngày sinh: 09/03/2002</p>
-                    <p>Email: tvhoang@gmai.com</p>
-                    <p>Số điện thoại: 0378765123</p>
+                    <p>Họ và tên: <?php echo $_SESSION['current_fullName']?></p>
+                    <p>Email: <?php echo $_SESSION['current_email']?></p>
+                    <p>Số điện thoại: <?php echo $_SESSION['current_numberPhone']?></p>
                 </div>
                 <hr>
                 <div id="address-user">
                     <p style="font-size: 20px;">Địa chỉ nhận hàng | <a href="#" style="font-size: 20px;">Chỉnh sửa</a></p>
-                    <p>Thiều Việt Hoàng</p>
-                    <p>Hẻm 35/7, Đường Nguyễn Văn Quỳ, Phường Tân Thuận Đông, Quận 7, TP. Hồ Chí Minh</p>
-                    <p>(+84) 378765123</p>
+                    <p><?php echo $_SESSION['current_houseRoadAddress']?>, <?php echo $_SESSION['current_ward']?>, <?php echo $_SESSION['current_district']?>, <?php echo $_SESSION['current_province']?></p>
                 </div>
             </div>
         </div>

@@ -22,6 +22,12 @@ if(mysqli_num_rows($result) == 1) {
 	$row = mysqli_fetch_assoc($result);
 	$fullName = $row['FullName'];
 	$numberPhone = $row['NumberPhone'];
+	$email = $row['Email'];
+	$houseRoadAddress = $row['HouseRoadAddress'];
+	$ward = $row['Ward'];
+	$district = $row['District'];
+	$province = $row['Province'];
+	$status = $row['Status'];
 	if ($row['Password'] == $pass) {
 		// dang nhap thanh cong
 		echo 'Dang nhap thanh cong';
@@ -29,7 +35,13 @@ if(mysqli_num_rows($result) == 1) {
 		$_SESSION['isAdmin'] = true;
 		$_SESSION['current_fullName'] = $fullName;
 		$_SESSION['current_numberPhone'] = $numberPhone;
-		header('location: ../index.php');
+		$_SESSION['current_email'] = $email;
+		$_SESSION['current_houseRoadAddress'] = $houseRoadAddress;
+		$_SESSION['current_ward'] = $ward;
+		$_SESSION['current_district'] = $district;
+		$_SESSION['current_province'] = $province;
+		$_SESSION['current_status'] = $status;
+		header('location: index.php');
 	}
 	else {
 		echo 'Sai password';
