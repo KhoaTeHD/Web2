@@ -28,7 +28,7 @@ require_once('lib_session.php');
   <!--End: Header-->
   <div id="main-user" >
     <div id="imagelogo">
-        <img id="img-logo" src=".//public/playground_assets/vutrudidong14482-9p2.svg" alt="">
+        <img id="img-logo" src=".//assets/img/hoangImg/logo/logo_text_400x100.png" alt="">
     </div>
     <div id="main-content">
         <div id="tab-bar-user">
@@ -39,7 +39,7 @@ require_once('lib_session.php');
         <div id="content-user">
             <div id="user-infor-and-address-user">
                 <div id="user-infor">
-                    <p style="font-size: 20px;">Thông tin cá nhân | <a href="#" style="font-size: 20px;">Chỉnh sửa</a></p>
+                    <p style="font-size: 20px;">Thông tin cá nhân | <a href="detail-user.php" style="font-size: 20px;">Chỉnh sửa</a></p>
                     <p>Họ và tên: <?php echo $_SESSION['current_fullName']?></p>
                     <p>Email: <?php echo $_SESSION['current_email']?></p>
                     <p>Số điện thoại: <?php echo $_SESSION['current_numberPhone']?></p>
@@ -54,12 +54,11 @@ require_once('lib_session.php');
     </div>
   </div>
   <!--Start: Footer-->
-  <div id="my-footer" style="position: relative;top: 50px;"></div>
-  <script src=".//assets/js/footer.js"></script>
-  <script>
-    const myFooter = document.querySelector("#my-footer");
-    myFooter.appendChild(createFooter());
-  </script>
+  <div id="my-footer">
+  <?php
+    include("footer.php");
+    ?>
+  </div>
   <!--End: Footer-->
 </body>
 </html>

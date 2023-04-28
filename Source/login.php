@@ -18,7 +18,10 @@ require_once('lib_session.php');
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
     data-tag="font">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 
 <body>
@@ -46,7 +49,7 @@ require_once('lib_session.php');
         
         echo '
 
-      <img src="public/playground_assets/rectangle23772-m91-500w.png" alt="Rectangle23772"
+      <img src=".//assets/img/hoangImg/imgs/rectangle23772-m91-500w.png" alt="Rectangle23772"
         class="containerlogin-rectangle2">
       <div class="containerlogin-frame12">
         <div class="containerlogin-frame10"><p>Nhấn vào <a href="logout.php?isAdmin=1">đây</a> nếu bạn muốn đăng xuất!</p></div>
@@ -55,71 +58,44 @@ require_once('lib_session.php');
       }
       else{
         echo '
-        <img src="public/playground_assets/rectangle23772-m91-500w.png" alt="Rectangle23772"
+        <img src=".//assets/img/hoangImg/imgs/rectangle23772-m91-500w.png" alt="Rectangle23772"
         class="containerlogin-rectangle2">
       <div class="containerlogin-frame12">
         <div class="containerlogin-frame10"></div>
       </div>
-        <form name="frm" id="" action="xulydangnhap.php" method="POST">
+        <form name="frm" id="" action="xulydangnhap.php" method="POST" onsubmit="return kiemTra();">
         <div class="containerlogin-group1">
           <span class="containerlogin-text LabelMedium">
-            <span>ĐĂNG NHẬP</span>
+            <span>ĐĂNG NHẬP</span>';
+            
+            if (isset($_SESSION['errorLogin'])) {
+              echo '<p id="loginError" style="font-size: 12px;line-height: 18.391px; padding-left: 12px;color: red;font-weight: bold;">' . $_SESSION['errorLogin'] . '</p>';
+              unset($_SESSION['errorLogin']);
+            }
+            echo '
           </span>
           <div class="containerlogin-frame13">
             <span class="containerlogin-text02">
-              <span>Bạn chưa có tài khoản?</span>
+              <span>Bạn chưa có tài khoản? &nbsp;</span>
             </span>
-            <span class="containerlogin-text04"><a href="formdangky.php">Đăng ký</a></span>
+            <span class="containerlogin-text04"><a href="formdangky.php" style="text-decoration: none;">Đăng ký.</a></span>
           </div>
+          <p style="top:46px; position: absolute;">Tài khoản</p> 
           <input name="userName" class="containerlogin-text08 LabelSmall" type="text"
             style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;"
             placeholder="Số điện thoại">
-          <!-- <img src="public/playground_assets/rectangle43772-vvx-200h.png" alt="Rectangle43772" class="containerlogin-rectangle4"> -->
+            <p style="top:130px; position: absolute;">Mật khẩu</p> 
           <input name="passWord" class="containerlogin-text10 LabelSmall" type="password"
             style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;"
             placeholder="Mật khẩu">
-          <!-- <img src="public/playground_assets/rectangle53772-6qka-200h.png" alt="Rectangle53772" class="containerlogin-rectangle5"> -->
-          <img src="public/playground_assets/rectangle63772-oop-200h.png" alt="Rectangle63772"
+          <img src=".//assets/img/hoangImg/imgs/rectangle63772-oop-200h.png" alt="Rectangle63772"
             class="containerlogin-rectangle6">
-          <input type="submit" id="btnSubmitLogin" class="containerlogin-text06 LabelLarge" value="Đăng nhập">
-
-          <!-- <span class="containerlogin-text08 LabelSmall">
-                <span>Tên đăng nhập/Số điện thoại</span>
-              </span> -->
-          <!-- <span class="containerlogin-text10 LabelSmall">
-                <span>Mật khẩu</span> -->
+          <input type="submit" id="btnSubmitLogin" class="containerlogin-text06 LabelLarge" value="Đăng nhập" onclick="">
           </span>
           <div id="container-eyes"></div>
-          <img id="btn-eyes" src="public/playground_assets/closedeye3772-x074-200h.png" alt="ClosedEye3772"
-            class="containerlogin-closed-eye" onclick ="showHidePass();">
-          <div class="containerlogin-frame11">
-            <span class="containerlogin-text12">
-              <span>Quên mật khẩu?</span>
-            </span>
-            <span class="containerlogin-text14">
-              <span>Đăng nhập với SMS</span>
-            </span>
-          </div>
-          <div class="containerlogin-frame14">
-            <img src="public/playground_assets/line13772-qg9c.svg" alt="Line13772" class="containerlogin-line1">
-            <span class="containerlogin-text16 LabelSmall">
-              <span>Hoặc</span>
-            </span>
-            <img src="public/playground_assets/line23772-bsv.svg" alt="Line23772" class="containerlogin-line2">
-          </div>
-          <img src="public/playground_assets/rectangle73772-u7ye-200h.png" alt="Rectangle73772"
-            class="containerlogin-rectangle7">
-          <img src="public/playground_assets/rectangle83772-kai7-200h.png" alt="Rectangle83772"
-            class="containerlogin-rectangle8">
-          <img src="public/playground_assets/rectangle93772-ibyn-200h.png" alt="Rectangle93772"
-            class="containerlogin-rectangle9">
-          <span class="containerlogin-text18"><span>Facebook</span></span>
-          <span class="containerlogin-text20"><span>Google</span></span>
-          <span class="containerlogin-text22"><span>Twitter</span></span>
-          <img src="public/playground_assets/facebook3772-gim-200h.png" alt="Facebook3772"
-            class="containerlogin-facebook">
-          <img src="public/playground_assets/google3772-6cym-200h.png" alt="Google3772" class="containerlogin-google">
-          <img src="public/playground_assets/twitter3772-qqo-200h.png" alt="Twitter3772" class="containerlogin-twitter">
+          <img id="btn-eyes" src=".//assets/img/hoangImg/icons/icons8-eye-24.png" alt="ClosedEye3772" class="containerlogin-closed-eye" onclick ="showHidePass();">
+          <img id="btn-eyes-blind" style="display:none;" src=".//assets/img/hoangImg/icons/icons8-blind-24.png" alt="ClosedEye3772" class="containerlogin-closed-eye" onclick ="showHidePass();">
+
         </div>
       </form>
         ';
@@ -128,7 +104,7 @@ require_once('lib_session.php');
       
       
       <img src=".//assets/img/hoangImg/logo/logo_tron.png" alt="z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772"
-        class="containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2">
+        class="containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2" onclick="showAlert();">
       <span class="containerlogin-text24 TitleMedium">
         <span>VŨ TRỤ ĐỒNG HỒ</span>
       </span>
@@ -143,29 +119,52 @@ require_once('lib_session.php');
   </div>
 
   <!--Start: Footer-->
-  <div id="my-footer"></div>
-  <script src=".//assets/js/footer.js"></script>
-  <script>
-    const myFooter = document.querySelector("#my-footer");
-    myFooter.appendChild(createFooter());
-  </script>
+  <div id="my-footer">
+  <?php
+    include("footer.php");
+    ?>
+  </div>
   <!--End: Footer-->
 
   <script>
     var btn_eye = document.querySelector('#btn-eyes');
+    var eyeBlind = document.getElementById("btn-eyes-blind");
     var passwordtxt = document.frm.passWord;
     var flag_eye = false;
     function showHidePass() {
       if(flag_eye == false){
           passwordtxt.type = 'text';
           flag_eye = true;
+          eyeBlind.style.display = 'block';
+          btn_eye.style.display = 'none';
       }
       else{
         passwordtxt.type = 'password';
           flag_eye = false;
+          eyeBlind.style.display = 'none';
+          btn_eye.style.display = 'block';
       }
     }
   </script>
+
+  <!--Start hien thi thong bao dang nhập sai-->
+  <script> 
+    function kiemTra() {
+      
+
+      if (document.frm.userName.value.trim().length == 0 ||
+        document.frm.passWord.value.trim().length == 0) {
+          Swal.fire({
+        title: 'Thông báo!',
+        text: 'Vui lòng điền đủ thông tin đăng nhập!',
+        icon: 'warning',
+        confirmButtonText: 'Xác nhận'
+      })
+        return false;
+      }
+    }
+  </script>
+  <!--End hien thi thong bao dang nhap sai-->
 </body>
 
 </html>

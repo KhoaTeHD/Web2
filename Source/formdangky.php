@@ -15,13 +15,8 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
     data-tag="font">
-  <<script src="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
-">
-    </script>
-    <link href="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
-" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="sweetalert2.min.js"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
@@ -35,10 +30,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
   </div>
 
   <!--End: Header-->
-
   <div id="body" style=" height: 600px;">
     <div class="containerlogin-containerlogin">
-      <img src="public/playground_assets/rectangle23772-m91-500w.png" alt="Rectangle23772"
+      <img src=".//assets/img/hoangImg/imgs/rectangle23772-m91-500w.png" alt="Rectangle23772"
         class="containerlogin-rectangle2">
       <div class="containerlogin-frame12">
         <div class="containerlogin-frame10"></div>
@@ -147,7 +141,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
 
       </form>
       <img src=".//assets/img/hoangImg/logo/logo_tron.png" alt="z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772"
-        class="containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2" onclick="showAlert();;">
+        class="containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2" onclick="">
       <span class="containerlogin-text24 TitleMedium">
         <span>VŨ TRỤ ĐỒNG HỒ</span>
       </span>
@@ -162,25 +156,24 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
   </div>
 
   <!--Start: Footer-->
-  <div id="my-footer"></div>
-  <script src=".//assets/js/footer.js"></script>
-  <script>
-    const myFooter = document.querySelector("#my-footer");
-    myFooter.appendChild(createFooter());
-  </script>
+  <div id="my-footer">
+  <?php
+    include("footer.php");
+    ?>
+  </div>
   <!--End: Footer-->
 
   <!--Start check mail-->
 
   <script>
     // Lấy phần tử input và phần tử thông báo lỗi
-    var input = document.getElementById("email");
+    var inputMail = document.getElementById("email");
     var errorMessage = document.getElementById("error-message");
 
     // Gắn sự kiện input cho phần tử input
-    input.addEventListener("input", function () {
+    inputMail.addEventListener("input", function () {
       // Kiểm tra định dạng email
-      var email = input.value;
+      var email = inputMail.value;
       var re = /\S+@\S+\.\S+/;
       var valid = re.test(email);
 
@@ -240,7 +233,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
   <script>
     // Lấy phần tử input và phần tử thông báo lỗi
     var input = document.getElementById("password");
-    var errorMessage = document.getElementById("pass-message");
+    var errorMessagepass = document.getElementById("pass-message");
 
     // Gắn sự kiện input cho phần tử input
     input.addEventListener("input", function () {
@@ -258,21 +251,21 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
 
       // Hiển thị thông báo tương ứng
       if (password.length < 8 || strength < 2) {
-        errorMessage.innerText = "Mật khẩu yếu";
-        errorMessage.style.display = "block";
+        errorMessagepass.innerText = "Mật khẩu yếu";
+        errorMessagepass.style.display = "block";
       } else if (password.length < 12 || strength < 3) {
-        errorMessage.innerText = "Mật khẩu trung bình";
-        errorMessage.style.display = "block";
+        errorMessagepass.innerText = "Mật khẩu trung bình";
+        errorMessagepass.style.display = "block";
       } else if (password.length < 16 || strength < 3) {
-        errorMessage.innerText = "Mật khẩu mạnh";
-        errorMessage.style.display = "block";
+        errorMessagepass.innerText = "Mật khẩu mạnh";
+        errorMessagepass.style.display = "block";
       }
       else if (password.length < 21 || strength < 4) {
-        errorMessage.innerText = "Mật khẩu rất mạnh";
-        errorMessage.style.display = "block";
+        errorMessagepass.innerText = "Mật khẩu rất mạnh";
+        errorMessagepass.style.display = "block";
       }
       else {
-        errorMessage.style.display = "none";
+        errorMessagepass.style.display = "none";
       }
     });
 

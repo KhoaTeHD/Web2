@@ -106,10 +106,10 @@ body {
     justify-content: center;
 }
 .containerlogin-group1 {
-    top: 71px;
+    top: 100px;
     left: 862px;
     width: 337px;
-    height: 404px;
+    height: 300px;
     display: flex;
     padding: 0;
     position: absolute;
@@ -134,6 +134,8 @@ body {
     align-self: auto;
     text-align: left;
     line-height: 16px;
+    display: flex;
+    flex-direction: row;
 }
 .LabelMedium {
     font-size: 16px;
@@ -143,7 +145,7 @@ body {
     font-stretch: normal;
 }
 .containerlogin-frame13 {
-    top: 388px;
+    top: 300px;
     left: 54px;
     display: flex;
     position: absolute;
@@ -177,7 +179,7 @@ p, li, ul, pre, div, h1, h2, h3, h4, h5, h6, figure, blockquote, figcaption {
     border-radius: 6px;
 }
 .containerlogin-rectangle6 {
-    top: 198px;
+    top: 230px;
     left: 0px;
     width: 332px;
     height: 42px;
@@ -188,7 +190,7 @@ p, li, ul, pre, div, h1, h2, h3, h4, h5, h6, figure, blockquote, figcaption {
     border-radius: 6px;
 }
 .containerlogin-text06 {
-    top: 209px;
+    top: 241px;
     left: 117px;
     color: rgba(255, 255, 255, 1);
     background-color: #674FA3;
@@ -207,7 +209,7 @@ p, li, ul, pre, div, h1, h2, h3, h4, h5, h6, figure, blockquote, figcaption {
     font-stretch: normal;
 }
 .containerlogin-text08 {
-    top: 63px;
+    top: 73px;
     left: 0;
     color: var(--dl-color-gray-black);
     height: auto;
@@ -226,7 +228,7 @@ p, li, ul, pre, div, h1, h2, h3, h4, h5, h6, figure, blockquote, figcaption {
     font-stretch: normal;
 }
 .containerlogin-text10 {
-    top: 130px;
+    top: 156px;
     left: 0;
     color: var(--dl-color-gray-black);
     height: auto;
@@ -241,13 +243,13 @@ p, li, ul, pre, div, h1, h2, h3, h4, h5, h6, figure, blockquote, figcaption {
     width: 42px;
     height: 42px;
     position: absolute;
-    top: 130px;
+    top: 156px;
     left: 290px;
     border-radius: 0px 8px 8px 0px;
 
 }
 .containerlogin-closed-eye {
-    top: 140px;
+    top: 166px;
     left: 300px;
     width: 20px;
     height: 20px;

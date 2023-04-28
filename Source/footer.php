@@ -1,6 +1,5 @@
-function createFooter() {
-    const footer = document.createElement("footer");
-    footer.innerHTML = `
+<?php
+echo '
     <div class="footer-footer">
         <div class="footer-frame8">
             <span class="footer-text LabelSmall">
@@ -100,24 +99,22 @@ function createFooter() {
                 <span class="footer-text49 LabelLarge">
                     <span>Hình thức vận chuyển</span>
                 </span>
-                <img src="public/playground_assets/logovisa13136-61f-200h.png" alt="logovisa13136"
-                    class="footer-logovisa1" />
-                <img src="public/playground_assets/logojcb13136-whon-200h.png" alt="logojcb13136"
+                <img src=".//assets/img/hoangImg/imgs/logovisa13136-61f-200h.png" alt="logovisa13136" class="footer-logovisa1" />
+                <img src=".//assets/img/hoangImg/imgs/logojcb13136-whon-200h.png" alt="logojcb13136"
                     class="footer-logojcb1" />
-                <img src="public/playground_assets/logomaster13136-cor6-200h.png" alt="logomaster13136"
+                <img src=".//assets/img/hoangImg/imgs/logomaster13136-cor6-200h.png" alt="logomaster13136"
                     class="footer-logomaster1" />
-                <img src="public/playground_assets/logovnpay13136-gcgc-200h.png" alt="logovnpay13136"
+                <img src=".//assets/img/hoangImg/imgs/logovnpay13136-gcgc-200h.png" alt="logovnpay13136"
                     class="footer-logovnpay1" />
-                <img src="public/playground_assets/logobct13136-czh5-200h.png" alt="logobct13136"
+                <img src=".//assets/img/hoangImg/imgs/logobct13136-czh5-200h.png" alt="logobct13136"
                     class="footer-logobct1" />
-                <img src="public/playground_assets/nhattin13136-6dx-200h.png" alt="nhattin13136"
+                <img src=".//assets/img/hoangImg/imgs/nhattin13136-6dx-200h.png" alt="nhattin13136"
                     class="footer-nhattin1" />
-                <img src="public/playground_assets/vnpost13136-xu3-200h.png" alt="vnpost13136" class="footer-vnpost1" />
-                <img src="public/playground_assets/logosamsungpay13136-8sh8r-200h.png" alt="logosamsungpay13136"
+                <img src=".//assets/img/hoangImg/imgs/vnpost13136-xu3-200h.png" alt="vnpost13136" class="footer-vnpost1" />
+                <img src=".//assets/img/hoangImg/imgs/logosamsungpay13136-8sh8r-200h.png" alt="logosamsungpay13136"
                     class="footer-logosamsungpay1" />
             </div>
         </div>
     </div>
-        `;
-    return footer;
-}
+';
+?>

@@ -13,12 +13,15 @@ $dbname = "vutrudongho";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+	die("Connection failed: " . mysqli_connect_error());
 }
 
 $sql = sprintf("SELECT * FROM user WHERE NumberPhone='%s'", $user);
 $result = mysqli_query($conn, $sql);
-if(mysqli_num_rows($result) == 1) {
+//khai báo biến lưu lỗi
+$errorLogin = "";
+$loginSuccess = "";
+if (mysqli_num_rows($result) == 1) {
 	$row = mysqli_fetch_assoc($result);
 	$fullName = $row['FullName'];
 	$numberPhone = $row['NumberPhone'];
@@ -30,7 +33,7 @@ if(mysqli_num_rows($result) == 1) {
 	$status = $row['Status'];
 	if ($row['Password'] == $pass) {
 		// dang nhap thanh cong
-		echo 'Dang nhap thanh cong';
+		//echo 'Dang nhap thanh cong';
 		$_SESSION['current_username'] = $user;
 		$_SESSION['isAdmin'] = true;
 		$_SESSION['current_fullName'] = $fullName;
@@ -42,15 +45,22 @@ if(mysqli_num_rows($result) == 1) {
 		$_SESSION['current_province'] = $province;
 		$_SESSION['current_status'] = $status;
 		header('location: index.php');
+	} else {
+		//echo 'Sai password';
+		$errorLogin = "Thông tin tài khoản chưa chính xác!";
+		session_start();
+		$_SESSION['errorLogin'] = $errorLogin;
+		header("Location: login.php?errorLogin=" . urlencode($errorLogin));
+		exit();
 	}
-	else {
-		echo 'Sai password';
-	}
-}
-else {
-	echo ('Ko ton tai user ' . $user);
+} else {
+	//echo ('Ko ton tai user ' . $user);
+	$errorLogin = "Thông tin tài khoản chưa chính xác!";
+		session_start();
+		$_SESSION['errorLogin'] = $errorLogin;
+		header("Location: login.php?errorLogin=" . urlencode($errorLogin));
+		exit();
 }
 
 mysqli_close($conn);
 ?>
-

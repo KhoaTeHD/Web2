@@ -216,12 +216,16 @@ require_once('lib_session.php');
 
 
   <!--Start: Footer-->
-  <div id="my-footer"></div>
-  <script src=".//assets/js/footer.js"></script>
+  <div id="my-footer">
+  <?php
+    include("footer.php");
+    ?>
+  </div>
+  <!-- <script src=".//assets/js/footer.js"></script>
   <script lang="javascript">
     const myFooter = document.querySelector("#my-footer");
     myFooter.appendChild(createFooter());
-  </script>
+  </script> -->
   <!--End: Footer-->
   <!---->
 
