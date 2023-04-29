@@ -127,7 +127,7 @@
             </select>
           </div>
           <div>
-            <p style="margin-bottom: 4px;">Số nhà, đường (*)</p>
+            <p style="margin-bottom: 4px;">Địa chỉ nhận hàng (*)</p>
             <input name="diaChiNha" type="text"
               style="padding-left: 6px;width:332px; height:36px; border-style: outset;margin-bottom: 34px; border: 1px solid #674FA3; border-radius: 8px;"
               placeholder="Số nhà, đường">

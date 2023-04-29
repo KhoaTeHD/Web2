@@ -23,6 +23,7 @@ $errorLogin = "";
 $loginSuccess = "";
 if (mysqli_num_rows($result) == 1) {
 	$row = mysqli_fetch_assoc($result);
+	$userID = $row['UserID'];
 	$fullName = $row['FullName'];
 	$numberPhone = $row['NumberPhone'];
 	$email = $row['Email'];
@@ -36,6 +37,7 @@ if (mysqli_num_rows($result) == 1) {
 		//echo 'Dang nhap thanh cong';
 		$_SESSION['current_username'] = $user;
 		$_SESSION['isAdmin'] = true;
+		$_SESSION['current_userID'] = $userID;
 		$_SESSION['current_fullName'] = $fullName;
 		$_SESSION['current_numberPhone'] = $numberPhone;
 		$_SESSION['current_email'] = $email;
