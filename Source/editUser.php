@@ -41,7 +41,7 @@ if (isset($_REQUEST['btnSubmitEdit'])) {
         $ward = $row['Ward'];
         $district = $row['District'];
         $province = $row['Province'];
-        if($_SESSION['current_numberPhone'] != $numberPhone){
+        if($_SESSION['current_numberPhone'] != $numberPhone || $_SESSION['current_email'] != $email){
             header("Location: logout.php?isAdmin=1");
         }
         else{

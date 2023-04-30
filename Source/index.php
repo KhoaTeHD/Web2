@@ -38,7 +38,7 @@ require_once('lib_session.php');
   <!--End: Header-->
   <link rel="stylesheet" href=".">
   <div id="main"
-    style="display: flex;flex-direction: column; background-color:#fff; height: 1728px; position: relative; top: 50px;">
+    style="display: flex;flex-direction: column; background-color:#fff; height: 5000px; position: relative; top: 50px;">
     <style>
       #vtdd-logotext {
         display: block;
@@ -73,14 +73,14 @@ require_once('lib_session.php');
     </div>
     <!--End: Slider-->
     <div style="background-color: #fff;">
-      <h1 style="text-align:center ;">CÁC HÃNG ĐỒNG HỒ CHÚNG TÔI ĐANG KINH DOANH</h1>
+      <p class="bigtitlehome" style="text-align:center ;">CÁC HÃNG ĐỒNG HỒ CHÚNG TÔI ĐANG KINH DOANH</p>
       <div id="productKD" style="margin-top: 30px;margin-left: 50px;margin-right: 50px;">
         <div
           style="width: 200px;height:200px;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div id="pdIphone" style="display:flex ;flex-direction: column;position: relative;">
-            <h1
-              style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.3);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
-              Casio</h1>
+            <p class="mediumtitlehome"
+              style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
+              Casio</p>
             <img src=".//assets/img/productImg/118_AEQ-110W-3AVDF-699x699.png" alt="" width="180px">
           </div>
         </div>
@@ -89,9 +89,9 @@ require_once('lib_session.php');
           style="width: 200px;height:200px;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div style="width:180px ;height: 180px;background-color: #fff;">
             <div id="pdOppo" style="display:flex ;flex-direction: column;position: relative;">
-              <h1
-                style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.3);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
-                Apple</h1>
+              <p class="mediumtitlehome"
+                style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
+                Apple</p>
               <img src=".//assets/img/productImg/0011842_midnight_550.png" alt="" width="180px">
             </div>
           </div>
@@ -99,9 +99,9 @@ require_once('lib_session.php');
         <div
           style="width: 200px;height:2020x;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div id="pdPixel" style="display:flex ;flex-direction: column;position: relative;">
-            <h1
-              style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.3);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
-              Citizen</h1>
+            <p class="mediumtitlehome"
+              style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
+              Citizen</p>
             <img src=".//assets/img/productImg/AN8195-58E-699x699.png" alt="" width="180px">
           </div>
         </div>
@@ -109,9 +109,9 @@ require_once('lib_session.php');
         <div
           style="width: 200px;height:200px;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div id="pdRealme" style="display:flex ;flex-direction: column;position: relative;">
-            <h1
-              style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.3);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
-              Orient</h1>
+            <p class="mediumtitlehome"
+              style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
+              Orient</p>
             <img src=".//assets/img/productImg/FAC08003A0-1-699x699.png" alt="" width="180px">
           </div>
         </div>
@@ -119,9 +119,9 @@ require_once('lib_session.php');
         <div
           style="width: 200px;height:200px;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div id="pdSamsung" style="display:flex ;flex-direction: column;position: relative;">
-            <h1
-              style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.3);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
-              Seiko</h1>
+            <p class="mediumtitlehome"
+              style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
+              Seiko</p>
             <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="180px">
           </div>
         </div>
@@ -131,80 +131,95 @@ require_once('lib_session.php');
 
 
     <div style="background-color: rgba(103, 80, 164, 0.4); margin-top: 56px; padding-bottom: 56px;">
-      <h1 style="text-align:center ;margin-top: 50px;">SẢN PHẨM BÁN CHẠY</h1>
+      <!--<p class="bigtitlehome" style="text-align:center ;margin-top: 50px;">SẢN PHẨM BÁN CHẠY</p>-->
+      <p class="bigtitlehome" style="text-align:center ;margin-top: 50px;">CASIO</p>
       <div id="productBC">
-        <div id="pdSPBC1"
+        <div id="casioContent">
+          <div class="col30">
+            <img src=".//assets/img/productImg/118_AEQ-110W-3AVDF-699x699.png" alt="" width="250px" alt="">
+          </div>
+          <p style="text-align: justify;" class="col70 smalltitlehome">Đồng hồ Casio là một trong những thương hiệu đồng hồ nổi tiếng và được yêu thích trên toàn
+            thế giới. Với thiết kế đơn giản, thời trang và đa dạng về chức năng, đồng hồ Casio đã trở thành một lựa chọn
+            phổ biến cho các tín đồ thời trang cũng như những người đam mê công nghệ. Không chỉ đơn thuần là một chiếc
+            đồng hồ báo giờ, đồng hồ Casio còn tích hợp nhiều tính năng hữu ích như đồng hồ định vị GPS, đồng hồ thông
+            minh, đồng hồ chống nước, đồng hồ đo nhịp tim và nhiều tính năng khác. Với chất lượng đáng tin cậy và giá cả
+            hợp lý, đồng hồ Casio là một lựa chọn tuyệt vời cho bất kỳ ai đang tìm kiếm một chiếc đồng hồ đa năng và
+            thời trang.</p>
+        </div>
+        <img src=".//assets/img/hoangImg/imgs/banerCasioBaby.png" alt="">
+        <img src=".//assets/img/hoangImg/imgs/banerCasioGsock.png" alt="">
+        <!-- <div id="pdSPBC1"
           style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
           <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <h3 style="color:#fff ;text-align: left;margin-top: 8px;">Iphone 14 ProMax</h3>
-          <div style="display:inline-flex;">
-            <h4 style="color:#fff ;text-align: left;">Giá bán: 18.000.000đ</h4>
-            <input type="button" style="width:70px;margin-left: 10px;" value="Mua ngay">
+          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
+          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
+            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
+            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
           </div>
         </div>
         <div id="pdSPBC2"
           style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
           <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <h3 style="color:#fff ;text-align: left;margin-top: 8px;">Iphone 14 ProMax</h3>
-          <div style="display:inline-flex;">
-            <h4 style="color:#fff;text-align: left;">Giá bán: 18.000.000đ</h4>
-            <input type="button" style="width:70px;margin-left: 10px;" value="Mua ngay">
+          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
+          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
+            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
+            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
           </div>
         </div>
         <div id="pdSPBC3"
           style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
           <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <h3 style="color:#fff ;text-align: left;margin-top: 8px;">Iphone 14 ProMax</h3>
-          <div style="display:inline-flex;">
-            <h4 style="color:#fff ;text-align: left;">Giá bán: 18.000.000đ</h4>
-            <input type="button" style="width:70px;margin-left: 10px;" value="Mua ngay">
+          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
+          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
+            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
+            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
           </div>
         </div>
         <div id="pdSPBC4"
           style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
           <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <h3 style="color:#fff ;text-align: left;margin-top: 8px;">Iphone 14 ProMax</h3>
-          <div style="display:inline-flex;">
-            <h4 style="color:#fff ;text-align: left;">Giá bán: 18.000.000đ</h4>
-            <input type="button" style="width:70px;margin-left: 10px;" value="Mua ngay">
+          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
+          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
+            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
+            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
           </div>
         </div>
         <div id="pdSPBC5"
           style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
           <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <h3 style="color:#fff ;text-align: left;margin-top: 8px;">Iphone 14 ProMax</h3>
-          <div style="display:inline-flex;">
-            <h4 style="color:#fff ;text-align: left;">Giá bán: 18.000.000đ</h4>
-            <input type="button" style="width:70px;margin-left: 10px;" value="Mua ngay">
+          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
+          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
+            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
+            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
           </div>
         </div>
         <div id="pdSPBC6"
           style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
           <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <h3 style="color:#fff ;text-align: left;margin-top: 8px;">Iphone 14 ProMax</h3>
-          <div style="display:inline-flex;">
-            <h4 style="color:#fff ;text-align: left;">Giá bán: 18.000.000đ</h4>
-            <input type="button" style="width:70px;margin-left: 10px;" value="Mua ngay">
+          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
+          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
+            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
+            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
           </div>
         </div>
         <div id="pdSPBC7"
           style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
           <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <h3 style="color:#fff ;text-align: left;margin-top: 8px;">Iphone 14 ProMax</h3>
-          <div style="display:inline-flex;">
-            <h4 style="color:#fff ;text-align: left;">Giá bán: 18.000.000đ</h4>
-            <input type="button" style="width:70px;margin-left: 10px;" value="Mua ngay">
+          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
+          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
+            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
+            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
           </div>
         </div>
         <div id="pdSPBC8"
           style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
           <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <h3 style="color:#fff ;text-align: left;margin-top: 8px;">Iphone 14 ProMax</h3>
-          <div style="display:inline-flex;">
-            <h4 style="color:#fff ;text-align: left;">Giá bán: 18.000.000đ</h4>
-            <input type="button" style="width:70px;margin-left: 10px;" value="Mua ngay">
+          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
+          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
+            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
+            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -217,7 +232,7 @@ require_once('lib_session.php');
 
   <!--Start: Footer-->
   <div id="my-footer">
-  <?php
+    <?php
     include("footer.php");
     ?>
   </div>

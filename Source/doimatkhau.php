@@ -97,7 +97,7 @@
       <img src=".//assets/img/hoangImg/logo/logo_tron.png" alt="z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772"
         class="containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2" onclick="">
       <span class="containerlogin-text24 TitleMedium">
-        <span>VŨ TRỤ ĐỒNG HỒ <?php echo $_SESSION['current_password']?></span>
+        <span>VŨ TRỤ ĐỒNG HỒ </span>
       </span>
       <span class="containerlogin-text26">
         <span>

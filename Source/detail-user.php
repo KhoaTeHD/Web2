@@ -80,8 +80,8 @@ require_once('lib_session.php');
         <p class="content-tab-bar-userr">Xin chào,
           <?php echo ("$_SESSION[current_fullName]"); ?>!
         </p>
-        <p class="content-tab-bar-user" style="color:rgba(61, 0, 213, 1);">Thông tin tài khoản</p>
-        <p class="content-tab-bar-user">Quản lý đơn hàng</p>
+        <p class="content-tab-bar-user" style="margin-bottom: 12px;color:#fff;width: 100%;height: 50px;text-align: center;line-height: 50px;">Thông tin tài khoản</p>
+        <p class="content-tab-bar-user" style="color:#000;width: 100%;height: 50px;text-align: center;line-height: 50px;">Quản lý đơn hàng</p>
          
       </div>
       <div id="content-details-user">

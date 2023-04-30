@@ -83,7 +83,7 @@ require_once('lib_session.php');
           <p style="top:46px; position: absolute;">Tài khoản</p> 
           <input name="userName" class="containerlogin-text08 LabelSmall" type="text"
             style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;"
-            placeholder="Số điện thoại">
+            placeholder="Email/Số điện thoại">
             <p style="top:130px; position: absolute;">Mật khẩu</p> 
           <input name="passWord" class="containerlogin-text10 LabelSmall" type="password"
             style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;"

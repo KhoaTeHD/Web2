@@ -17,12 +17,21 @@ if (!$conn) {
 }
 
 $sql = sprintf("SELECT * FROM user WHERE NumberPhone='%s'", $user);
+$sqlMail = sprintf("SELECT * FROM user WHERE Email='%s'", $user);
+
 $result = mysqli_query($conn, $sql);
+$resultMail = mysqli_query($conn, $sqlMail);
+
 //khai báo biến lưu lỗi
 $errorLogin = "";
 $loginSuccess = "";
-if (mysqli_num_rows($result) == 1) {
-	$row = mysqli_fetch_assoc($result);
+if (mysqli_num_rows($result) == 1 || mysqli_num_rows($resultMail) == 1 ) {
+	if(mysqli_num_rows($result) == 1){
+		$row = mysqli_fetch_assoc($result);
+	}
+	if(mysqli_num_rows($resultMail) == 1){
+		$row = mysqli_fetch_assoc($resultMail);
+	}
 	$userID = $row['UserID'];
 	$fullName = $row['FullName'];
 	$numberPhone = $row['NumberPhone'];

@@ -4,7 +4,41 @@
     box-sizing: border-box;
 }
 
+.bigtitlehome{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 28px;
+    line-height: 20px;
+    /* identical to box height, or 100% */
+    letter-spacing: 0.3px;
+}
 
+.mediumtitlehome{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 22px;
+    line-height: 20px;
+    /* identical to box height, or 100% */
+    letter-spacing: 0.3px;
+}
+
+.smalltitlehome{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 100% */
+    letter-spacing: 0.3px;
+}
+
+.minititlehome{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 100% */
+    letter-spacing: 0.3px;
+}
 /*phần slider*/
 .slider .slide-img {
     width: 100%;
@@ -88,16 +122,30 @@
 
 #productBC{
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: space-around;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 40px;
+}
+#casioContent{
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
     align-content: space-around;
-    margin-left: 60px;
-    margin-right: 60px;
-    margin-top: 40px;
 }
-
 #pdSPBC5,#pdSPBC6,#pdSPBC7,#pdSPBC8{
     margin-top: 38px;
+}
+
+.col30{
+    width: 30%;
+}
+.col70{
+    width: 70%;
 }
