@@ -27,6 +27,7 @@ if (mysqli_num_rows($result) == 1) {
 	$fullName = $row['FullName'];
 	$numberPhone = $row['NumberPhone'];
 	$email = $row['Email'];
+	$passwordUser = $row['Password'];
 	$houseRoadAddress = $row['HouseRoadAddress'];
 	$ward = $row['Ward'];
 	$district = $row['District'];
@@ -41,6 +42,7 @@ if (mysqli_num_rows($result) == 1) {
 		$_SESSION['current_fullName'] = $fullName;
 		$_SESSION['current_numberPhone'] = $numberPhone;
 		$_SESSION['current_email'] = $email;
+		$_SESSION['current_password'] = $passwordUser;
 		$_SESSION['current_houseRoadAddress'] = $houseRoadAddress;
 		$_SESSION['current_ward'] = $ward;
 		$_SESSION['current_district'] = $district;

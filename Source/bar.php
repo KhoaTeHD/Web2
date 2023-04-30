@@ -52,6 +52,7 @@ if (isAdminLogged()) {
               ">
    <li style="padding-left:8px;"><a href="user.php">Thông tin tài khoản</a></li>
    <li style="padding-left:8px;"><a href="donhang.php">Đơn hàng của tôi</a></li>
+   <li style="padding-left:8px;"><a href="doimatkhau.php">Đổi mật khẩu</a></li>
    <li><hr></li>
    <li style="padding-left:8px;"><a class="nav-link" href="logout.php?isAdmin=1">Đăng xuat</a></li>
    </ul>
