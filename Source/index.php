@@ -78,10 +78,12 @@ require_once('lib_session.php');
         <div
           style="width: 200px;height:200px;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div id="pdIphone" style="display:flex ;flex-direction: column;position: relative;">
-            <p onclick="window.location.href='#casioBrandInfo'" class="mediumtitlehome"
+            <!-- <p onclick="window.location.href='#casioBrandInfo'" class="mediumtitlehome"
               style="cursor: pointer;color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
-              Casio</p>
-            <img src=".//assets/img/productImg/118_AEQ-110W-3AVDF-699x699.png" alt="" width="180px">
+              Casio</p> -->
+              <div  style="cursor: pointer;display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 10;"><a id="theAtrongHoverMauTim" class="btn-11 mediumtitlehome" onclick="window.location.href='#casioBrandInfo'">Casio</a></div>
+              <div  style="display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 9;background-color: #B3A7D1;"></div>
+            <img src=".//assets/img/productImg/118_AEQ-110W-3AVDF-699x699.png" style="opacity: 0.9;" alt="" width="180px">
           </div>
         </div>
 

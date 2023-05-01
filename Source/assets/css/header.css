@@ -120,10 +120,11 @@
     flex-grow: 0;
     text-decoration-line: none;
 }
-a {
+/*Thẻ a của Hoàng*/
+.the_a_Black_Purple {
     text-decoration: none;
     color: black;
   }
-a:hover{
+.the_a_Black_Purple:hover{
     color: #6750A4;
 }

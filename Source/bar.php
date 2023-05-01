@@ -48,11 +48,11 @@ if (isAdminLogged()) {
               line-height: 40px;
               letter-spacing: 0.1px;
               ">
-   <li style="padding-left:8px;"><a href="user.php">Thông tin tài khoản</a></li>
-   <li style="padding-left:8px;"><a href="donhang.php">Đơn hàng của tôi</a></li>
-   <li style="padding-left:8px;"><a href="doimatkhau.php">Đổi mật khẩu</a></li>
+   <li style="padding-left:8px;"><a class="the_a_Black_Purple" href="user.php">Thông tin tài khoản</a></li>
+   <li style="padding-left:8px;"><a class="the_a_Black_Purple" href="donhang.php">Đơn hàng của tôi</a></li>
+   <li style="padding-left:8px;"><a class="the_a_Black_Purple" href="doimatkhau.php">Đổi mật khẩu</a></li>
    <li><hr></li>
-   <li style="padding-left:8px;"><a class="nav-link" href="logout.php?isAdmin=1">Đăng xuất</a></li>
+   <li style="padding-left:8px;"><a class="the_a_Black_Purple" class="nav-link" href="logout.php?isAdmin=1">Đăng xuất</a></li>
    </ul>
    </div>
    <script lang="javascript">
