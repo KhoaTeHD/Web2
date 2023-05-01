@@ -15,18 +15,16 @@ echo '
     <p class="child-menu-header" style="width: auto;order: 7;">Liên hệ</p>
 </div>
 <div id="avt-and-icons">
-    <img class="icon-header" src=".//assets/img/search.png" style="order: 0;" alt="">
-    <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 1;" alt="">
-    <img class="icon-header" src=".//assets/img/hoangImg/icons/icons8-help-24.png" style="order: 2;" alt="">
-    <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 3;" alt="">
-    <img class="icon-header" src=".//assets/img/hoangImg/icons/icons8-shopping-cart-24.png" style="order: 4;" alt="">
-    <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 5;" alt="">'; ?>
+    <img class="icon-header" src=".//assets/img/hoangImg/icons/icons8-help-24.png" style="order: 0;" alt="">
+    <img class="line-header" src=".//assets/img/hoangImg/imgs/Line.png" style="order: 1;" alt="">
+    <img class="icon-header" src=".//assets/img/hoangImg/icons/icons8-shopping-cart-24.png" style="order: 2;" alt="">
+    <img class="line-header" src=".//assets/img/hoangImg/imgs/Line.png" style="order: 3;" alt="">'; ?>
 
 <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->
 <?php
 //var_dump(isAdminLogged());
 if (isAdminLogged()) {
-    echo ' <img id="avt_user" onclick="avtClicked();" src=".//assets/img/hoangImg/icons/icons8-user-64.png" width="34" height="34" style="order: 6;" alt="">
+    echo ' <img id="avt_user" onclick="avtClicked();" src=".//assets/img/hoangImg/icons/icons8-user-64.png" width="34" height="34" style="order: 4;" alt=""></div>
    <div id="menu-options-user" style="position: absolute;
                                       top:37px;
                                       right:0;
@@ -54,7 +52,7 @@ if (isAdminLogged()) {
    <li style="padding-left:8px;"><a href="donhang.php">Đơn hàng của tôi</a></li>
    <li style="padding-left:8px;"><a href="doimatkhau.php">Đổi mật khẩu</a></li>
    <li><hr></li>
-   <li style="padding-left:8px;"><a class="nav-link" href="logout.php?isAdmin=1">Đăng xuat</a></li>
+   <li style="padding-left:8px;"><a class="nav-link" href="logout.php?isAdmin=1">Đăng xuất</a></li>
    </ul>
    </div>
    <script lang="javascript">
@@ -76,7 +74,7 @@ if (isAdminLogged()) {
    ';
 
 } else {
-    echo ('<p id="login-signup" style="order: 6;"> <a href="login.php">Đăng nhập</a></p>
+    echo ('<p id="login-signup" style="order: 6;"> <a href="login.php">Đăng nhập</a></p></div>
     ');
 }
 ?>

@@ -8,6 +8,7 @@ require_once('lib_session.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href=".//assets/css/donhang.css">
     <link rel="stylesheet" href=".//assets/css/header.css">
   <link rel="stylesheet" href=".//assets/css/footer.css">
   <link rel="stylesheet"
@@ -25,7 +26,21 @@ require_once('lib_session.php');
     ?>
   </div>
   <!--End: Header-->
-    <div id="mainDonHang" style="height: 500px;"></div>
+  <div id="main-user" >
+    <div id="imagelogo">
+        <img id="img-logo" src=".//assets/img/hoangImg/logo/logo_text_400x100.png" alt="">
+    </div>
+    <div id="main-content">
+        <div id="tab-bar-user">
+            <p class="content-tab-bar-userr">Xin chào, <?php echo ("$_SESSION[current_fullName]"); ?>!</p>
+            <p class="content-tab-bar-user" style="margin-bottom: 12px;color:#fff;width: 100%;height: 50px;text-align: center;line-height: 50px;">Thông tin tài khoản</p>
+            <p class="content-tab-bar-user" style="color:#000;width: 100%;height: 50px;text-align: center;line-height: 50px;"><a href="donhang.php">Quản lý đơn hàng</a></p>
+        </div>
+        <div id="content-user">
+
+        </div>
+    </div>
+  </div>
   <!--Start: Footer-->
   <div id="my-footer">
   <?php

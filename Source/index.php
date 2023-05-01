@@ -23,22 +23,22 @@ require_once('lib_session.php');
 </head>
 
 <body>
+  <!--Start Nut di chuyen-->
+  <div id="btnLenXuong" style="position: fixed;z-index: 999;display: flex;flex-direction: column;top:80%;right: 14px;">
+  <img id="btn-top" src=".//assets/img/hoangImg/icons/icons8-slide-up-32.png" alt="" style="cursor: pointer;margin-bottom: 10px;">
+  <img id="scroll-to-bottom" onclick="scrollToBottom()" src=".//assets/img/hoangImg/icons/icons8-down-button-32.png" alt="" style="cursor: pointer;">
+  </div>
+  
+  <!--End nut di chuyen-->
   <!--Start: Header-->
-  <!-- <div id="bar-header"></div>
-  <script src=".//assets/js/header.js"></script>
-  <script>
-    const myHeader = document.querySelector("#bar-header");
-    myHeader.appendChild(createHeader());
-  </script> -->
-  <div id="bar-header">
+  <div id="bar-header" >
     <?php
     include("bar.php");
     ?>
   </div>
   <!--End: Header-->
-  <link rel="stylesheet" href=".">
   <div id="main"
-    style="display: flex;flex-direction: column; background-color:#fff; height: 5000px; position: relative; top: 50px;">
+    style="display: flex;flex-direction: column; background-color:#fff; height: 9700px; position: relative; top: 50px;">
     <style>
       #vtdd-logotext {
         display: block;
@@ -78,8 +78,8 @@ require_once('lib_session.php');
         <div
           style="width: 200px;height:200px;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div id="pdIphone" style="display:flex ;flex-direction: column;position: relative;">
-            <p class="mediumtitlehome"
-              style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
+            <p onclick="window.location.href='#casioBrandInfo'" class="mediumtitlehome"
+              style="cursor: pointer;color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
               Casio</p>
             <img src=".//assets/img/productImg/118_AEQ-110W-3AVDF-699x699.png" alt="" width="180px">
           </div>
@@ -89,8 +89,8 @@ require_once('lib_session.php');
           style="width: 200px;height:200px;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div style="width:180px ;height: 180px;background-color: #fff;">
             <div id="pdOppo" style="display:flex ;flex-direction: column;position: relative;">
-              <p class="mediumtitlehome"
-                style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
+              <p onclick="window.location.href='#appleBrandInfo'" class="mediumtitlehome"
+                style="cursor: pointer;color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
                 Apple</p>
               <img src=".//assets/img/productImg/0011842_midnight_550.png" alt="" width="180px">
             </div>
@@ -99,8 +99,8 @@ require_once('lib_session.php');
         <div
           style="width: 200px;height:2020x;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div id="pdPixel" style="display:flex ;flex-direction: column;position: relative;">
-            <p class="mediumtitlehome"
-              style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
+            <p onclick="window.location.href='#citizenBrandInfo'" class="mediumtitlehome"
+              style="cursor: pointer;color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
               Citizen</p>
             <img src=".//assets/img/productImg/AN8195-58E-699x699.png" alt="" width="180px">
           </div>
@@ -109,8 +109,8 @@ require_once('lib_session.php');
         <div
           style="width: 200px;height:200px;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div id="pdRealme" style="display:flex ;flex-direction: column;position: relative;">
-            <p class="mediumtitlehome"
-              style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
+            <p onclick="window.location.href='#orientBrandInfo'" class="mediumtitlehome"
+              style="cursor: pointer;color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
               Orient</p>
             <img src=".//assets/img/productImg/FAC08003A0-1-699x699.png" alt="" width="180px">
           </div>
@@ -119,8 +119,8 @@ require_once('lib_session.php');
         <div
           style="width: 200px;height:200px;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div id="pdSamsung" style="display:flex ;flex-direction: column;position: relative;">
-            <p class="mediumtitlehome"
-              style="color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
+            <p onclick="window.location.href='#seikoBrandInfo'" class="mediumtitlehome"
+              style="cursor: pointer;color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
               Seiko</p>
             <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="180px">
           </div>
@@ -130,15 +130,16 @@ require_once('lib_session.php');
     </div>
 
 
-    <div style="background-color: rgba(103, 80, 164, 0.4); margin-top: 56px; padding-bottom: 56px;">
+    <div id="casioBrandInfo" style="background-color: rgba(103, 80, 164, 0.4); margin-top: 56px; padding-bottom: 56px;">
       <!--<p class="bigtitlehome" style="text-align:center ;margin-top: 50px;">SẢN PHẨM BÁN CHẠY</p>-->
       <p class="bigtitlehome" style="text-align:center ;margin-top: 50px;">CASIO</p>
       <div id="productBC">
-        <div id="casioContent">
+        <div class="clockBrandContent">
           <div class="col30">
-            <img src=".//assets/img/productImg/118_AEQ-110W-3AVDF-699x699.png" alt="" width="250px" alt="">
+            <img src=".//assets/img/hoangImg/imgs/118_AEQ-110W-3AVDF-699x699.png" alt="" width="250px" alt="">
           </div>
-          <p style="text-align: justify;" class="col70 smalltitlehome">Đồng hồ Casio là một trong những thương hiệu đồng hồ nổi tiếng và được yêu thích trên toàn
+          <p style="text-align: justify;display: flex;align-items: center;" class="col70 smalltitlehome">Đồng hồ Casio
+            là một trong những thương hiệu đồng hồ nổi tiếng và được yêu thích trên toàn
             thế giới. Với thiết kế đơn giản, thời trang và đa dạng về chức năng, đồng hồ Casio đã trở thành một lựa chọn
             phổ biến cho các tín đồ thời trang cũng như những người đam mê công nghệ. Không chỉ đơn thuần là một chiếc
             đồng hồ báo giờ, đồng hồ Casio còn tích hợp nhiều tính năng hữu ích như đồng hồ định vị GPS, đồng hồ thông
@@ -146,89 +147,100 @@ require_once('lib_session.php');
             hợp lý, đồng hồ Casio là một lựa chọn tuyệt vời cho bất kỳ ai đang tìm kiếm một chiếc đồng hồ đa năng và
             thời trang.</p>
         </div>
-        <img src=".//assets/img/hoangImg/imgs/banerCasioBaby.png" alt="">
-        <img src=".//assets/img/hoangImg/imgs/banerCasioGsock.png" alt="">
-        <!-- <div id="pdSPBC1"
-          style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
-          <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
-          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
-            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
-            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
+        <img src=".//assets/img/hoangImg/imgs/banerCasioBaby.png" alt="" width="250px"
+          style="width: 100%;margin-top: 12px;">
+        <img src=".//assets/img/hoangImg/imgs/banerCasioGsock.png" alt="" width="250px"
+          style="width: 100%;margin-top: 14px;">
+
+        <hr id="appleBrandInfo" style="margin-top: 50px;margin-bottom: 50px;">
+
+        <p class="bigtitlehome" style="text-align:center ;">APPLE</p>
+        <div class="clockBrandContent">
+          <div class="col30">
+            <img src=".//assets/img/productImg/0011842_midnight_550.png" alt="" width="250px" alt="">
           </div>
+          <p style="text-align: justify;display: flex;align-items: center;" class="col70 smalltitlehome">Apple Watch là
+            một trong những sản phẩm đồng hồ thông minh được yêu thích nhất hiện nay. Với thiết kế đẹp mắt, tính năng
+            thông minh và tích hợp nhiều chức năng hữu ích, Apple Watch đã trở thành một lựa chọn phổ biến cho những
+            người yêu công nghệ. Với khả năng đo nhịp tim, theo dõi hoạt động thể chất, kiểm tra sức khỏe và tích hợp hệ
+            thống thông báo từ các ứng dụng trên điện thoại, Apple Watch giúp người dùng có thể quản lý công việc, cuộc
+            sống và sức khỏe của mình một cách tiện lợi hơn. Đặc biệt, tính năng định vị GPS và hướng dẫn đường đi cũng
+            là điểm nhấn đáng chú ý của Apple Watch, giúp người dùng dễ dàng điều hướng và khám phá thế giới xung quanh
+            một cách thuận tiện hơn. Với chất lượng và độ tin cậy của thương hiệu Apple, Apple Watch là một sự lựa chọn
+            tuyệt vời cho những ai muốn sở hữu một chiếc đồng hồ thông minh đẳng cấp và hiện đại.</p>
         </div>
-        <div id="pdSPBC2"
-          style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
-          <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
-          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
-            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
-            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
+        <img src=".//assets/img/hoangImg/imgs/apple_baner.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
+        <img src=".//assets/img/hoangImg/imgs/apple_banner3.jpg" alt="" style="width: 100%;">
+
+        <hr id="citizenBrandInfo" style="margin-top: 50px;margin-bottom: 50px;">
+
+        <p class="bigtitlehome" style="text-align:center ;">CITIZEN</p>
+        <div class="clockBrandContent">
+          <div class="col30">
+            <img src=".//assets/img/hoangImg/imgs/AN8195-58E-699x699.png" alt="" width="250px" alt="">
           </div>
+          <p style="text-align: justify;display: flex;align-items: center;" class="col70 smalltitlehome">Đồng hồ Citizen
+            là một trong những thương hiệu đồng hồ nổi tiếng và được yêu thích trên toàn thế giới. Với hơn 100 năm kinh
+            nghiệm trong sản xuất đồng hồ, Citizen đã tạo ra những sản phẩm đồng hồ chất lượng cao, thiết kế đẹp mắt và
+            tính năng đa dạng. Đồng hồ Citizen là sự kết hợp tuyệt vời giữa phong cách, chức năng và độ chính xác, với
+            khả năng chống nước, chống sốc và tích hợp các chức năng như đo độ sâu, đo tốc độ, đo thời gian, đo khoảng
+            cách và nhiều tính năng khác. Đặc biệt, đồng hồ Citizen cũng nổi tiếng với công nghệ Eco-Drive tiên tiến,
+            cho phép sử dụng năng lượng ánh sáng để làm năng lượng cho đồng hồ, giúp tiết kiệm pin và bảo vệ môi trường.
+            Với chất lượng và độ tin cậy của thương hiệu Citizen, đồng hồ Citizen là sự lựa chọn hoàn hảo cho những ai
+            đang tìm kiếm một chiếc đồng hồ đa năng và bền vững.</p>
         </div>
-        <div id="pdSPBC3"
-          style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
-          <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
-          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
-            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
-            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
+        <img src=".//assets/img/hoangImg/imgs/citizen_banner1.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
+        <img src=".//assets/img/hoangImg/imgs/citizen_banner2.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
+        <img src=".//assets/img/hoangImg/imgs/citizen_banner4.jpg" alt="" style="width: 100%;">
+
+        <hr id="orientBrandInfo" style="margin-top: 50px;margin-bottom: 50px;">
+
+        <p class="bigtitlehome" style="text-align:center ;">ORIENT</p>
+        <div class="clockBrandContent">
+          <div class="col30">
+            <img src=".//assets/img/hoangImg/imgs/FAC08003A0-1-699x699.png" alt="" width="250px" alt="">
           </div>
+          <p style="text-align: justify;display: flex;align-items: center;" class="col70 smalltitlehome">Đồng hồ Orient
+            là một trong những thương hiệu đồng hồ nổi tiếng và được đánh giá cao trong ngành công nghiệp đồng hồ. Với
+            hơn 70 năm kinh nghiệm sản xuất đồng hồ, Orient đã tạo ra những sản phẩm đồng hồ chất lượng cao, với thiết
+            kế tinh tế và độ chính xác cao. Đồng hồ Orient được sản xuất với các linh kiện chính hãng và được lắp ráp
+            bằng tay bởi các thợ đồng hồ tài ba, giúp tăng độ chính xác và độ bền của sản phẩm. Đồng hồ Orient còn nổi
+            tiếng với các tính năng đa dạng như đo thời gian, ngày giờ, lịch và tính năng đo độ sâu, giúp người dùng sử
+            dụng đồng hồ theo nhiều mục đích khác nhau. Đặc biệt, đồng hồ Orient cũng được trang bị tính năng cộng hưởng
+            tự động, cho phép đồng hồ sử dụng chính chuyển động của cổ tay để làm năng lượng cho đồng hồ, giúp tiết kiệm
+            năng lượng và kéo dài tuổi thọ của pin. Với chất lượng và độ tin cậy của thương hiệu Orient, đồng hồ Orient
+            là sự lựa chọn tuyệt vời cho những ai đang tìm kiếm một chiếc đồng hồ chất lượng cao và đáng tin cậy.</p>
         </div>
-        <div id="pdSPBC4"
-          style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
-          <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
-          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
-            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
-            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
+        <img src=".//assets/img/hoangImg/imgs/orient_banner1.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
+        <img src=".//assets/img/hoangImg/imgs/orient_banner2.jpg" alt="" style="width: 100%;">
+
+        <hr id="seikoBrandInfo" style="margin-top: 50px;margin-bottom: 50px;">
+
+        <p class="bigtitlehome" style="text-align:center ;">SEIKO</p>
+        <div class="clockBrandContent">
+          <div class="col30">
+            <img src=".//assets/img/hoangImg/imgs/SRPG41K1.png" alt="" width="250px" alt="">
           </div>
+          <p style="text-align: justify;display: flex;align-items: center;" class="col70 smalltitlehome">Đồng hồ Seiko
+            là một trong những thương hiệu đồng hồ nổi tiếng và được yêu thích trên toàn thế giới. Với hơn 130 năm kinh
+            nghiệm trong sản xuất đồng hồ, Seiko đã tạo ra những sản phẩm đồng hồ chất lượng cao, với thiết kế đẹp mắt
+            và tính năng đa dạng. Đồng hồ Seiko được sản xuất với các linh kiện chính hãng và được lắp ráp bằng tay bởi
+            các thợ đồng hồ tài ba, giúp tăng độ chính xác và độ bền của sản phẩm. Đồng hồ Seiko còn nổi tiếng với các
+            tính năng đa dạng như đo thời gian, ngày giờ, lịch và tính năng đo độ sâu, giúp người dùng sử dụng đồng hồ
+            theo nhiều mục đích khác nhau. Đặc biệt, đồng hồ Seiko cũng được trang bị tính năng cộng hưởng tự động hoặc
+            solar, cho phép đồng hồ sử dụng chính chuyển động của cổ tay hoặc ánh sáng để làm năng lượng cho đồng hồ,
+            giúp tiết kiệm năng lượng và kéo dài tuổi thọ của pin. Với chất lượng và độ tin cậy của thương hiệu Seiko,
+            đồng hồ Seiko là sự lựa chọn hoàn hảo cho những ai đang tìm kiếm một chiếc đồng hồ đa năng và bền vững.</p>
         </div>
-        <div id="pdSPBC5"
-          style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
-          <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
-          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
-            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
-            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
-          </div>
-        </div>
-        <div id="pdSPBC6"
-          style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
-          <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
-          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
-            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
-            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
-          </div>
-        </div>
-        <div id="pdSPBC7"
-          style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
-          <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
-          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
-            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
-            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
-          </div>
-        </div>
-        <div id="pdSPBC8"
-          style="display:flex ;flex-direction: column;background-color: rgba(103, 80, 164, 0.7);padding: 14px;border-radius: 8px;">
-          <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="250px">
-          <p style="color:#fff ;text-align: left;margin-top: 8px;" class="smalltitlehome">Iphone 14 ProMax</p>
-          <div style="display:inline-flex;justify-content: flex-end;position: relative;">
-            <p style="color:#fff ;text-align: left;position: absolute;left:0 ;" class="smalltitlehome">Giá bán: 18.000.000đ</p>
-            <input class="minititlehome" type="button" style="width:75px;text-align: center;" value="Mua ngay">
-          </div>
-        </div> -->
+        <img src=".//assets/img/hoangImg/imgs/seiko_banner1.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
+        <img src=".//assets/img/hoangImg/imgs/seiko_banner2.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
+        <img src=".//assets/img/hoangImg/imgs/seiko_banner3.jpg" alt="" style="width: 100%;">
+
       </div>
     </div>
 
 
   </div>
-
-
-
-
 
   <!--Start: Footer-->
   <div id="my-footer">
@@ -236,14 +248,39 @@ require_once('lib_session.php');
     include("footer.php");
     ?>
   </div>
-  <!-- <script src=".//assets/js/footer.js"></script>
-  <script lang="javascript">
-    const myFooter = document.querySelector("#my-footer");
-    myFooter.appendChild(createFooter());
-  </script> -->
   <!--End: Footer-->
-  <!---->
+<script>
+  var btnTop = document.getElementById("btn-top");
+  window.addEventListener("scroll", function() {
+  if (window.pageYOffset > 0 ) {
+    btnTop.style.display = "block";
+  } else {
+    btnTop.style.display = "none";
+  }
+});
 
+btnTop.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+function scrollToBottom() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+var scrollToBottomButton = document.getElementById("scroll-to-bottom");
+
+window.onscroll = function() {
+  if (window.pageYOffset == document.body.scrollHeight - window.innerHeight) {
+    scrollToBottomButton.style.display = "none";
+  } else {
+    scrollToBottomButton.style.display = "block";
+  }
+};
+
+</script>
 </body>
 
 </html>
