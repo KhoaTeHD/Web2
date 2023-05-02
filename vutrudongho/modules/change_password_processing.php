@@ -1,6 +1,6 @@
 <!--Start php xu ly sua thong tin-->
 <?php
-require_once('lib_session.php');
+require_once('../lib_session.php');
 ?>
 <?php
 if (isset($_REQUEST['btnSubmitSaveNewPass'])) {

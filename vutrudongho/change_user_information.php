@@ -9,7 +9,7 @@ require_once('lib_session.php');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href=".//assets/css/user.css">
+  <link rel="stylesheet" href=".//assets/css/user_information.css">
   <link rel="stylesheet" href=".//assets/css/header.css">
   <link rel="stylesheet" href=".//assets/css/footer.css">
   <link rel="stylesheet"
@@ -67,7 +67,7 @@ require_once('lib_session.php');
   <!--Start: Header-->
   <div id="bar-header">
     <?php
-    include("bar.php");
+    include(".//components/header.php");
     ?>
   </div>
   <!--End: Header-->
@@ -98,7 +98,7 @@ require_once('lib_session.php');
                     <p><?php echo $_SESSION['current_houseRoadAddress'] ?>, <?php echo $_SESSION['current_ward'] ?>, <?php echo $_SESSION['current_district'] ?>, <?php echo $_SESSION['current_province'] ?></p>
                 </div>
             </div> -->
-        <form name="frm" id="" action="editUser.php" method="POST" onsubmit="return kiemTra();"
+        <form name="frm" id="" action=".//modules/change_user_information_processing.php" method="POST" onsubmit="return kiemTra();"
           style="display: flex;flex-direction: row;width: 100%;">
 
           <p id="titleEditInforUser" style="position: absolute;padding: 12px;">Chỉnh sửa thông tin</p>
@@ -178,14 +178,14 @@ require_once('lib_session.php');
   <!--Start: Footer-->
   <div id="my-footer">
     <?php
-    include("footer.php");
+    include(".//components/footer.php");
     ?>
   </div>
   <!--End: Footer-->
   <!--Start Điều hướng về trang user-->
   <script>
     function quayVeUser(){
-    window.location = "user.php";
+    window.location = "user_information.php";
     }
   </script>
   <!--End điều hướng về trang user-->

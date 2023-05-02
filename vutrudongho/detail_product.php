@@ -29,7 +29,7 @@
 <body>
     <div id="bar-header">
         <?php
-        include("bar.php");
+        include("header.php");
         ?>
     </div>
     <div class="detail_container">
