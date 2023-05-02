@@ -1,5 +1,5 @@
 <?php
-require_once('lib_session.php');
+require_once('../lib_session.php');
 
 $user = $_REQUEST['userName'];
 $pass = $_REQUEST['passWord'];
@@ -57,13 +57,13 @@ if (mysqli_num_rows($result) == 1 || mysqli_num_rows($resultMail) == 1 ) {
 		$_SESSION['current_district'] = $district;
 		$_SESSION['current_province'] = $province;
 		$_SESSION['current_status'] = $status;
-		header('location: index.php');
+		header('location: ../../index.php');
 	} else {
 		//echo 'Sai password';
 		$errorLogin = "Thông tin tài khoản chưa chính xác!";
 		session_start();
 		$_SESSION['errorLogin'] = $errorLogin;
-		header("Location: login.php?errorLogin=" . urlencode($errorLogin));
+		header("Location: ../../login.php?errorLogin=" . urlencode($errorLogin));
 		exit();
 	}
 } else {
@@ -71,7 +71,7 @@ if (mysqli_num_rows($result) == 1 || mysqli_num_rows($resultMail) == 1 ) {
 	$errorLogin = "Thông tin tài khoản chưa chính xác!";
 		session_start();
 		$_SESSION['errorLogin'] = $errorLogin;
-		header("Location: login.php?errorLogin=" . urlencode($errorLogin));
+		header("Location: ../../login.php?errorLogin=" . urlencode($errorLogin));
 		exit();
 }
 

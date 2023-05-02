@@ -9,7 +9,7 @@ require_once('lib_session.php');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href=".//assets/css/user.css">
+  <link rel="stylesheet" href=".//assets/css/user_information.css">
   <link rel="stylesheet" href=".//assets/css/header.css">
   <link rel="stylesheet" href=".//assets/css/footer.css">
   <link rel="stylesheet"
@@ -24,7 +24,7 @@ require_once('lib_session.php');
   <!--Start: Header-->
   <div id="bar-header">
     <?php
-    include("bar.php");
+    include(".//components/header.php");
     ?>
   </div>
   <!--End: Header-->
@@ -38,7 +38,7 @@ require_once('lib_session.php');
           <?php echo ("$_SESSION[current_fullName]"); ?>!
         </p>
         <ul id="primary">
-          <li style="margin-bottom: 16px;"><a href="user.php">Thông tin tài khoản</a></li>
+          <li style="margin-bottom: 16px;"><a href="user_information.php">Thông tin tài khoản</a></li>
           <li><a href="donhang.php">Quản lý đơn hàng</a></li>
         </ul>
 <!--         <p class="content-tab-bar-user"
@@ -51,7 +51,7 @@ require_once('lib_session.php');
       <div id="content-user">
         <div id="user-infor-and-address-user">
           <div id="user-infor">
-            <p style="font-size: 20px;display: flex;flex-direction: row;">Thông tin cá nhân | <a class="hoverTheA" href="detail-user.php" style="font-size: 20px;">Chỉnh
+            <p style="font-size: 20px;display: flex;flex-direction: row;">Thông tin cá nhân | <a class="hoverTheA" href="change_user_information.php" style="font-size: 20px;">Chỉnh
                 sửa</a></p>
             <p>Họ và tên:
               <?php echo $_SESSION['current_fullName'] ?>
@@ -65,7 +65,7 @@ require_once('lib_session.php');
           </div>
           <hr>
           <div id="address-user">
-            <p style="font-size: 20px;display: flex;flex-direction: row;">Địa chỉ nhận hàng | <a class="hoverTheA" href="detail-user.php" style="font-size: 20px;">Chỉnh sửa</a></p>
+            <p style="font-size: 20px;display: flex;flex-direction: row;">Địa chỉ nhận hàng | <a class="hoverTheA" href="change_user_information.php" style="font-size: 20px;">Chỉnh sửa</a></p>
             <p>
               <?php echo $_SESSION['current_houseRoadAddress'] ?>,
               <?php echo $_SESSION['current_ward'] ?>,
@@ -80,7 +80,7 @@ require_once('lib_session.php');
   <!--Start: Footer-->
   <div id="my-footer">
     <?php
-    include("footer.php");
+    include(".//components/footer.php");
     ?>
   </div>
   <!--End: Footer-->

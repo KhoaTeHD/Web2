@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href=".//assets/css/formdoimatkhau.css">
+  <link rel="stylesheet" href=".//assets/css/change_pass.css">
   <link rel="stylesheet" href=".//assets/css/header.css">
   <link rel="stylesheet" href=".//assets/css/footer.css">
   <link rel="stylesheet"
@@ -25,7 +25,7 @@
   <!--Start: Header-->
   <div id="bar-header">
     <?php
-    include("bar.php");
+    include(".//components/header.php");
     ?>
   </div>
 
@@ -38,7 +38,7 @@
         <div class="containerlogin-frame10"></div>
       </div>
 
-      <form name="frmdoipass" id="" action="xulydoimatkhau.php" method="POST" onsubmit="return kiemTra();">
+      <form name="frmdoipass" id="" action="change_password_processing.php" method="POST" onsubmit="return kiemTra();">
 
         <div class="containerlogin-group1">
 
@@ -112,7 +112,7 @@
   <!--Start: Footer-->
   <div id="my-footer">
   <?php
-    include("footer.php");
+    include(".//components/footer.php");
     ?>
   </div>
   <!--End: Footer-->

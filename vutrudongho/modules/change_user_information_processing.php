@@ -1,6 +1,6 @@
 <!--Start php xu ly sua thong tin-->
 <?php
-require_once('lib_session.php');
+require_once('../lib_session.php');
 ?>
 <?php
 if (isset($_REQUEST['btnSubmitEdit'])) {
@@ -42,7 +42,7 @@ if (isset($_REQUEST['btnSubmitEdit'])) {
         $district = $row['District'];
         $province = $row['Province'];
         if($_SESSION['current_numberPhone'] != $numberPhone || $_SESSION['current_email'] != $email){
-            header("Location: logout.php?isAdmin=1");
+            header("Location: ../../logout.php?isAdmin=1");
         }
         else{
             $_SESSION['current_fullName'] = $fullName;
@@ -52,7 +52,7 @@ if (isset($_REQUEST['btnSubmitEdit'])) {
             $_SESSION['current_ward'] = $ward;
             $_SESSION['current_district'] = $district;
             $_SESSION['current_province'] = $province;
-            header("Location: user.php");
+            header("Location: ../../user_information.php");
             exit();
         }
         

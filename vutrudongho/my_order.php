@@ -8,7 +8,7 @@ require_once('lib_session.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href=".//assets/css/donhang.css">
+    <link rel="stylesheet" href=".//assets/css/my_order.css">
     <link rel="stylesheet" href=".//assets/css/header.css">
   <link rel="stylesheet" href=".//assets/css/footer.css">
   <link rel="stylesheet"
@@ -22,7 +22,7 @@ require_once('lib_session.php');
     <!--Start: Header-->
     <div id="bar-header">
     <?php
-      include("bar.php");
+      include(".//components/header.php");
     ?>
   </div>
   <!--End: Header-->
@@ -44,7 +44,7 @@ require_once('lib_session.php');
   <!--Start: Footer-->
   <div id="my-footer">
   <?php
-    include("footer.php");
+    include(".//components/footer.php");
     ?>
   </div>
   <!--End: Footer-->

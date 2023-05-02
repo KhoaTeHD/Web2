@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href=".//assets/css/formdangky.css">
+  <link rel="stylesheet" href=".//assets/css/account_registration_form.css">
   <link rel="stylesheet" href=".//assets/css/header.css">
   <link rel="stylesheet" href=".//assets/css/footer.css">
   <link rel="stylesheet"
@@ -25,7 +25,7 @@
   <!--Start: Header-->
   <div id="bar-header">
     <?php
-    include("bar.php");
+    include(".//components/header.php");
     ?>
   </div>
 
@@ -38,7 +38,7 @@
         <div class="containerlogin-frame10"></div>
       </div>
 
-      <form name="frmdangky" id="" action="xulydangky.php" method="POST" onsubmit="return kiemTra();">
+      <form name="frmdangky" id="" action=".//modules/signup_processing.php" method="POST" onsubmit="return kiemTra();">
 
         <div class="containerlogin-group1">
 
@@ -158,7 +158,7 @@
   <!--Start: Footer-->
   <div id="my-footer">
   <?php
-    include("footer.php");
+    include(".//components/footer.php");
     ?>
   </div>
   <!--End: Footer-->
@@ -312,7 +312,6 @@
       })
     }
     function kiemTra() {
-      // cau a
 
       if (document.frmdangky.fullName.value.trim().length == 0 ||
 
@@ -325,6 +324,24 @@
         document.frmdangky.diaChiNha.value.length == 0) {
         showAlert();
         return false;
+      }
+      if(document.frmdangky.passWord.value != document.frmdangky.repeatPassword.value){
+        Swal.fire({
+        title: 'Thông báo!',
+        text: 'Mật khẩu và Nhập lại mật khẩu không trùng khớp!',
+        icon: 'warning',
+        confirmButtonText: 'Xác nhận'
+      })
+      return false;
+      }
+      if(document.frmdangky.passWord.value.length < 8){
+        Swal.fire({
+        title: 'Thông báo!',
+        text: 'Mật khẩu tối thiểu 8 ký tự!',
+        icon: 'warning',
+        confirmButtonText: 'Xác nhận'
+      })
+      return false;
       }
     }
   </script>

@@ -35,7 +35,7 @@ require_once('lib_session.php');
   <div id="bar-header">
     <?php
 
-      include("bar.php");      
+      include(".//components/header.php");      
 
     ?>
   </div>
@@ -63,7 +63,7 @@ require_once('lib_session.php');
       <div class="containerlogin-frame12">
         <div class="containerlogin-frame10"></div>
       </div>
-        <form name="frm" id="" action="xulydangnhap.php" method="POST" onsubmit="return kiemTra();">
+        <form name="frm" id="" action=".//modules/login_processing.php" method="POST" onsubmit="return kiemTra();">
         <div class="containerlogin-group1">
           <span class="containerlogin-text LabelMedium">
             <span>ĐĂNG NHẬP</span>';
@@ -78,7 +78,7 @@ require_once('lib_session.php');
             <span class="containerlogin-text02">
               <span>Bạn chưa có tài khoản? &nbsp;</span>
             </span>
-            <span class="containerlogin-text04"><a href="formdangky.php" style="text-decoration: none;">Đăng ký.</a></span>
+            <span class="containerlogin-text04"><a href="signup.php" style="text-decoration: none;">Đăng ký.</a></span>
           </div>
           <p style="top:46px; position: absolute;">Tài khoản</p> 
           <input name="userName" class="containerlogin-text08 LabelSmall" type="text"
@@ -121,7 +121,7 @@ require_once('lib_session.php');
   <!--Start: Footer-->
   <div id="my-footer">
   <?php
-    include("footer.php");
+    include(".//components/footer.php");
     ?>
   </div>
   <!--End: Footer-->

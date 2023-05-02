@@ -35,14 +35,27 @@ if (!$conn) {
 $sqlPhoneNumber = "SELECT COUNT(*) as count FROM user WHERE NumberPhone = '$numberPhone'";
 $resultsqlPhoneNumber = mysqli_query($conn, $sqlPhoneNumber);
 $rowPhoneNumber = mysqli_fetch_assoc($resultsqlPhoneNumber);
+
+$sqlEmail = "SELECT COUNT(*) as count FROM user WHERE Email = '$email'";
+$resultsqlEmail = mysqli_query($conn, $sqlEmail);
+$rowEmail = mysqli_fetch_assoc($resultsqlEmail);
+
 //khai báo biến lưu lỗi
 $error = "";
 // Nếu số điện thoại đã tồn tại, hiển thị thông báo lỗi và yêu cầu người dùng nhập lại
-if ($rowPhoneNumber['count'] > 0) {
-  $error = "Số điện thoại đã tồn tại trong hệ thống, vui lòng nhập lại thông tin.";
+if (($rowPhoneNumber['count'] > 0 || $rowEmail['count'] > 0) ||($rowPhoneNumber['count'] >0 && $rowEmail['count']>0) ) {
+  if($rowPhoneNumber['count'] >0 && $rowEmail['count']>0){
+    $error = "Số điện thoại/Email đã tồn tại trong hệ thống, vui lòng nhập lại thông tin.";
+  }
+  elseif($rowPhoneNumber['count'] > 0){
+    $error = "Số điện thoại đã tồn tại trong hệ thống, vui lòng nhập lại thông tin.";
+  }
+  elseif($rowEmail['count'] > 0){
+    $error = "Email đã tồn tại trong hệ thống, vui lòng nhập lại thông tin.";
+  }
   session_start();
   $_SESSION['error'] = $error;
-  header("Location: formdangky.php?error=" . urlencode($error));
+  header("Location: ../../signup.php?error=" . urlencode($error));
   exit();
 } else {
   $sql2 = sprintf("SELECT COUNT(*)FROM user;");
@@ -76,7 +89,7 @@ if ($rowPhoneNumber['count'] > 0) {
 
   $sql = sprintf("INSERT INTO `user` (`UserID`, `FullName`, `NumberPhone`, `Email`, `Password`, `HouseRoadAddress`, `Ward`, `District`, `Province`, `Status`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',1);", checkQuantityUS(), $fullName, $numberPhone, $email, $passWord, $diaChiNha, $phuongXa, $quanHuyen, $tinh);
   if ($conn->query($sql) === TRUE) {
-    header('location: index.php');
+    header('location: ../../index.php');
     die();
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

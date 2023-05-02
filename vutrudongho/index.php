@@ -33,7 +33,7 @@ require_once('lib_session.php');
   <!--Start: Header-->
   <div id="bar-header" >
     <?php
-    include("bar.php");
+    include(".//components/header.php");
     ?>
   </div>
   <!--End: Header-->
@@ -247,7 +247,7 @@ require_once('lib_session.php');
   <!--Start: Footer-->
   <div id="my-footer">
     <?php
-    include("footer.php");
+    include(".//components/footer.php");
     ?>
   </div>
   <!--End: Footer-->
