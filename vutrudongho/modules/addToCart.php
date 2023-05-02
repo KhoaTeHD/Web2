@@ -2,13 +2,15 @@
 include("connectDatabase.php");
 include("updateQuantyInCart.php");
 
-if(isset($_POST['addToCart'])){
+
+if(isset($_GET['ProductID'])){
+
     // tài khoản Thiều Việt Hoàng
     $_SESSION['current_userID'] = "US000001";
 
-    $userID =  $_POST['UserID'];
+    $userID =  $_SESSION['current_userID'];
 
-    $productID = $_POST['ProductID'];
+    $productID = $_GET['ProductID'];
 
     //echo $_SESSION['current_userID'];
 
@@ -21,23 +23,23 @@ if(isset($_POST['addToCart'])){
     if(isset($_SESSION)){
 
         while($item = mysqli_fetch_array($cart)){
-            if($item['ProductID'] == $_POST['ProductID']){
+            if($item['ProductID'] == $_GET['ProductID']){
                 $result = updateQuantyInCart($item['UserID'], $item['ProductID'], ((int) $item['Quantity']) +1 );
                 if( $result === true ){
-                    echo $_SESSION['current_userID'];
-
                     $success_msg[] = "Đã thêm sản phẩm vào giỏ hàng";
+                    echo true;
                 }
                 else if( $result === false){
                     $error_msg[] = "Đã có lỗi xảy ra! vui lòng thử lại sau";
+                    echo false;
                 }
                 else{
-                    $warning_msg[] = $result;
+                    echo $result;
                 }
             }
         }
         if(mysqli_query($conn,"Insert into cart (`UserID`, `ProductID`, `Quantity`) VALUES ('$userID', '$productID', '1')")){
-            
+            echo true;
             $success_msg[] = "Đã thêm sản phẩm vào giỏ hàng";
         }
     }

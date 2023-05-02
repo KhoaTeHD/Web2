@@ -14,7 +14,7 @@ function updateQuantyInCart($userID, $productID, $quanty) {
         else{
             $result = mysqli_query($conn,"update cart set Quantity='$quanty' where UserID='$userID' and ProductID='$productID'");
             closeDatabase($conn);
-            return $result;
+            return (bool) $result;
         }
         
     }
