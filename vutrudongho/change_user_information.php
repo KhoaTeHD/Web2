@@ -176,7 +176,7 @@ require_once('lib_session.php');
     </div>
   </div>
   <!--Start: Footer-->
-  <div id="my-footer">
+  <div id="my-footer" style="position: absolute;">
     <?php
     include(".//components/footer.php");
     ?>

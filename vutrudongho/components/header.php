@@ -6,18 +6,18 @@ echo '
 <div id="logo-header"></div>
 <div id="menu-header">
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 0;" alt="">
-    <p class="child-menu-header" style="width: auto;order: 1;"><a style="color: white; text-decoration: none;" href="index.php">Trang chủ</a></p>
+    <p class="child-menu-header" style="width: auto;order: 1;"><a id="navbarHome" class="navbartheA" href="index.php">Trang chủ</a></p>
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 2;" alt="">
-    <p class="child-menu-header" style="width: auto;order: 3;">Sản phẩm</p>
+    <p class="child-menu-header" style="width: auto;order: 3;"><a class="navbartheA" href="">Sản phẩm</a></p>
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 4;" alt="">
-    <p class="child-menu-header" style="width: auto;order: 5;">Về chúng tôi</p>
+    <p class="child-menu-header" style="width: auto;order: 5;"><a class="navbartheA" href="">Về chúng tôi</a></p>
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 6;" alt="">
-    <p class="child-menu-header" style="width: auto;order: 7;">Liên hệ</p>
+    <p class="child-menu-header" style="width: auto;order: 7;"><a class="navbartheA" href="">Liên hệ</a></p>
 </div>
 <div id="avt-and-icons">
-    <img class="icon-header" src=".//assets/img/hoangImg/icons/icons8-help-24.png" style="order: 0;" alt="">
+    <img id="btnHelp" class="icon-header" src=".//assets/img/hoangImg/icons/icons8-help-24.png" style="order: 0;" alt="">
     <img class="line-header" src=".//assets/img/hoangImg/imgs/Line.png" style="order: 1;" alt="">
-    <img class="icon-header" src=".//assets/img/hoangImg/icons/icons8-shopping-cart-24.png" style="order: 2;" alt="">
+    <img id="btnCart" class="icon-header" src=".//assets/img/hoangImg/icons/icons8-shopping-cart-24.png" style="order: 2;" alt="">
     <img class="line-header" src=".//assets/img/hoangImg/imgs/Line.png" style="order: 3;" alt="">'; ?>
 
 <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->
@@ -74,7 +74,7 @@ if (isAdminLogged()) {
    ';
 
 } else {
-    echo ('<p id="login-signup" style="order: 6;"> <a href="login.php">Đăng nhập</a></p></div>
+    echo ('<p id="login-signup" style="order: 6;"> <a id="navbarLogin" class="navbartheA" href="login.php">Đăng nhập</a></p></div>
     ');
 }
 ?>
