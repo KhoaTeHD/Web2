@@ -47,12 +47,13 @@ if (isAdminLogged()) {
               font-size: 16px;
               line-height: 40px;
               letter-spacing: 0.1px;
+              
               ">
-   <li style="padding-left:8px;"><a class="the_a_Black_Purple" href="user_information.php">Thông tin tài khoản</a></li>
-   <li style="padding-left:8px;"><a class="the_a_Black_Purple" href="my_order.php">Đơn hàng của tôi</a></li>
-   <li style="padding-left:8px;"><a class="the_a_Black_Purple" href="change_pass.php">Đổi mật khẩu</a></li>
+   <li style="padding-left:8px;display:flex;flex-direction:row;justify-content:left;margin-left:20px;" ><img style="position:absolute;left:0;" src=".//assets/img/hoangImg/icons/icons8-user-menu-male-24.png" width="22" alt=""></img><a class="the_a_Black_Purple" href="user_information.php">Thông tin tài khoản</a></li>
+   <li style="padding-left:8px;display:flex;flex-direction:row;justify-content:left;margin-left:20px;"><img style="position:absolute;left:0;" src=".//assets/img/hoangImg/icons/icons8-purchase-order-48.png" width="22" alt=""></img><a class="the_a_Black_Purple" href="my_order.php">Đơn hàng của tôi</a></li>
+   <li style="padding-left:8px;display:flex;flex-direction:row;justify-content:left;margin-left:20px;"><img style="position:absolute;left:0;" src=".//assets/img/hoangImg/icons/icons8-password-100.png" width="22" alt=""></img><a class="the_a_Black_Purple" href="change_pass.php">Đổi mật khẩu</a></li>
    <li><hr></li>
-   <li style="padding-left:8px;"><a class="the_a_Black_Purple" class="nav-link" href="logout.php?isAdmin=1">Đăng xuất</a></li>
+   <li style="padding-left:8px;display:flex;flex-direction:row;justify-content:left;margin-left:20px;"><img style="position:absolute;left:0;" src=".//assets/img/hoangImg/icons/icons8-logout-48.png" width="22" alt=""></img><a class="the_a_Black_Purple" class="nav-link" href="logout.php?isAdmin=1">Đăng xuất</a></li>
    </ul>
    </div>
    <script lang="javascript">

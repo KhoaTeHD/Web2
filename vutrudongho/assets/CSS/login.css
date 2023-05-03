@@ -455,3 +455,17 @@ p, li, ul, pre, div, h1, h2, h3, h4, h5, h6, figure, blockquote, figcaption {
     margin-bottom: 0;
     text-decoration: none;
 }
+
+#btnSubmitLogin{
+    padding: 10px 40px;
+    border-radius: 12px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#btnSubmitLogin:is(:hover, :focus){
+    outline-offset: 3px;
+}
+
+
+

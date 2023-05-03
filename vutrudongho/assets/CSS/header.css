@@ -111,6 +111,9 @@ cursor: pointer;
 #btnCart:hover{
 cursor: pointer;
 }
+#avt_user:hover{
+cursor: pointer;
+}
 
 #login-signup,
 #login-signup a {

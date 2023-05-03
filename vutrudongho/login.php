@@ -87,8 +87,6 @@ require_once('lib_session.php');
           <input name="passWord" class="containerlogin-text10 LabelSmall" type="password"
             style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;"
             placeholder="Mật khẩu">
-          <img src=".//assets/img/hoangImg/imgs/rectangle63772-oop-200h.png" alt="Rectangle63772"
-            class="containerlogin-rectangle6">
           <input type="submit" id="btnSubmitLogin" class="containerlogin-text06 LabelLarge" value="Đăng nhập" onclick="">
           </span>
           <div id="container-eyes"></div>

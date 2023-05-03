@@ -9,7 +9,7 @@ require_once('lib_session.php');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href=".//assets/css/user_information.css">
+  <link rel="stylesheet" href=".//assets/css/change_user_information_processing.css">
   <link rel="stylesheet" href=".//assets/css/header.css">
   <link rel="stylesheet" href=".//assets/css/footer.css">
   <link rel="stylesheet"
@@ -80,8 +80,10 @@ require_once('lib_session.php');
         <p class="content-tab-bar-userr">Xin chào,
           <?php echo ("$_SESSION[current_fullName]"); ?>!
         </p>
-        <p class="content-tab-bar-user" style="margin-bottom: 12px;color:#fff;width: 100%;height: 50px;text-align: center;line-height: 50px;">Thông tin tài khoản</p>
-        <p class="content-tab-bar-user" style="color:#000;width: 100%;height: 50px;text-align: center;line-height: 50px;">Quản lý đơn hàng</p>
+        <ul id="primary2">
+          <li style="margin-bottom: 16px;"><a href="user_information.php">Thông tin tài khoản</a></li>
+          <li><a href="my_order.php">Quản lý đơn hàng</a></li>
+        </ul>
          
       </div>
       <div id="content-details-user">
