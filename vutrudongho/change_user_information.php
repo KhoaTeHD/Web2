@@ -9,7 +9,7 @@ require_once('lib_session.php');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href=".//assets/css/user_information.css">
+  <link rel="stylesheet" href=".//assets/css/change_user_information_processing.css">
   <link rel="stylesheet" href=".//assets/css/header.css">
   <link rel="stylesheet" href=".//assets/css/footer.css">
   <link rel="stylesheet"
@@ -80,8 +80,10 @@ require_once('lib_session.php');
         <p class="content-tab-bar-userr">Xin chào,
           <?php echo ("$_SESSION[current_fullName]"); ?>!
         </p>
-        <p class="content-tab-bar-user" style="margin-bottom: 12px;color:#fff;width: 100%;height: 50px;text-align: center;line-height: 50px;">Thông tin tài khoản</p>
-        <p class="content-tab-bar-user" style="color:#000;width: 100%;height: 50px;text-align: center;line-height: 50px;">Quản lý đơn hàng</p>
+        <ul id="primary2">
+          <li style="margin-bottom: 16px;"><a href="user_information.php">Thông tin tài khoản</a></li>
+          <li><a href="my_order.php">Quản lý đơn hàng</a></li>
+        </ul>
          
       </div>
       <div id="content-details-user">
@@ -101,63 +103,63 @@ require_once('lib_session.php');
         <form name="frm" id="" action=".//modules/change_user_information_processing.php" method="POST" onsubmit="return kiemTra();"
           style="display: flex;flex-direction: row;width: 100%;">
 
-          <p id="titleEditInforUser" style="position: absolute;padding: 12px;">Chỉnh sửa thông tin</p>
+          <p id="titleEditInforUser" style="position: absolute;padding: 12px;" class="LabelMedium">Chỉnh sửa thông tin</p>
           <div id="edit_infor_user">
             <div>
-              <p style="margin-top: 30px;margin-bottom: 4px;">Họ và tên (*)</p>
-              <input name="fullName" type="text"
+              <p class="LabelMedium" style="margin-top: 30px;margin-bottom: 4px;">Họ và tên (*)</p>
+              <input class="LabelMedium" name="fullName" type="text"
                 style="padding-left: 6px;width:320px; height:36px;  border-style: outset;margin-bottom: 12px; border: 1px solid #674FA3; border-radius: 8px;"
                 value="<?php echo $_SESSION['current_fullName'] ?>">
             </div>
             <div>
               <div style="display: flex; flex-direction:row ;width: fit-content;">
-                <p style="margin-bottom: 4px;">Email </p>
+                <p class="LabelMedium" style="margin-bottom: 4px;">Email </p>
                 <p id="error-message"
                   style="display: none; color: red;padding-left: 10px;font-size: 12px;font-weight: bold;line-height: 18.391px;">
                 </p>
               </div>
-              <input id="email" name="email" type="email"
+              <input class="LabelMedium" id="email" name="email" type="email"
                 style="padding-left: 6px;width:320px; height:36px; border-style: outset;margin-bottom: 12px; border: 1px solid #674FA3; border-radius: 8px;"
                 value="<?php echo $_SESSION['current_email'] ?>">
             </div>
             <div>
               <div style="display: flex; flex-direction:row ;width: fit-content;">
-                <p style="margin-bottom: 4px;">Số điện thoại</p>
+                <p class="LabelMedium" style="margin-bottom: 4px;">Số điện thoại</p>
                 <p id="phoneNumber-message"
                   style="display: none; color: red;padding-left: 10px;font-size: 12px;font-weight: bold;line-height: 18.391px;">
                 </p>
               </div>
-              <input id="numberPhone" name="numberPhone" type="text"
+              <input class="LabelMedium" id="numberPhone" name="numberPhone" type="text"
                 style="padding-left: 6px;width:320px; height:36px; border-style: outset;margin-bottom: 12px; border: 1px solid #674FA3; border-radius: 8px;"
                 value="<?php echo $_SESSION['current_numberPhone'] ?>">
             </div>
           </div>
           <div id="edit_address_user">
             <div>
-              <p style="margin-top: 30px;margin-bottom: 4px;">Tỉnh/Thành phố (*)</p>
-              <select id="city" name="tinh"
+              <p class="LabelMedium" style="margin-top: 30px;margin-bottom: 4px;">Tỉnh/Thành phố (*)</p>
+              <select class="LabelMedium" id="city" name="tinh"
                 style="width:332px; height:36px; border-style: outset;margin-bottom: 12px; border: 1px solid #674FA3; border-radius: 8px;">
                 <option value="<?php echo $_SESSION['current_province'] ?>" selected></option>
               </select>
             </div>
             <div>
-              <p style="margin-bottom: 4px;">Quận/Huyện (*)</p>
-              <select id="district" name="quanHuyen"
+              <p class="LabelMedium" style="margin-bottom: 4px;">Quận/Huyện (*)</p>
+              <select class="LabelMedium" id="district" name="quanHuyen"
                 style="width:332px; height:36px; border-style: outset;margin-bottom: 12px; border: 1px solid #674FA3; border-radius: 8px;">
                 <option value="<?php echo $_SESSION['current_district'] ?>" selected><?php echo $_SESSION['current_district'] ?></option>
               </select>
             </div>
             <div>
-              <p style="margin-bottom: 4px;">Phường/Xã (*)</p>
-              <select id="ward" name="phuongXa"
+              <p  class="LabelMedium" style="margin-bottom: 4px;">Phường/Xã (*)</p>
+              <select class="LabelMedium" id="ward" name="phuongXa"
                 style="width:332px; height:36px; border-style: outset;margin-bottom: 12px; border: 1px solid #674FA3; border-radius: 8px;">
                 <option value="<?php echo $_SESSION['current_ward'] ?>" selected><?php echo $_SESSION['current_ward'] ?>
                 </option>
               </select>
             </div>
             <div>
-              <p style="margin-bottom: 4px;">Địa chỉ nhận hàng (*)</p>
-              <input name="diaChiNha" type="text"
+              <p class="LabelMedium" style="margin-bottom: 4px;">Địa chỉ nhận hàng (*)</p>
+              <input class="LabelMedium" name="diaChiNha" type="text"
                 style="padding-left: 6px;width:332px; height:36px; border-style: outset;margin-bottom: 34px; border: 1px solid #674FA3; border-radius: 8px;"
                 value="<?php echo $_SESSION['current_houseRoadAddress'] ?>">
             </div>
@@ -176,7 +178,7 @@ require_once('lib_session.php');
     </div>
   </div>
   <!--Start: Footer-->
-  <div id="my-footer">
+  <div id="my-footer" style="position: absolute;">
     <?php
     include(".//components/footer.php");
     ?>

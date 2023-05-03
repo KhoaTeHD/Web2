@@ -6,18 +6,18 @@ echo '
 <div id="logo-header"></div>
 <div id="menu-header">
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 0;" alt="">
-    <p class="child-menu-header" style="width: auto;order: 1;"><a style="color: white; text-decoration: none;" href="index.php">Trang chủ</a></p>
+    <p class="child-menu-header" style="width: auto;order: 1;"><a id="navbarHome" class="navbartheA" href="index.php">Trang chủ</a></p>
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 2;" alt="">
-    <p class="child-menu-header" style="width: auto;order: 3;">Sản phẩm</p>
+    <p class="child-menu-header" style="width: auto;order: 3;"><a class="navbartheA" href="">Sản phẩm</a></p>
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 4;" alt="">
-    <p class="child-menu-header" style="width: auto;order: 5;">Về chúng tôi</p>
+    <p class="child-menu-header" style="width: auto;order: 5;"><a id="navbarAbout" class="navbartheA" href="about_us.php">Về chúng tôi</a></p>
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 6;" alt="">
-    <p class="child-menu-header" style="width: auto;order: 7;">Liên hệ</p>
+    <p class="child-menu-header" style="width: auto;order: 7;"><a class="navbartheA" href="">Liên hệ</a></p>
 </div>
 <div id="avt-and-icons">
-    <img class="icon-header" src=".//assets/img/hoangImg/icons/icons8-help-24.png" style="order: 0;" alt="">
+    <img id="btnHelp" class="icon-header" src=".//assets/img/hoangImg/icons/icons8-help-24.png" style="order: 0;" alt="">
     <img class="line-header" src=".//assets/img/hoangImg/imgs/Line.png" style="order: 1;" alt="">
-    <img class="icon-header" src=".//assets/img/hoangImg/icons/icons8-shopping-cart-24.png" style="order: 2;" alt="">
+    <img id="btnCart" class="icon-header" src=".//assets/img/hoangImg/icons/icons8-shopping-cart-24.png" style="order: 2;" alt="">
     <img class="line-header" src=".//assets/img/hoangImg/imgs/Line.png" style="order: 3;" alt="">'; ?>
 
 <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->
@@ -47,12 +47,13 @@ if (isAdminLogged()) {
               font-size: 16px;
               line-height: 40px;
               letter-spacing: 0.1px;
+              
               ">
-   <li style="padding-left:8px;"><a class="the_a_Black_Purple" href="user_information.php">Thông tin tài khoản</a></li>
-   <li style="padding-left:8px;"><a class="the_a_Black_Purple" href="my_order.php">Đơn hàng của tôi</a></li>
-   <li style="padding-left:8px;"><a class="the_a_Black_Purple" href="change_pass.php">Đổi mật khẩu</a></li>
+   <li style="padding-left:8px;display:flex;flex-direction:row;justify-content:left;margin-left:20px;" ><img style="position:absolute;left:0;" src=".//assets/img/hoangImg/icons/icons8-user-menu-male-24.png" width="22" alt=""></img><a class="the_a_Black_Purple" href="user_information.php">Thông tin tài khoản</a></li>
+   <li style="padding-left:8px;display:flex;flex-direction:row;justify-content:left;margin-left:20px;"><img style="position:absolute;left:0;" src=".//assets/img/hoangImg/icons/icons8-purchase-order-48.png" width="22" alt=""></img><a class="the_a_Black_Purple" href="my_order.php">Đơn hàng của tôi</a></li>
+   <li style="padding-left:8px;display:flex;flex-direction:row;justify-content:left;margin-left:20px;"><img style="position:absolute;left:0;" src=".//assets/img/hoangImg/icons/icons8-password-100.png" width="22" alt=""></img><a class="the_a_Black_Purple" href="change_pass.php">Đổi mật khẩu</a></li>
    <li><hr></li>
-   <li style="padding-left:8px;"><a class="the_a_Black_Purple" class="nav-link" href="logout.php?isAdmin=1">Đăng xuất</a></li>
+   <li style="padding-left:8px;display:flex;flex-direction:row;justify-content:left;margin-left:20px;"><img style="position:absolute;left:0;" src=".//assets/img/hoangImg/icons/icons8-logout-48.png" width="22" alt=""></img><a class="the_a_Black_Purple" class="nav-link" href="logout.php?isAdmin=1">Đăng xuất</a></li>
    </ul>
    </div>
    <script lang="javascript">
@@ -74,7 +75,7 @@ if (isAdminLogged()) {
    ';
 
 } else {
-    echo ('<p id="login-signup" style="order: 6;"> <a href="login.php">Đăng nhập</a></p></div>
+    echo ('<p id="login-signup" style="order: 6;"> <a id="navbarLogin" class="navbartheA" href="login.php">Đăng nhập</a></p></div>
     ');
 }
 ?>

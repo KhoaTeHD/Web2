@@ -25,13 +25,15 @@ require_once('lib_session.php');
 <body>
   <!--Start Nut di chuyen-->
   <div id="btnLenXuong" style="position: fixed;z-index: 999;display: flex;flex-direction: column;top:80%;right: 14px;">
-  <img id="btn-top" src=".//assets/img/hoangImg/icons/icons8-slide-up-32.png" alt="" style="cursor: pointer;margin-bottom: 10px;">
-  <img id="scroll-to-bottom" onclick="scrollToBottom()" src=".//assets/img/hoangImg/icons/icons8-down-button-32.png" alt="" style="cursor: pointer;">
+    <img id="btn-top" src=".//assets/img/hoangImg/icons/icons8-slide-up-32.png" alt=""
+      style="cursor: pointer;margin-bottom: 10px;">
+    <img id="scroll-to-bottom" onclick="scrollToBottom()" src=".//assets/img/hoangImg/icons/icons8-down-button-32.png"
+      alt="" style="cursor: pointer;">
   </div>
-  
+
   <!--End nut di chuyen-->
   <!--Start: Header-->
-  <div id="bar-header" >
+  <div id="bar-header">
     <?php
     include(".//components/header.php");
     ?>
@@ -81,9 +83,16 @@ require_once('lib_session.php');
             <!-- <p onclick="window.location.href='#casioBrandInfo'" class="mediumtitlehome"
               style="cursor: pointer;color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
               Casio</p> -->
-              <div  style="cursor: pointer;display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 10;"><a id="theAtrongHoverMauTim" class="btn-11 mediumtitlehome" onclick="window.location.href='#casioBrandInfo'">Casio</a></div>
-              <div  style="display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 9;background-color: #B3A7D1;"></div>
-            <img src=".//assets/img/productImg/118_AEQ-110W-3AVDF-699x699.png" style="opacity: 0.9;" alt="" width="180px">
+            <div
+              style="cursor: pointer;display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 10;">
+              <a id="theAtrongHoverMauTim" class="btn-11 mediumtitlehome"
+                onclick="window.location.href='#casioBrandInfo'">Casio</a>
+            </div>
+            <div
+              style="display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 9;background-color: #B3A7D1;">
+            </div>
+            <img src=".//assets/img/productImg/118_AEQ-110W-3AVDF-699x699.png" style="opacity: 0.9;" alt=""
+              width="180px">
           </div>
         </div>
 
@@ -91,40 +100,72 @@ require_once('lib_session.php');
           style="width: 200px;height:200px;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div style="width:180px ;height: 180px;background-color: #fff;">
             <div id="pdOppo" style="display:flex ;flex-direction: column;position: relative;">
-              <p onclick="window.location.href='#appleBrandInfo'" class="mediumtitlehome"
+              <!-- <p onclick="window.location.href='#appleBrandInfo'" class="mediumtitlehome"
                 style="cursor: pointer;color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
-                Apple</p>
-              <img src=".//assets/img/productImg/0011842_midnight_550.png" alt="" width="180px">
+                Apple</p> -->
+              <div
+                style="cursor: pointer;display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 10;">
+                <a id="theAtrongHoverMauTim2" class="btn-11 mediumtitlehome"
+                  onclick="window.location.href='#appleBrandInfo'">Apple</a>
+              </div>
+              <div
+                style="display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 9;background-color: #B3A7D1;">
+              </div>
+              <img src=".//assets/img/productImg/0011842_midnight_550.png" style="opacity: 0.9;" alt="" width="180px">
             </div>
           </div>
         </div>
         <div
           style="width: 200px;height:2020x;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div id="pdPixel" style="display:flex ;flex-direction: column;position: relative;">
-            <p onclick="window.location.href='#citizenBrandInfo'" class="mediumtitlehome"
+            <!-- <p onclick="window.location.href='#citizenBrandInfo'" class="mediumtitlehome"
               style="cursor: pointer;color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
-              Citizen</p>
-            <img src=".//assets/img/productImg/AN8195-58E-699x699.png" alt="" width="180px">
+              Citizen</p> -->
+            <div
+              style="cursor: pointer;display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 10;">
+              <a id="theAtrongHoverMauTim3" class="btn-11 mediumtitlehome"
+                onclick="window.location.href='#citizenBrandInfo'">Citizen</a>
+            </div>
+            <div
+              style="display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 9;background-color: #B3A7D1;">
+            </div>
+            <img src=".//assets/img/productImg/AN8195-58E-699x699.png" style="opacity: 0.9;" alt="" width="180px">
           </div>
         </div>
 
         <div
           style="width: 200px;height:200px;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div id="pdRealme" style="display:flex ;flex-direction: column;position: relative;">
-            <p onclick="window.location.href='#orientBrandInfo'" class="mediumtitlehome"
+            <!-- <p onclick="window.location.href='#orientBrandInfo'" class="mediumtitlehome"
               style="cursor: pointer;color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
-              Orient</p>
-            <img src=".//assets/img/productImg/FAC08003A0-1-699x699.png" alt="" width="180px">
+              Orient</p> -->
+            <div
+              style="cursor: pointer;display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 10;">
+              <a id="theAtrongHoverMauTim4" class="btn-11 mediumtitlehome"
+                onclick="window.location.href='#orientBrandInfo'">Orient</a>
+            </div>
+            <div
+              style="display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 9;background-color: #B3A7D1;">
+            </div>
+            <img src=".//assets/img/productImg/FAC08003A0-1-699x699.png" style="opacity: 0.9;" s alt="" width="180px">
           </div>
         </div>
 
         <div
           style="width: 200px;height:200px;background-color:rgba(103, 80, 164, 0.5);display: flex;justify-content: center;align-items: center;">
           <div id="pdSamsung" style="display:flex ;flex-direction: column;position: relative;">
-            <p onclick="window.location.href='#seikoBrandInfo'" class="mediumtitlehome"
+            <!-- <p onclick="window.location.href='#seikoBrandInfo'" class="mediumtitlehome"
               style="cursor: pointer;color:#fff ;text-align: center;background-color: rgba(103, 80, 164, 0.6);position: absolute;width:100% ;top:50%;transform: translateY(-50%);line-height: 1.5;">
-              Seiko</p>
-            <img src=".//assets/img/productImg/SRPG41K1.png" alt="" width="180px">
+              Seiko</p> -->
+            <div
+              style="cursor: pointer;display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 10;">
+              <a id="theAtrongHoverMauTim5" class="btn-11 mediumtitlehome"
+                onclick="window.location.href='#seikoBrandInfo'">Seiko</a>
+            </div>
+            <div
+              style="display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 9;background-color: #B3A7D1;">
+            </div>
+            <img src=".//assets/img/productImg/SRPG41K1.png" style="opacity: 0.9;" alt="" width="180px">
           </div>
         </div>
 
@@ -251,38 +292,46 @@ require_once('lib_session.php');
     ?>
   </div>
   <!--End: Footer-->
-<script>
-  var btnTop = document.getElementById("btn-top");
-  window.addEventListener("scroll", function() {
-  if (window.pageYOffset > 0 ) {
-    btnTop.style.display = "block";
-  } else {
-    btnTop.style.display = "none";
-  }
-});
+  <script>
+    var btnTop = document.getElementById("btn-top");
+    window.addEventListener("scroll", function () {
+      if (window.pageYOffset > 0) {
+        btnTop.style.display = "block";
+      } else {
+        btnTop.style.display = "none";
+      }
+    });
 
-btnTop.addEventListener("click", function() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
+    btnTop.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
 
-function scrollToBottom() {
-  window.scrollTo(0,document.body.scrollHeight);
-}
+    function scrollToBottom() {
+      window.scrollTo(0, document.body.scrollHeight);
+    }
 
-var scrollToBottomButton = document.getElementById("scroll-to-bottom");
+    var scrollToBottomButton = document.getElementById("scroll-to-bottom");
 
-window.onscroll = function() {
-  if (window.pageYOffset == document.body.scrollHeight - window.innerHeight) {
-    scrollToBottomButton.style.display = "none";
-  } else {
-    scrollToBottomButton.style.display = "block";
-  }
-};
+    window.onscroll = function () {
+      if (window.pageYOffset == document.body.scrollHeight - window.innerHeight) {
+        scrollToBottomButton.style.display = "none";
+      } else {
+        scrollToBottomButton.style.display = "block";
+      }
+    };
 
-</script>
+  </script>
+  <!--start Hiện thanh line-->
+  <script>
+    var lineHome = document.getElementById("navbarHome");
+
+    lineHome.style.borderBottom = '2px solid #fff';
+    lineHome.style.paddingBottom = '1.15px';
+  </script>
+  <!--end Hiện thanh line-->
 </body>
 
 </html>

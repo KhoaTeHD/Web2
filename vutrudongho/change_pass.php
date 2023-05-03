@@ -38,12 +38,12 @@
         <div class="containerlogin-frame10"></div>
       </div>
 
-      <form name="frmdoipass" id="" action="change_password_processing.php" method="POST" onsubmit="return kiemTra();">
+      <form name="frmdoipass" id="" action=".//modules/change_password_processing.php" method="POST" onsubmit="return kiemTra();">
 
         <div class="containerlogin-group1">
 
           <div class="containerlogin-text LabelMedium" style="position: absolute; display: flex;flex-direction: row; align-items: flex-start;width: 100%;">
-            <span style="">ĐỔI MẬT KHẨU</span>
+            <span class="TitleMediumpass" style="">ĐỔI MẬT KHẨU</span>
             <!-- <p style="font-size: 12px;line-height: 18.391px; padding-left: 12px;color: red;font-weight: bold;">*Số điện thoại đã được đăng ký cho tài khoản khác.</p> -->
             <?php
             if (isset($_SESSION['errorOldPass'])) {
@@ -54,7 +54,7 @@
           </div>
           <div style="margin-top: 80px;">
             <div style="display: flex; flex-direction:row ;width: fit-content;">
-              <p style="margin-bottom: 4px;">Mật khẩu hiện tại (*)</p>
+              <p class="TitleSmallpass" style="margin-bottom: 4px;">Mật khẩu hiện tại (*)</p>
             </div>
 
             <input id="currentPassword" name="currentPassword" type="password"
@@ -63,7 +63,7 @@
           </div>
           <div style="">
             <div style="display: flex; flex-direction:row ;width: fit-content;">
-              <p style="margin-bottom: 4px;">Mật khẩu mới (*)</p>
+              <p class="TitleSmallpass" style="margin-bottom: 4px;">Mật khẩu mới (*)</p>
               <p id="pass-message"
                 style="display: none; color: red;padding-left: 10px;font-size: 12px;font-weight: bold;line-height: 18.391px;">
                 aa</p>
@@ -75,7 +75,7 @@
           </div>
           <div style="margin-bottom: 12px;">
             <div style="display: flex; flex-direction:row ;width: fit-content;">
-              <p style="margin-bottom: 4px;">Nhập lại mật khẩu mới (*)</p>
+              <p class="TitleSmallpass" style="margin-bottom: 4px;">Nhập lại mật khẩu mới (*)</p>
               <img id="khongtrungkhop" src=".//assets/img/hoangImg/icons/icons8-cancel-48.png" alt="" width="20px"
                 height="20px" style="margin-left: 10px;display: none;">
               <img id="trungkhop" src=".//assets/img/hoangImg/icons/icons8-ok.gif" alt="" width="20px" height="20px"
@@ -86,8 +86,8 @@
               placeholder="Nhập lại mật khẩu mới" maxlength="20">
           </div>
           <div style="width: 332px; display:flex;justify-content: center;">
-            <input type="submit" name="btnSubmitSaveNewPass" id="btnSubmitSaveNewPass" class="containerlogin-text06 LabelLarge" value="Lưu">
-            <input type="button" id="btnSubmitHuySaveNewPass" class="containerlogin-text06 LabelLarge" value="Hủy" style="margin-left: 20px;" onclick="returnHome();">
+            <input type="submit" name="btnSubmitSaveNewPass" id="btnSubmitSaveNewPass" class="containerlogin-text06 TitleSmallpass" value="Lưu">
+            <input type="button" id="btnSubmitHuySaveNewPass" class="containerlogin-text06 TitleSmallpass" value="Hủy" style="margin-left: 20px;" onclick="returnHome();">
 
           </div>
 
