@@ -24,7 +24,7 @@ if (isset($_REQUEST['btnSubmitSaveNewPass'])) {
         $errorOldPass = "Mật khẩu hiện tại chưa đúng. Vui lòng thử lại!";
         session_start();
         $_SESSION['errorOldPass'] = $errorOldPass;
-        header("Location: doimatkhau.php?errorOldPass=" . urlencode($errorOldPass));
+        header("Location: ../../change_pass.php?errorOldPass=" . urlencode($errorOldPass));
         exit();
     } else {
         $sql = sprintf("UPDATE `user` SET `Password` = '%s' WHERE `user`.`UserID` = '%s'", $newPass, $userID);
@@ -35,7 +35,7 @@ if (isset($_REQUEST['btnSubmitSaveNewPass'])) {
             $row = mysqli_fetch_assoc($result);
             $newPassWord = $row['Password'];
             $_SESSION['current_password'] = $newPassWord;
-            header("Location: logout.php?isAdmin=1");
+            header("Location: ../../logout.php?isAdmin=1");
             exit();
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;

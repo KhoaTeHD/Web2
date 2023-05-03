@@ -35,10 +35,6 @@
     --dl-space-space-oneandhalfunits: 24px;
 }
 
-html {
-    font-family: Inter;
-    font-size: 16px;
-}
 
 * {
     box-sizing: border-box;
@@ -83,14 +79,8 @@ img {
 }
 
 body {
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    text-transform: none;
-    letter-spacing: normal;
-    line-height: 1.15;
-    color: var(--dl-color-gray-black);
-    background-color: var(--dl-color-gray-white);
+
+
 }
 
 .containerlogin-group1 {
@@ -162,7 +152,20 @@ body {
     font-weight: 500px;
     font-stretch: normal;
 }
-
+.TitleMediumpass {
+    font-size: 22px;
+    font-style: normal;
+    font-family: Roboto;
+    font-weight: 500px;
+    font-stretch: normal;
+}
+.TitleSmallpass {
+    font-size: 16px;
+    font-style: normal;
+    font-family: Roboto;
+    font-weight: 500px;
+    font-stretch: normal;
+}
 .containerlogin-text26 {
     top: 381px;
     left: 173px;
