@@ -40,7 +40,6 @@ if (isset($_REQUEST['btnSubmitSaveNewPass'])) {
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
-    
     }
     mysqli_close($conn);
 } ?>

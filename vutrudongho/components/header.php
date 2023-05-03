@@ -10,7 +10,7 @@ echo '
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 2;" alt="">
     <p class="child-menu-header" style="width: auto;order: 3;"><a class="navbartheA" href="">Sản phẩm</a></p>
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 4;" alt="">
-    <p class="child-menu-header" style="width: auto;order: 5;"><a class="navbartheA" href="">Về chúng tôi</a></p>
+    <p class="child-menu-header" style="width: auto;order: 5;"><a id="navbarAbout" class="navbartheA" href="about_us.php">Về chúng tôi</a></p>
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 6;" alt="">
     <p class="child-menu-header" style="width: auto;order: 7;"><a class="navbartheA" href="">Liên hệ</a></p>
 </div>

@@ -23,7 +23,7 @@ echo '
         <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Liên hệ khối văn phòng</a>
     </div>
     <div id="he-thong-cua-hang-toan-quoc">
-        <a style="margin-top: 12px;" class="mediumtitlehomeFooter theAtrongFooter" href="">Hệ thống cửa hàng trên toàn quốc</a>
+        <a style="margin-top: 12px;" class="mediumtitlehomeFooter theAtrongFooter" href="about_us.php#He_thong_cua_hang_tren_toan_quoc">Hệ thống cửa hàng trên toàn quốc</a>
         <a style="margin-top: 12px;" class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Danh sách các cửa hàng miền Bắc</a>
         <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Danh sách các cửa hàng miền Trung</a>
         <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Danh sách các cửa hàng miền Nam</a>
