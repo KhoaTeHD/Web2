@@ -68,11 +68,11 @@
                             <div class="cart_item_unitprice"><?php echo number_format($product["PriceToSell"]) ?> đ</div>
                             <div class="cart_item_quantity">
                                 <span class="minus_btn material-symbols-outlined" data-id="<?php echo $item["ProductID"] ?>" >indeterminate_check_box</span>
-                                <p id="<?php echo $item["ProductID"] ?>"><?php echo $item["Quantity"] ?><p></p>
+                                <p id=""><?php echo $item["Quantity"] ?></p>
                                 <span class="add_btn material-symbols-outlined" data-id="<?php echo $item["ProductID"] ?>" >add_box</span>
                             </div>
                             <div class="cart_item_total"><?php echo number_format(   $product["PriceToSell"]*$item["Quantity"]   ) ?> đ</div>
-                            <span class="material-symbols-outlined red_bin">delete</span>
+                            <span class="material-symbols-outlined red_bin" data-id="<?php echo $item["ProductID"] ?>">delete</span>
                         </div>
 
                 <?php
@@ -96,7 +96,11 @@
                 var target = event.target;
                 var id = target.getAttribute("data-id");
 
-                var quantity =document.getElementById(id);
+                var x = target.parentElement;
+
+                var quantity = x.children[1];
+
+                //var quantity =document.getElementById(id);
 
                 var sumQuanty = parseInt(quantity.innerText) +1;
 
@@ -124,7 +128,10 @@
                 var target = event.target;
                 var id = target.getAttribute("data-id");
 
-                var quantity =document.getElementById(id);
+                var x = target.parentElement;
+
+                var quantity = x.children[1];
+                //var quantity =document.getElementById(id);
 
                 var sumQuanty = parseInt(quantity.innerText) -1;
                 if(sumQuanty != 0){
@@ -138,8 +145,8 @@
                             }
                         }
                     }
-                    xml.open("GET","modules/updateCart.php?ProductID="+id+"&Quantity="+sumQuanty,true);
-                    xml.send();
+                xml.open("GET","modules/updateCart.php?ProductID="+id+"&Quantity="+sumQuanty,true);
+                xml.send();
                 }
             })
         }

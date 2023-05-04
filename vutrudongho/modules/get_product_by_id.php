@@ -1,15 +1,13 @@
 <?php
     function get_product_by_id ($productID){
 
-        $product = mysqli_query(connectDatabase(), "select * from product where ProductID ='$productID'");
+        $product = mysqli_query(connectDatabase(), "select * from product where ProductID ='$productID' and Status = 1");
 
-        $product = mysqli_fetch_array($product);
+        if($product){
+            $product = mysqli_fetch_array($product);
+            return $product;
+        }
 
-        return $product;
+        return false;
     }
-
-
-
-
-
 ?>

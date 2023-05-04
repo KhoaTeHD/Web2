@@ -23,7 +23,7 @@
 
 .product_img {
     width: 31.25rem;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
 }
 
 .product_img img {
@@ -153,9 +153,21 @@
     justify-content: center;
 }
 
-.add_cart_button button {
+.enabled_button {
     background-color: #6750A4;
     color: white;
+    border: none;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    height: 3rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.disabled_button  {
+    background-color: #9f9fa077;
+    color: rgba(29, 29, 29, 0.342);
     border: none;
     width: 100%;
     max-width: 500px;
