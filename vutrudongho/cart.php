@@ -99,6 +99,7 @@
                 <?php
                     }
                 ?>
+            </div>
             <div class="cart_totalprice">
                 <p>Tổng cộng:</p>
                 <p style="color: #6750A4; font-size: 1.375rem;">0 đ</p>

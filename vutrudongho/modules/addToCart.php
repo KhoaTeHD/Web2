@@ -26,21 +26,22 @@ if(isset($_GET['ProductID'])){
             if($item['ProductID'] == $_GET['ProductID']){
                 $result = updateQuantyInCart($item['UserID'], $item['ProductID'], ((int) $item['Quantity']) +1 );
                 if( $result === true ){
-                    $success_msg[] = "Đã thêm sản phẩm vào giỏ hàng";
                     echo true;
+                    return;
                 }
                 else if( $result === false){
-                    $error_msg[] = "Đã có lỗi xảy ra! vui lòng thử lại sau";
                     echo false;
+                    return;
                 }
                 else{
                     echo $result;
+                    return;
                 }
             }
         }
         if(mysqli_query($conn,"Insert into cart (`UserID`, `ProductID`, `Quantity`) VALUES ('$userID', '$productID', '1')")){
             echo true;
-            $success_msg[] = "Đã thêm sản phẩm vào giỏ hàng";
+            return;
         }
     }
     closeDatabase($conn);
