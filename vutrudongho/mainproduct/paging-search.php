@@ -1,12 +1,12 @@
 <?php
-include("../mainproduct/header.php");
-include("../mainproduct/menu.php");
+include(".//components/header.php");
+include("menu.php");
 
 ?>
 <div id="main">
     <?php
-    include("../mainproduct/sidebar/sidebar.php");
-    include '../config/connect.php';
+    include("sidebar.php");
+    include 'connect.php';
     $search = isset($_GET['search']) ? $_GET['search'] : '';
     $product = mysqli_query($conn, "select product.*, brand.BrandName as 'brandName' from product join brand on product.BrandID = brand.BrandID where product.ProductName LIKE '%$search%'");
     $item_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 9;
@@ -31,7 +31,7 @@ include("../mainproduct/menu.php");
             <div class="card">
                 <div class="product-top">
                     <class="product-thumb">
-                        <img src="../assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
+                        <img src=".//assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
                         <button class="info-detail" onclick="location.href='detail_product.php?ProductID=<?php echo $value['ProductID'] ?>'">Xem Thêm</button>
                     </class="product-thumb">
                 </div>

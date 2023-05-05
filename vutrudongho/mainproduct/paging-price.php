@@ -1,7 +1,7 @@
 <div id="main">
     <?php
-    include '../config/connect.php';
-    include("../mainproduct/sidebar/sidebar.php");
+    include 'connect.php';
+    include("sidebar.php");
     $pricefrom = isset($_GET['from']) ? $_GET['from'] : '';
     $priceto = isset($_GET['to']) ? $_GET['to'] : '';
     $query_run = mysqli_query($conn, "select * from product where PriceToSell between $pricefrom and $priceto");
@@ -28,7 +28,7 @@
                 <div class="card">
                     <div class="product-top">
                         <class="product-thumb">
-                            <img src="../assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
+                            <img src=".//assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
                             <button class="info-detail" onclick="location.href='detail_product.php?ProductID=<?php echo $value['ProductID'] ?>'">Xem Thêm</button>
                         </class="product-thumb">
                     </div>

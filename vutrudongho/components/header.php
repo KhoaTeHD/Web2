@@ -8,7 +8,7 @@ echo '
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 0;" alt="">
     <p class="child-menu-header" style="width: auto;order: 1;"><a id="navbarHome" class="navbartheA" href="index.php">Trang chủ</a></p>
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 2;" alt="">
-    <p class="child-menu-header" style="width: auto;order: 3;"><a class="navbartheA" href="">Sản phẩm</a></p>
+    <p class="child-menu-header" style="width: auto;order: 3;"><a id="navbarProduct" class="navbartheA" href="product.php">Sản phẩm</a></p>
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 4;" alt="">
     <p class="child-menu-header" style="width: auto;order: 5;"><a id="navbarAbout" class="navbartheA" href="about_us.php">Về chúng tôi</a></p>
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 6;" alt="">
@@ -17,8 +17,14 @@ echo '
 <div id="avt-and-icons">
     <img id="btnHelp" class="icon-header" src=".//assets/img/hoangImg/icons/icons8-help-24.png" style="order: 0;" alt="">
     <img class="line-header" src=".//assets/img/hoangImg/imgs/Line.png" style="order: 1;" alt="">
-    <img id="btnCart" class="icon-header" src=".//assets/img/hoangImg/icons/icons8-shopping-cart-24.png" style="order: 2;" alt="">
-    <img class="line-header" src=".//assets/img/hoangImg/imgs/Line.png" style="order: 3;" alt="">'; ?>
+    <img id="btnCart" onclick="btnCartClicked();" class="icon-header" src=".//assets/img/hoangImg/icons/icons8-shopping-cart-24.png" style="order: 2;" alt="">
+    <img class="line-header" src=".//assets/img/hoangImg/imgs/Line.png" style="order: 3;" alt="">
+    <script>
+    function btnCartClicked(){
+        window.location = "cart.php";
+       }
+    </script>
+'; ?>
 
 <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->
 <?php
@@ -69,9 +75,14 @@ if (isAdminLogged()) {
         menu_options_user.style.display = "block";
         flag = true;
     }
-    
-   } 
+   }
    </script>
+   <script>
+   function btnCartClicked(){
+       window.location = "cart.php";
+      }
+   </script>
+
    ';
 
 } else {

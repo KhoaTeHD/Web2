@@ -1,5 +1,5 @@
 <?php
-include '../config/connect.php';
+include 'connect.php';
 $quantity = mysqli_query($conn, "select * from product where status=1");
 if ($quantity) {
     $rowcount = mysqli_num_rows($quantity);

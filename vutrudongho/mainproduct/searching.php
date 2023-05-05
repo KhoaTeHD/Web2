@@ -12,7 +12,7 @@
     <div class="search">
         <form class="example" action="" method="GET">
             <input type="text" placeholder="Tìm kiếm..." name="search">
-            <button type="submit"><img class="ic-search" src="../icon/search-1.png"></button>
+            <button type="submit"><img class="ic-search" src=".//assets/img/hoangImg/icons/search.png"></button>
         </form>
     </div>
 </div>
