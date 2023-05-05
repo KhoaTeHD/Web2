@@ -6,6 +6,10 @@
     font-family: "roboto";
 }
 
+body {
+    background-color: #f7f2f9;
+}
+
 .detail_container {
     display: flex;
     flex-direction: column;

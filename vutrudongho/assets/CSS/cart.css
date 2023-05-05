@@ -11,12 +11,14 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: #f7f2f9;
 }
 
 .cart_body {
     background-color: #FFFBFE;
     border: solid 1px rgba(0, 0, 0, 40%);
-    min-width: 50%;
+    min-width: 45%;
+    min-height: 70%;
     height: fit-content; 
     border-radius: 12px;
     overflow: hidden;
@@ -188,7 +190,9 @@
 .cart_totalprice {
     display: flex;
     font-size: 20px;
-    padding: 0 20px;
+    font-weight: 600;
+    margin: 10px 0px;
+    padding: 0 60px;
     height: auto;
     width: 100%;
     justify-content: space-between;

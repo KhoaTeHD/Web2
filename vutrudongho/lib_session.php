@@ -1,5 +1,8 @@
 <?php
-session_start();
+
+if(!isset($_SESSION)){
+	session_start();
+}
 
 function isAdminLogged() {
 	if(isset($_SESSION['current_username'])) {

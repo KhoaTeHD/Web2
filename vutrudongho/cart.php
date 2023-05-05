@@ -1,6 +1,9 @@
 <?php
     include 'modules/connectDatabase.php';
     include 'modules/get_product_by_id.php';
+    include 'modules/cartFunction.php';
+    //include 'lib_session.php';
+
     session_start();
     // TEST
     $_SESSION['current_userID'] = "US000001";
@@ -14,8 +17,6 @@
         }
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +24,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/CSS/cart.css">
+    <link rel="stylesheet" href="assets/CSS/header.css">
+    <link rel="stylesheet" href="assets/CSS/footer.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <title>Document</title>
+    <link rel="shortcut icon" href="assets/Img/logo.png" type="image/x-icon">
+    <title>Giỏ hàng</title>
 </head>
 <style>
 .material-symbols-outlined {
@@ -36,6 +40,11 @@
 }
 </style>
 <body>
+    <div id="bar-header">
+        <?php
+        include("components/header.php");
+        ?>
+    </div>
     <div class="cart">
         <div class="cart_body">
             <div class="cart_header">
@@ -57,6 +66,18 @@
                     while($item = mysqli_fetch_array($cart)){ 
                         $stt++;
                         $product = get_product_by_id($item["ProductID"]);
+                        $inStock = get_quanty_product_byID($item["ProductID"]);
+                        if((int)$inStock['Quantity'] !=0){
+                            if((int) $item['Quantity'] > (int)$inStock['Quantity']){
+                                $item['Quantity'] = $inStock['Quantity'];
+                                updateQuantyInCart($userID, $item["ProductID"], $inStock['Quantity']);
+                            }
+                        }
+                        else{
+                            mysqli_query($conn,"DELETE from cart where cart.UserID='$userID' and cart.ProductID='". $item["ProductID"]. "'");
+                            continue;
+                        }
+
                 ?>
                         <div class="cart_item">
                             <div class="cart_item_stt"><?php echo $stt ?></div>
@@ -65,14 +86,14 @@
                                 <p><?php echo $product["ProductName"] ?></p>
                             </div>
                             <div class="cart_item_category"><?php echo $product["Model"] ?>, <?php echo $product["Color"] ?></div>
-                            <div class="cart_item_unitprice"><?php echo number_format($product["PriceToSell"]) ?> đ</div>
+                            <div class="cart_item_unitprice" data-id="<?php echo $product["PriceToSell"] ?>"><?php echo number_format($product["PriceToSell"]) ?> đ</div>
                             <div class="cart_item_quantity">
                                 <span class="minus_btn material-symbols-outlined" data-id="<?php echo $item["ProductID"] ?>" >indeterminate_check_box</span>
-                                <p id=""><?php echo $item["Quantity"] ?></p>
+                                <p><?php echo $item["Quantity"] ?></p>
                                 <span class="add_btn material-symbols-outlined" data-id="<?php echo $item["ProductID"] ?>" >add_box</span>
                             </div>
-                            <div class="cart_item_total"><?php echo number_format(   $product["PriceToSell"]*$item["Quantity"]   ) ?> đ</div>
-                            <span class="material-symbols-outlined red_bin" data-id="<?php echo $item["ProductID"] ?>">delete</span>
+                            <div class="cart_item_total" id="<?php echo $item["ProductID"] ?>" ><?php echo number_format(   $product["PriceToSell"]*$item["Quantity"]   ) ?> đ</div>
+                            <span class="material-symbols-outlined red_bin"  onclick="deleteItem('<?php echo $item['ProductID']; ?>', this)">delete</span>
                         </div>
 
                 <?php
@@ -80,77 +101,22 @@
                 ?>
             <div class="cart_totalprice">
                 <p>Tổng cộng:</p>
-                <p>100.000.000 đ</p>
+                <p style="color: #6750A4; font-size: 1.375rem;">0 đ</p>
             </div>
             <div class="button">
                 <button class="confirm_button">Mua Ngay</button>
             </div>
         </div>
     </div>
+    </div>
+    <div id="my-footer">
+        <?php
+        include("components/footer.php");
+        ?>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    <script>
-        var add_btn = document.getElementsByClassName("add_btn");
-        for (var i =0; i< add_btn.length; i++){
-            add_btn[i].addEventListener("click",function(event){
-                var target = event.target;
-                var id = target.getAttribute("data-id");
-
-                var x = target.parentElement;
-
-                var quantity = x.children[1];
-
-                //var quantity =document.getElementById(id);
-
-                var sumQuanty = parseInt(quantity.innerText) +1;
-
-                var xml = new XMLHttpRequest();
-                xml.onreadystatechange = function (){
-                    if(this.readyState == 4 && this.status == 200){
-                        var s = String(this.responseText);
-
-                        if(s == 1){
-                            quantity.innerText = sumQuanty;
-                        }
-                        else if ( s !=0) {
-                            swal(this.responseText.toString(), "", "warning");
-                        }
-                    }
-                }
-                xml.open("GET","modules/updateCart.php?ProductID="+id+"&Quantity="+sumQuanty,true);
-                xml.send();
-            })
-        }
-
-        var minus_btn = document.getElementsByClassName("minus_btn");
-        for (var i =0; i< add_btn.length; i++){
-            minus_btn[i].addEventListener("click",function(event){
-                var target = event.target;
-                var id = target.getAttribute("data-id");
-
-                var x = target.parentElement;
-
-                var quantity = x.children[1];
-                //var quantity =document.getElementById(id);
-
-                var sumQuanty = parseInt(quantity.innerText) -1;
-                if(sumQuanty != 0){
-                    var xml = new XMLHttpRequest();
-                    xml.onreadystatechange = function (){
-                        if(this.readyState == 4 && this.status == 200){
-                            var s = String(this.responseText);
-                            
-                            if(s == 1){
-                                quantity.innerText = sumQuanty;
-                            }
-                        }
-                    }
-                xml.open("GET","modules/updateCart.php?ProductID="+id+"&Quantity="+sumQuanty,true);
-                xml.send();
-                }
-            })
-        }
-    </script>
+    <script src="/assets/JS/cart.js"></script>
     
 </body>
 </html>
