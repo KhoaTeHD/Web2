@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'connectDatabase.php';
-include 'updateQuantyInCart.php';
+include 'cartFunction.php';
 
 if(isset($_GET['ProductID']) && isset($_GET['Quantity'])){
 
