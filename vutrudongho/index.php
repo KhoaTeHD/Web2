@@ -40,7 +40,7 @@ require_once('lib_session.php');
   </div>
   <!--End: Header-->
   <div id="main"
-    style="display: flex;flex-direction: column; background-color:#fff; height: 9700px; position: relative; top: 50px;">
+    style="display: flex;flex-direction: column; background-color:#fff; height: fit-content; position: relative; top: 50px;">
     <style>
       #vtdd-logotext {
         display: block;
