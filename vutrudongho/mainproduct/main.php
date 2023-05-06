@@ -7,7 +7,7 @@
     $cur_page = !empty($_GET['page']) ? $_GET['page'] : 1;
     $offset = ($cur_page - 1) * $item_page;
     $page = mysqli_query($conn, "select * from product where status=1 order by ProductID LIMIT " . $item_page . " OFFSET " . $offset);
-    $total = mysqli_query($conn, "select * from product");
+    $total = mysqli_query($conn, "select * from product where status=1");
     $total = $total->num_rows;
     $total_page = ceil($total / $item_page);
     //-----

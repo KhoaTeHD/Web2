@@ -1,6 +1,6 @@
 <?php
-include(".//components/header.php");
-include("menu.php");
+include(".//mainproduct/searching.php");
+include(".//mainproduct/menu.php");
 
 ?>
 <div id="main">

@@ -139,13 +139,9 @@ form.example::after {
 .quantity {
     font-family: "Roboto";
     font-size: larger;
-    margin: 0;
-    width: 50%;
+    margin: 12px 25%;
     float: left;
-    position: relative;
-    left: 370px;
-    top: 15px;
-    width: 300px;
+    max-width: 100%;
 }
 
 * {
@@ -166,11 +162,8 @@ form.example::after {
 .dropdown-sort {
     padding: 0;
     float: right;
-    width: 34%;
-    margin-right: 0px;
-    position: relative;
-    /* left: 400px; */
-    top: 8px;
+    max-width: 100%;
+    margin: 8px 10%;
 }
 .dropdown-sort .sort{
     color: white;
@@ -353,7 +346,6 @@ ul.list-model {
 /* thẻ sản phẩm */
 .card {
     width: calc(30% - 20px);
-    height: 480px;
     border: 1px solid #000;
     text-align: center;
     margin: 10px 0 0px 10px;
@@ -374,7 +366,6 @@ ul.list-model {
 
 .card img {
     width: 100%;
-    height: auto;
     transform: scale(1);
     transition: all 0.5s;
 }
@@ -392,7 +383,7 @@ ul.list-model {
     bottom: 110px;
 }
 
-.card .product-top .info-detail {
+.product-top .info-detail {
     text-transform: uppercase;
     text-decoration: none;
     text-align: center;
@@ -409,7 +400,7 @@ ul.list-model {
     border-color: #000;
     border-style: solid;
     margin-left: 20%;
-    margin: 0 20% 25px;
+    margin:0 20% 50px;
     background-color: transparent;
 }
 
@@ -421,7 +412,8 @@ ul.list-model {
     outline: none;
     text-decoration: none;
     line-height: 21px;
-}
+    height: 25px;
+    max-width: 100%;}
 
 .price {
     margin: 50px 100px 0px 110px;
@@ -430,7 +422,7 @@ ul.list-model {
     align-items: stretch;
     width: auto;
     display: block;
-    position: absolute;
+    /* position: absolute; */
     bottom: 15px;
 }
 
