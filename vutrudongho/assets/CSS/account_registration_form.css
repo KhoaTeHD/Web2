@@ -55,9 +55,6 @@ html {
     height: 583px;
     display: flex;
     overflow: hidden;
-    position: relative;
-    top: 50px;
-    align-items: flex-start;
     flex-shrink: 0;
     border-color: transparent;
     background-image: linear-gradient(180deg, rgba(212, 195, 255, 1) 0%, rgba(217, 217, 217, 0) 100%);
@@ -94,26 +91,20 @@ body {
 }
 
 .containerlogin-group1 {
-    top: 71px;
-    left: 590px;
     width: 637px;
     height: 404px;
     display: flex;
     padding: 0;
-    position: absolute;
     flex-direction: column;
     flex-wrap: wrap;
-    align-self: auto;
     box-sizing: border-box;
-    align-items: flex-start;
     flex-shrink: 1;
     border-color: transparent;
     border-style: none;
     border-width: 0;
-    margin-right: 0;
+    margin-right: 20px;
     border-radius: 0px 0px 0px 0px;
-    margin-bottom: 0;
-    justify-content: flex-start;
+    margin-left: 20px;
     background-color: transparent;
 }
 
@@ -133,26 +124,20 @@ body {
 
 
 .containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2 {
-    top: 106px;
-    left: 180px;
     width: 212px;
     height: 212px;
-    position: absolute;
     border-color: transparent;
     border-radius: 500px;
 }
 
 .containerlogin-text24 {
-    top: 348px;
-    left: 193px;
     color: rgba(0, 0, 0, 1);
     height: auto;
-    position: absolute;
     align-self: auto;
     text-align: left;
     line-height: 24px;
-    margin-right: 0;
-    margin-bottom: 0;
+    margin-top: 12px;
+    margin-bottom: 8;
 }
 
 .TitleMedium {
@@ -164,11 +149,8 @@ body {
 }
 
 .containerlogin-text26 {
-    top: 381px;
-    left: 73px;
     color: rgba(0, 0, 0, 1);
     height: auto;
-    position: absolute;
     font-size: 20px;
     align-self: auto;
     font-style: Medium;

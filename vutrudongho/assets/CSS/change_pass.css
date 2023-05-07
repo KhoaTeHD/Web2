@@ -51,8 +51,6 @@
     height: 583px;
     display: flex;
     overflow: hidden;
-    position: relative;
-    top: 50px;
     align-items: flex-start;
     flex-shrink: 0;
     border-color: transparent;
@@ -84,13 +82,10 @@ body {
 }
 
 .containerlogin-group1 {
-    top: 71px;
-    left: 790px;
-    width: 420px;
-    height: 404px;
+    width: 60%;
+    height: fit-content;
     display: flex;
-    padding: 0;
-    position: absolute;
+    padding: 8px;
     flex-direction: column;
     flex-wrap: wrap;
     align-self: auto;
@@ -105,6 +100,8 @@ body {
     margin-bottom: 0;
     justify-content: flex-start;
     background-color: transparent;
+    background-color: #fff;
+
 }
 
 
@@ -123,26 +120,23 @@ body {
 
 
 .containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2 {
-    top: 106px;
-    left: 280px;
+
     width: 212px;
     height: 212px;
-    position: absolute;
     border-color: transparent;
     border-radius: 500px;
 }
 
 .containerlogin-text24 {
-    top: 348px;
-    left: 293px;
+
     color: rgba(0, 0, 0, 1);
     height: auto;
-    position: absolute;
+
     align-self: auto;
     text-align: left;
     line-height: 24px;
-    margin-right: 0;
-    margin-bottom: 0;
+    margin-top: 12px;
+    margin-bottom: 8px;
 }
 
 .TitleMedium {
@@ -167,11 +161,8 @@ body {
     font-stretch: normal;
 }
 .containerlogin-text26 {
-    top: 381px;
-    left: 173px;
     color: rgba(0, 0, 0, 1);
     height: auto;
-    position: absolute;
     font-size: 20px;
     align-self: auto;
     font-style: Medium;

@@ -41,65 +41,9 @@ require_once('lib_session.php');
   </div>
   <!--End: Header-->
 
-  <div id="body" style=" height: 600px;">
+  <div id="body" style=" height: fit-content;margin-top: 50px;">
     <div class="containerlogin-containerlogin">
-
-      <?php
-      if (isAdminLogged()) {
-
-        echo '
-
-      <img src=".//assets/img/hoangImg/imgs/rectangle23772-m91-500w.png" alt="Rectangle23772"
-        class="containerlogin-rectangle2">
-      <div class="containerlogin-frame12">
-        <div class="containerlogin-frame10"><p>Nhấn vào <a href="logout.php?isAdmin=1">đây</a> nếu bạn muốn đăng xuất!</p></div>
-      </div>
-        ';
-      } else {
-        echo '
-        <img src=".//assets/img/hoangImg/imgs/rectangle23772-m91-500w.png" alt="Rectangle23772"
-        class="containerlogin-rectangle2">
-      <div class="containerlogin-frame12">
-        <div class="containerlogin-frame10"></div>
-      </div>
-        <form name="frm" id="" action=".//modules/login_processing.php" method="POST" onsubmit="return kiemTra();">
-        <div class="containerlogin-group1">
-          <span class="containerlogin-text LabelMedium">
-            <span>ĐĂNG NHẬP</span>';
-
-        if (isset($_SESSION['errorLogin'])) {
-          echo '<p id="loginError" style="font-size: 12px;line-height: 18.391px; padding-left: 12px;color: red;font-weight: bold;">' . $_SESSION['errorLogin'] . '</p>';
-          unset($_SESSION['errorLogin']);
-        }
-        echo '
-          </span>
-          <div class="containerlogin-frame13">
-            <span class="containerlogin-text02">
-              <span>Bạn chưa có tài khoản? &nbsp;</span>
-            </span>
-            <span class="containerlogin-text04"><a href="signup.php" style="text-decoration: none;">Đăng ký.</a></span>
-          </div>
-          <p style="top:46px; position: absolute;">Tài khoản</p> 
-          <input name="userName" class="containerlogin-text08 LabelSmall" type="text"
-            style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;"
-            placeholder="Email/Số điện thoại">
-            <p style="top:130px; position: absolute;">Mật khẩu</p> 
-          <input name="passWord" class="containerlogin-text10 LabelSmall" type="password"
-            style="width:332px; height:42px; position: absolute; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;"
-            placeholder="Mật khẩu">
-          <input type="submit" id="btnSubmitLogin" class="containerlogin-text06 LabelLarge" value="Đăng nhập" onclick="">
-          </span>
-          <div id="container-eyes"></div>
-          <img id="btn-eyes" src=".//assets/img/hoangImg/icons/icons8-eye-24.png" alt="ClosedEye3772" class="containerlogin-closed-eye" onclick ="showHidePass();">
-          <img id="btn-eyes-blind" style="display:none;" src=".//assets/img/hoangImg/icons/icons8-blind-24.png" alt="ClosedEye3772" class="containerlogin-closed-eye" onclick ="showHidePass();">
-
-        </div>
-      </form>
-        ';
-      }
-      ?>
-
-
+    <div style="width: 50%;height: 100%;display:flex;flex-direction:column;align-items:center;justify-content:center;">
       <img src=".//assets/img/hoangImg/logo/logo_tron.png" alt="z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772"
         class="containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2" onclick="showAlert();">
       <span class="containerlogin-text24 TitleMedium">
@@ -113,10 +57,76 @@ require_once('lib_session.php');
         </span>
       </span>
     </div>
+      <?php
+      if (isAdminLogged()) {
+
+        echo '
+
+      <img src=".//assets/img/hoangImg/imgs/rectangle23772-m91-500w.png" alt="Rectangle23772"
+        class="containerlogin-rectangle2">
+      <div class="containerlogin-frame12">
+        <div class="containerlogin-frame10"><p>Nhấn vào <a href="logout.php?isAdmin=1">đây</a> nếu bạn muốn đăng xuất!</p></div>
+      </div>
+        ';
+      } else {
+        echo '
+        <div style="width: 50%;height: 100%;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <form style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;" name="frm" id="" action=".//modules/login_processing.php" method="POST" onsubmit="return kiemTra();">
+        <div class="containerlogin-group1" style="display:flex;flex-direction:column;align-items:center;justify-content:center;"> 
+          <div style="width:90%;height:90%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;">
+          <span class="containerlogin-text LabelMedium">
+            <span>ĐĂNG NHẬP</span>';
+
+        if (isset($_SESSION['errorLogin'])) {
+          echo '<p id="loginError" style="font-size: 12px;line-height: 18.391px;color: red;font-weight: bold;">' . $_SESSION['errorLogin'] . '</p>';
+          unset($_SESSION['errorLogin']);
+        }
+        echo '
+          </span>
+          <div style="width:100%;display:flex;flex-direction:column;align-items:center;">
+            <p style="display:block;width:70%;margin-bottom:8px;">Tài khoản</p> 
+            <input name="userName" class="containerlogin-text08 LabelSmall" type="text"
+            style="width:70%; height:42px; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;"
+            placeholder="Email/Số điện thoại">
+          </div>
+          <div id="container-pass" style="display:flex;flex-direction:column;align-items:center;width:100%;">
+            <p style="display:block;width:70%;margin-bottom:8px;">Mật khẩu</p>
+            <div style="display:flex;flex-direction:column;align-items:center;width:70%;">
+                <div style="width:100%;display:flex;flex-direction:row;">
+                <input name="passWord" class="containerlogin-text10 LabelSmall" type="password"
+                style="width:100%; height:42px; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;"
+                placeholder="Mật khẩu">
+                <div id="container-eyes">
+                    <img id="btn-eyes" src=".//assets/img/hoangImg/icons/icons8-eye-24.png" alt="ClosedEye3772" class="containerlogin-closed-eye" onclick ="showHidePass();">
+                    <img id="btn-eyes-blind" style="display:none;" src=".//assets/img/hoangImg/icons/icons8-blind-24.png" alt="ClosedEye3772" class="containerlogin-closed-eye" onclick ="showHidePass();">
+                </div>
+                </div>
+            </div>   
+          </div>
+            
+          <input type="submit" id="btnSubmitLogin" class="containerlogin-text06 LabelLarge" value="Đăng nhập" onclick="">
+          </span>
+          
+          <div class="containerlogin-frame13">
+          <span class="containerlogin-text02">
+            <span>Bạn chưa có tài khoản? &nbsp;</span>
+          </span>
+          <span class="containerlogin-text04"><a href="signup.php" style="text-decoration: none;">Đăng ký.</a></span>
+        </div>
+        </div>
+        </div>
+      </form>
+      </div>
+        ';
+      }
+      ?>
+
+      
+    </div>
   </div>
 
   <!--Start: Footer-->
-  <div id="my-footer">
+  <div id="my-footer" style="">
     <?php
     include(".//components/footer.php");
     ?>

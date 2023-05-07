@@ -30,15 +30,23 @@
   </div>
 
   <!--End: Header-->
-  <div id="body" style=" height: 600px;">
+  <div id="body" style=" height: fit-content;margin-top: 50px;">
     <div class="containerlogin-containerlogin">
-      <img src=".//assets/img/hoangImg/imgs/rectangle23772-m91-500w.png" alt="Rectangle23772"
-        class="containerlogin-rectangle2">
-      <div class="containerlogin-frame12">
-        <div class="containerlogin-frame10"></div>
+    <div style="width: 40%;height: 100%;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <img src=".//assets/img/hoangImg/logo/logo_tron.png" alt="z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772"
+        class="containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2" onclick="">
+      <span class="containerlogin-text24 TitleMedium">
+        <span>VŨ TRỤ ĐỒNG HỒ</span>
+      </span>
+      <span class="containerlogin-text26">
+        <span>
+          <span>Nền tảng thương mại điện tử được yêu thích tại</span>
+          <br>
+          <span>Thành phố Hồ Chí Minh</span>
+        </span>
+      </span>
       </div>
-
-      <form name="frmdangky" id="" action=".//modules/signup_processing.php" method="POST" onsubmit="return kiemTra();">
+      <form style="width: 60%;height: 100%;display:flex;flex-direction:column;align-items:center;justify-content:center;" name="frmdangky" id="" action=".//modules/signup_processing.php" method="POST" onsubmit="return kiemTra();">
 
         <div class="containerlogin-group1">
 
@@ -140,23 +148,13 @@
         </div>
 
       </form>
-      <img src=".//assets/img/hoangImg/logo/logo_tron.png" alt="z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772"
-        class="containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2" onclick="">
-      <span class="containerlogin-text24 TitleMedium">
-        <span>VŨ TRỤ ĐỒNG HỒ</span>
-      </span>
-      <span class="containerlogin-text26">
-        <span>
-          <span>Nền tảng thương mại điện tử được yêu thích tại</span>
-          <br>
-          <span>Thành phố Hồ Chí Minh</span>
-        </span>
-      </span>
+      
+
     </div>
   </div>
 
   <!--Start: Footer-->
-  <div id="my-footer">
+  <div id="my-footer" style="">
   <?php
     include(".//components/footer.php");
     ?>

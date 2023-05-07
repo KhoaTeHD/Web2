@@ -30,20 +30,28 @@
   </div>
 
   <!--End: Header-->
-  <div id="body" style=" height: 600px;">
+  <div id="body" style=" height: fit-content;margin-top: 50px;">
     <div class="containerlogin-containerlogin">
-      <img src=".//assets/img/hoangImg/imgs/rectangle23772-m91-500w.png" alt="Rectangle23772"
-        class="containerlogin-rectangle2">
-      <div class="containerlogin-frame12">
-        <div class="containerlogin-frame10"></div>
+    <div style="width: 50%;height: 100%;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <img src=".//assets/img/hoangImg/logo/logo_tron.png" alt="z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772"
+        class="containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2" onclick="">
+      <span class="containerlogin-text24 TitleMedium">
+        <span>VŨ TRỤ ĐỒNG HỒ </span>
+      </span>
+      <span class="containerlogin-text26">
+        <span>
+          <span>Nền tảng thương mại điện tử được yêu thích tại</span>
+          <br>
+          <span>Thành phố Hồ Chí Minh</span>
+        </span>
+      </span>
       </div>
-
-      <form name="frmdoipass" id="" action=".//modules/change_password_processing.php" method="POST" onsubmit="return kiemTra();">
+      <form style="width: 50%;height: 100%;display:flex;flex-direction:column;align-items:center;justify-content:center;" name="frmdoipass" id="" action=".//modules/change_password_processing.php" method="POST" onsubmit="return kiemTra();">
 
         <div class="containerlogin-group1">
 
-          <div class="containerlogin-text LabelMedium" style="position: absolute; display: flex;flex-direction: row; align-items: flex-start;width: 100%;">
-            <span class="TitleMediumpass" style="">ĐỔI MẬT KHẨU</span>
+          <div class="containerlogin-text LabelMedium" style="display: flex;flex-direction: row; align-items: flex-start;width: 100%;">
+            <span class="TitleSmallpass" style="">ĐỔI MẬT KHẨU</span>
             <!-- <p style="font-size: 12px;line-height: 18.391px; padding-left: 12px;color: red;font-weight: bold;">*Số điện thoại đã được đăng ký cho tài khoản khác.</p> -->
             <?php
             if (isset($_SESSION['errorOldPass'])) {
@@ -52,7 +60,7 @@
             }
             ?>
           </div>
-          <div style="margin-top: 80px;">
+          <div style="margin-top: 20px;">
             <div style="display: flex; flex-direction:row ;width: fit-content;">
               <p class="TitleSmallpass" style="margin-bottom: 4px;">Mật khẩu hiện tại (*)</p>
             </div>
@@ -94,18 +102,8 @@
         </div>
 
       </form>
-      <img src=".//assets/img/hoangImg/logo/logo_tron.png" alt="z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772"
-        class="containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2" onclick="">
-      <span class="containerlogin-text24 TitleMedium">
-        <span>VŨ TRỤ ĐỒNG HỒ </span>
-      </span>
-      <span class="containerlogin-text26">
-        <span>
-          <span>Nền tảng thương mại điện tử được yêu thích tại</span>
-          <br>
-          <span>Thành phố Hồ Chí Minh</span>
-        </span>
-      </span>
+      
+
     </div>
   </div>
 
