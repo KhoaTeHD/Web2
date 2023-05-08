@@ -45,6 +45,7 @@ if (mysqli_num_rows($result) == 1 || mysqli_num_rows($resultMail) == 1 ) {
 	if ($row['Password'] == $pass) {
 		// dang nhap thanh cong
 		//echo 'Dang nhap thanh cong';
+		if($row['Status'] == 1){
 		$_SESSION['current_username'] = $user;
 		$_SESSION['isAdmin'] = true;
 		$_SESSION['current_userID'] = $userID;
@@ -57,7 +58,15 @@ if (mysqli_num_rows($result) == 1 || mysqli_num_rows($resultMail) == 1 ) {
 		$_SESSION['current_district'] = $district;
 		$_SESSION['current_province'] = $province;
 		$_SESSION['current_status'] = $status;
-		header('location: ../../index.php');
+		header('location: ../../index.php');}
+		//nếu status = 0 tức là tk bị khóa
+		else{
+			$errorLogin = "Tài khoản của bạn bị khóa!";
+			session_start();
+			$_SESSION['errorLogin'] = $errorLogin;
+			header("Location: ../../login.php?errorLogin=" . urlencode($errorLogin));
+			exit();
+		}
 	} else {
 		//echo 'Sai password';
 		$errorLogin = "Thông tin tài khoản chưa chính xác!";

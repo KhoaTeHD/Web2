@@ -20,7 +20,7 @@ if (!$conn) {
 $limit = 3;
 
 // truy vấn cơ sở dữ liệu để lấy số lượng tổng mục
-$sql = sprintf("SELECT * FROM `order`");
+$sql = sprintf("SELECT * FROM `order` where UserID = '$userID'");
 $result = mysqli_query($conn, $sql);
 $total_items = mysqli_num_rows($result);
 
@@ -82,7 +82,7 @@ $result = mysqli_query($conn, $query);
 
       </div>
       <div id="content-user">
-        <p style="margin-bottom: 16px;margin-top: 4px;margin-left: 4px;">Tổng số đơn hàng (<?php echo $total_items;?>)</p>
+        <p class="styleTextMyOrder" style="margin-bottom: 16px;margin-top: 4px;margin-left: 4px;">Tổng số đơn hàng (<?php echo $total_items;?>)</p>
 
         <?php
         // hiển thị dữ liệu
@@ -123,27 +123,27 @@ $result = mysqli_query($conn, $query);
           style="display: flex;flex-direction: column;width: 100%;height: fit-content;align-items: center;background-color: #fff;margin-bottom: 8px;padding-bottom: 8px;">
           <div class="header-component-order"
             style="display: inline-flex;padding: 8px 8px 8px 8px;align-items: left;width: 100%;position:relative;">
-            <a style="display:block;text-align: right;" href="">Xem chi tiết</a>
-            <p style="display:block;position: absolute;right:8px;">Mã đơn hàng: '.$orderID.'</p>
-          </div>
+            <a class="hoverTheA2" style="display:block;text-align: right;" href="detail_my_order.php?id='.$orderID.'">Xem chi tiết</a>
+            <p class="styleTextMyOrder" style="display:block;position: absolute;right:8px;">Mã đơn hàng: '.$orderID.'</p>';  
+          echo '</div>
           <hr style="width: 100%;">
           <div class="main-component-order-title"
             style="display:flex;flex-direction: row;justify-content: space-between;align-items: center;width: 95%;margin-top: 4px;margin-bottom: 10px;">
-            <p style="width: 20%;">Thời gian</p>
-            <p style="width:14%;">Phí vận chuyển</p>
-            <p style="width:14%;">Giảm giá</p> 
-            <p style="width:14%;">Tổng tiền</p>
-            <p style="width:24%;">Hình thức thanh toán</p>
-            <p style="width: 14%;">Trạng thái</p>
+            <p class="styleTextMyOrder2" style="width: 20%;">Thời gian</p>
+            <p class="styleTextMyOrder2" style="width:14%;">Phí vận chuyển</p>
+            <p class="styleTextMyOrder2" style="width:14%;">Giảm giá</p> 
+            <p class="styleTextMyOrder2" style="width:14%;">Tổng tiền</p>
+            <p class="styleTextMyOrder2" style="width:24%;">Hình thức thanh toán</p>
+            <p class="styleTextMyOrder2" style="width: 14%;">Trạng thái</p>
           </div>
           <div class="main-component-order"
             style="display:flex;flex-direction: row;justify-content: space-between;align-items: center;width: 95%;margin-top: 4px;">
-            <p style="width: 20%;">'.$orderDate.'</p>
-            <p style="width: 14%;">'.$shippingFee.' đ</p>
-            <p style="width: 14%;">'.$orderDiscount.' đ</p> 
-            <p style="width: 14%;">'. $orderTotal.' đ</p>
-            <p style="width: 24%;">'.$phuongthucThanhToan.'</p>
-            <p style="width: 14%;">'.$trangThaiDonHang.'</p>
+            <p class="styleTextMyOrder" style="width: 20%;">'.$orderDate.'</p>
+            <p class="styleTextMyOrder" style="width: 14%;">'.$shippingFee.' đ</p>
+            <p class="styleTextMyOrder" style="width: 14%;">'.$orderDiscount.' đ</p> 
+            <p class="styleTextMyOrder" style="width: 14%;">'. $orderTotal.' đ</p>
+            <p class="styleTextMyOrder" style="width: 24%;">'.$phuongthucThanhToan.'</p>
+            <p class="styleTextMyOrder" style="width: 14%;">'.$trangThaiDonHang.'</p>
           </div>
         </div>
           
@@ -184,7 +184,7 @@ $result = mysqli_query($conn, $query);
         <div
           style="width: 100%;height: 26px;position: absolute;bottom: 0;margin-bottom: 60px;display: flex;flex-direction:row;align-items: center;justify-content: center;">
           <div id="numberPhanTrang"
-            style="width: fit-content;display: flex;flex-direction:row;align-items: center;justify-content: center;position: fixed;z-index: 999999;">
+            style="width: fit-content;display: flex;flex-direction:row;align-items: center;justify-content: center;position: absolute;z-index: 999999;">
             <p style="padding: 4px;">
               <?php
               // hiển thị các liên kết phân trang
