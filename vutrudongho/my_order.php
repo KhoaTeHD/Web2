@@ -34,7 +34,7 @@ $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
 $start = ($current_page - 1) * $limit;
 
 // truy vấn cơ sở dữ liệu để lấy dữ liệu
-$query = sprintf("select * from `order` ORDER BY OderDate DESC limit $start, $limit;");
+$query = sprintf("select * from `order` where UserID = '$userID' ORDER BY OderDate DESC limit $start, $limit;");
 $result = mysqli_query($conn, $query);
 
 ?>
@@ -83,6 +83,10 @@ $result = mysqli_query($conn, $query);
       </div>
       <div id="content-user">
         <p class="styleTextMyOrder" style="margin-bottom: 16px;margin-top: 4px;margin-left: 4px;">Tổng số đơn hàng (<?php echo $total_items;?>)</p>
+        <?php if($total_items == 0){
+          echo '<p class="styleTextMyOrder">Bấm<a class="hoverTheA3" href="product.php">vào đây</a> để mua hàng.</p>';
+        }
+        ?>
 
         <?php
         // hiển thị dữ liệu
@@ -139,9 +143,9 @@ $result = mysqli_query($conn, $query);
           <div class="main-component-order"
             style="display:flex;flex-direction: row;justify-content: space-between;align-items: center;width: 95%;margin-top: 4px;">
             <p class="styleTextMyOrder" style="width: 20%;">'.$orderDate.'</p>
-            <p class="styleTextMyOrder" style="width: 14%;">'.$shippingFee.' đ</p>
-            <p class="styleTextMyOrder" style="width: 14%;">'.$orderDiscount.' đ</p> 
-            <p class="styleTextMyOrder" style="width: 14%;">'. $orderTotal.' đ</p>
+            <p class="styleTextMyOrder" style="width: 14%;">'.number_format($shippingFee, 0, ',', '.').' đ</p>
+            <p class="styleTextMyOrder" style="width: 14%;">'.number_format($orderDiscount, 0, ',', '.').' đ</p> 
+            <p class="styleTextMyOrder" style="width: 14%;">'.number_format($orderTotal, 0, ',', '.').' đ</p>
             <p class="styleTextMyOrder" style="width: 24%;">'.$phuongthucThanhToan.'</p>
             <p class="styleTextMyOrder" style="width: 14%;">'.$trangThaiDonHang.'</p>
           </div>
@@ -189,7 +193,7 @@ $result = mysqli_query($conn, $query);
               <?php
               // hiển thị các liên kết phân trang
               for ($page = 1; $page <= $total_pages; $page++) {
-                echo '<a class="number-ptrang-' . $page . '" onclick="changeColor()" style="text-decoration: none;padding: 4px 8px;background-color:#ccc;" href="?page=' . $page . '">' . $page . '</a> ';
+                echo '<a class="number-ptrang-' . $page . '" style="text-decoration: none;padding: 4px 8px;background-color:#ccc;" href="?page=' . $page . '">' . $page . '</a> ';
               }
               ?>
             </p>
@@ -208,18 +212,10 @@ $result = mysqli_query($conn, $query);
   </div>
   <!--End: Footer-->
   <script>
-    function changeColor() {
-      var currentPage = parseInt(new URLSearchParams(window.location.search).get('page')); // Lấy trang hiện tại từ tham số truy vấn '?page'
-
-      if (currentPage) {
-        var currentElement = document.querySelector('.number-ptrang-' + currentPage); // Chọn phần tử tương ứng với trang hiện tại
-
-        if (currentElement) {
-          currentElement.style.backgroundColor = "orange"; // Thay đổi màu nền của phần tử thành màu cam
-        }
-      }
-    }
-
+    var currentPage = parseInt(new URLSearchParams(window.location.search).get('page'));
+    var currentElement = document.querySelector('.number-ptrang-' + currentPage);
+    currentElement.style.backgroundColor = 'purple';
+    currentElement.style.color = '#fff';
   </script>
 </body>
 

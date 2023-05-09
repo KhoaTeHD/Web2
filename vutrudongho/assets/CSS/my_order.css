@@ -421,3 +421,49 @@
             letter-spacing: 0.1px;
             color: rgba(29, 25, 43, 1);;
         }
+
+        /*Start: Hover thẻ a3*/
+        .hoverTheA3 {
+            margin-left: 4px;
+            text-decoration: none;
+            width: fit-content;
+            padding: 0px 0;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            letter-spacing: 0.1px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #674FA2, #674FA2 50%, #000 50%);
+            background-size: 200% 100%;
+            background-position: -100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hoverTheA3:before {
+            display: block;
+            content: "";
+            width: 0;
+            height: 2px;
+            bottom: -1px;
+            left: 0;
+            z-index: 0;
+            position: absolute;
+            background: #674FA2;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hoverTheA3:hover {
+            background-position: 0%;
+        }
+
+        .hoverTheA3:hover:before {
+            width: 100%;
+        }
+        /*End: Hover thẻ a*/
+
+

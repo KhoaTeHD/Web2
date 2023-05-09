@@ -34,7 +34,9 @@ $row5 = mysqli_fetch_array($result5);
 $orderDate = $row5['OderDate'];
 $shippingFee = $row5['ShippingFee'];
 $orderDiscount = $row5['OrderDiscount'];
+$orderDiscount_formatted = number_format($orderDiscount, 0, ',', '.');
 $orderTotal = $row5['OrderTotal'];
+$orderTotal_formatted = number_format($orderTotal, 0, ',', '.');
 $address = $row5['Address'];
 $paymentID = $row5['PaymentID'];
 $phuongthucThanhToan = "";
@@ -103,8 +105,7 @@ global $tongtien1mathang;
 
       </div>
       <div id="content-user">
-        <p class="styleTextMyOrder" style="margin-bottom: 16px;margin-top: 4px;margin-left: 4px;">Chi tiết đơn hàng: (
-          <?php echo $_GET['id']; ?>)
+        <p class="styleTextMyOrder" style="margin-bottom: 16px;margin-top: 4px;margin-left: 4px;">Chi tiết đơn hàng: (<?php echo $_GET['id']; ?>)
         </p>
 
         <?php
@@ -121,23 +122,23 @@ global $tongtien1mathang;
           <div class="main-component-order-title"
             style="display:flex;flex-direction: row;justify-content: space-between;align-items: center;width: 95%;margin-top: 4px;margin-bottom: 10px;">
             <p class="styleTextMyOrder2" style="width: 15%;">Hình</p>
-            <p class="styleTextMyOrder2" style="width: 37%;">Tên sản phẩm</p>
+            <p class="styleTextMyOrder2" style="width: 35%;">Tên sản phẩm</p>
             <p class="styleTextMyOrder2" style="width:13%;margin-left: 40px;">Loại</p>
             <p class="styleTextMyOrder2" style="width:9%;">Màu</p>
-            <p class="styleTextMyOrder2" style="width:10%;">Giới tính</p>
-            <p class="styleTextMyOrder2" style="width:10%;">Giá</p>
-            <p class="styleTextMyOrder2" style="width: 8%;">Số lượng</p>
+            <p class="styleTextMyOrder2" style="width:12%;">Giới tính</p>
+            <p class="styleTextMyOrder2" style="width:13%;">Giá</p>
+            <p class="styleTextMyOrder2" style="width: 7%;">Số lượng</p>
           </div>
           <div class="main-component-order"
             style="display:flex;flex-direction: row;justify-content: space-between;align-items: center;width: 95%;margin-top: 4px;">
             <div style="width: 15%;"><img src=".//assets/img/productImg/' . $urlPicture . '" width="75"
                 alt="" /></div>
-            <p class="styleTextMyOrder" style="width: 37%;text-align: justify;">' . $productName . '</p>
+            <p class="styleTextMyOrder" style="width: 35%;text-align: justify;">' . $productName . '</p>
             <p class="styleTextMyOrder" style="width: 13%; margin-left: 40px;">' . $model . '</p>
             <p class="styleTextMyOrder" style="width: 9%;">' . $color . '</p>
-            <p class="styleTextMyOrder" style="width: 8%;">' . $gender . '</p>
-            <p class="styleTextMyOrder" style="width: 12%;">' . $price . 'đ</p>
-            <p class="styleTextMyOrder" style="width: 8%;">' . $quantity . '</p>
+            <p class="styleTextMyOrder" style="width: 12%;">' . $gender . '</p>
+            <p class="styleTextMyOrder" style="width: 13%;">' . number_format($price, 0, ',', '.') . 'đ</p>
+            <p class="styleTextMyOrder" style="width: 7%;">' . $quantity . '</p>
           </div>
         </div>
         ';
@@ -173,11 +174,11 @@ global $tongtien1mathang;
               <div id="value_total_detail_order"
                 style="width: 40%;height: fit-content;display: flex;flex-direction: column;background-color: #fff;padding: 16px;text-align: right;">
                 <p class="styleTextMyOrder">&nbsp;</p>
-                <p class="styleTextMyOrder"><?php echo $tongtien1mathang;?> đ</p>
-                <p class="styleTextMyOrder"><?php echo $shippingFee;?> đ</p>
-                <p class="styleTextMyOrder">- <?php echo $orderDiscount;?> đ</p>
+                <p class="styleTextMyOrder"><?php echo number_format($tongtien1mathang, 0, ',', '.');?> đ</p>
+                <p class="styleTextMyOrder">+ <?php echo number_format($shippingFee, 0, ',', '.');?> đ</p>
+                <p class="styleTextMyOrder" style="color: red;">- <?php echo $orderDiscount_formatted;?> đ</p>
                 <hr style="width:100%">
-                <p class="styleTextMyOrder"><?php echo $orderTotal;?> đ</p>
+                <p class="styleTextMyOrder"><?php echo $orderTotal_formatted;?> đ</p>
               </div>
             </div>
           </div>
