@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href=".//assets/css/contact.css">
+  <link rel="stylesheet" href=".//assets/css/help.css">
   <link rel="stylesheet" href=".//assets/css/header.css">
   <link rel="stylesheet" href=".//assets/css/footer.css">
   <link rel="stylesheet"
@@ -24,12 +24,13 @@
 </div>
 <!--End: Header-->
 
-<body style="position: relative;">
+<body style="position: relative;    background: rgb(128,83,221);
+    background: linear-gradient(133deg, rgba(128,83,221,1) 2%, rgba(173,114,206,1) 50%, rgba(220,165,200,1) 100%);">
   <div id="container-aboutUs"
     style="position: relative;top:50px;height: fit-content;width: 100%;display: flex;flex-direction: column;align-items: center;">
     <img src=".//assets/Img/hoangImg/imgs/banner_hotro.png" width="100%" alt="">
     <div id="muahangtragop"
-      style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #ccc;height: fit-content;padding: 12px;">
+      style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
       <p>Mua hàng trả góp</p>
       <p>Để thuận tiện cho việc mua sắm của quý khách, Vũ Trụ Đồng Hồ triển khai 2 hình thức hỗ trợ mua trả góp lãi suất
         0% với thủ tục đơn giản, thời gian xét duyệt nhanh chóng, chi tiết xem dưới đây:</p>
@@ -107,7 +108,7 @@
         trên số tiền mà khách hàng trả góp.</p>
     </div>
     <div id="huongdandathangvathanhtoan"
-      style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #ccc;height: fit-content;padding: 12px;">
+      style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
       <p>Hướng dẫn đặt hàng và thanh toán</p>
       <p> I.TIẾN HÀNH ĐẶT HÀNG</p>
       <p>Bước 1: Đặt hàng online bằng một trong các hình thức sau:</p>
@@ -172,7 +173,7 @@
       </ul>
     </div>
     <div id="chinhsachbaohanh"
-      style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #ccc;height: fit-content;padding: 12px;">
+      style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
       <p>Chính sách về bảo hành</p>
       <p>Vũ Trụ Đồng Hồ cam kết tất cả các sản phẩm bán ra tại Vũ Trụ Đồng Hồ đều là sản phẩm chính hãng, và nhận được
         các chế độ bảo hành chính hãng.</p>
@@ -212,7 +213,7 @@
       <p>Tại TTBH Hãng: Theo giờ làm việc của TTBH hãng.</p>
     </div>
     <div id="phamvidieukhoangoibaohanh"
-      style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #ccc;height: fit-content;padding: 12px;">
+      style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
       <p>Phạm vi, điều khoản gói bảo hành</p>
       <table border="1" data-rows="4" data-cols="4" class="tve_table tcb-fixed tve_table_flat"
         data-css="tve-u-1735162f073" data-v="top">
@@ -327,7 +328,7 @@
         </tbody>
       </table>
     </div>
-    <div id="chinhsachbaomat" style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #ccc;height: fit-content;padding: 12px;">
+    <div id="chinhsachbaomat" style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
       <p>Chính sách bảo mật</p>
       <p>Vũ Trụ Đồng Hồ cam kết sẽ bảo mật những thông tin mang tính riêng tư của bạn. Bạn vui lòng đọc bản “Chính sách bảo mật” dưới đây để hiểu hơn những cam kết mà chúng tôi thực hiện, nhằm tôn trọng và bảo vệ quyền lợi của người truy cập:</p>
       <p>1. Mục đích và phạm vi thu thập</p>
@@ -349,7 +350,7 @@
       <p>3. Thời gian lưu trữ thông tin</p>
       <p>Dữ liệu cá nhân của khách hàng sẽ được lưu trữ cho đến khi có yêu cầu hủy bỏ hoặc tự khách hàng đăng nhập và thực hiện hủy bỏ. Còn lại trong mọi trường hợp thông tin cá nhân thành viên sẽ được bảo mật trên máy chủ của Vũ Trụ Đồng Hồ.</p>
       <p>4. Địa chỉ của đơn vị thu thập và quản lý thông tin cá nhân</p>
-      <p>Tên tổ chức: CÔNG TY CỔ PHẦN XÂY DỰNG VÀ ĐẦU TƯ THƯƠNG MẠI VŨ TRỤ ĐỒNG HỒ</p>
+      <p>Tên tổ chức: CÔNG TY CỔ PHẦN XÂY DỰNG VÀ ĐẦU TƯ THƯƠNG MẠI VŨ TRỤ</p>
       <p>Trụ sở chính: Số 26 Phù Đổng Thiên Vương, P. Phạm Đình Hổ, Q. Hai Bà Trưng, TP. Hà Nội.</p>
       <p>Văn phòng đại diện khu vực Miền Nam: 1060 đường 3/2, Phường 12, Quận 11, TP. Hồ Chí Minh.</p>
       <p>Email: cskh@vutrudongho.com</p>
@@ -365,13 +366,50 @@
       <p>+ Khách hàng có quyền yêu cầu thay đổi hoặc huỷ bỏ thông tin cá nhân của mình.</p>
       <p>+ Thông tin cá nhân của thành viên được Vũ Trụ Đồng Hồ cam kết bảo mật tuyệt đối theo chính sách bảo vệ thông tin cá nhân của Vũ Trụ Đồng Hồ. Việc thu thập và sử dụng thông tin của mỗi thành viên chỉ được thực hiện khi có sự đồng ý của khách hàng đó trừ những trường hợp pháp luật có quy định khác.</p>
     </div>
-    <div id="hotrokythuat"
-      style="margin-top:20px;margin-bottom:20px;display: flex;flex-direction: column;width: 95%;background-color: #ccc;height: fit-content;padding: 12px;">
-      <p>Hỗ trợ kỹ thuật</p>
-      <p>Trung tâm bảo hành dịch vụ Vũ Trụ Đồng Hồ</p>
-      <p>Địa chỉ miền Bắc: 27A Nguyễn Công Trứ, P.Đồng Nhân, Q.Hai Bà Trưng, HN (SĐT 093.235.10.80)</p>
-      <p>Địa chỉ miền Trung: 27A Nguyễn Công Trứ, P.Đồng Nhân, Q.Hai Bà Trưng, Đà Nẵng (SĐT 093.235.10.80)</p>
-      <p>Địa chỉ miền Nam: 27A Nguyễn Công Trứ, P.Đồng Nhân, Q.Hai Bà Trưng, TP.HCM (SĐT 093.235.10.80)</p>
+
+    <div id="chinhsachgiaiquyetkhieunai" style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
+      <p>Chính sách giải quyết khiếu nại</p>
+      <p>Quy trình giải quyết tranh chấp, khiếu nại</p>
+      <p>Vũ Trụ Đồng Hồ có trách nhiệm tiếp nhận và xử lý khiếu nại của khách hàng liên quan đến giao dịch tại website https://vutrudongho.com.</p>
+      <p>Khách hàng có quyền gửi khiếu nại về việc chất lượng, dịch vụ, giá cả sản phẩm không đúng với mô tả, thông tin thanh toán bị tiết lộ gây thiệt hại cho mình đến Ban quản trị của Vũ Trụ Đồng Hồ. Khi tiếp nhận những phản hồi này, Vũ Trụ Đồng Hồ sẽ xác nhận lại thông tin, trường hợp đúng như phản ánh của khách hàng tùy theo mức độ, Vũ Trụ Đồng Hồ sẽ có những biện pháp xử lý kịp thời.</p>
+      <p>Khách hàng gửi khiếu nại tại địa chỉ :</p>
+      <p>Tên tổ chức: CÔNG TY CỔ PHẦN XÂY DỰNG VÀ ĐẦU TƯ THƯƠNG MẠI VŨ TRỤ</p>
+      <p>Trụ sở chính:  Số 89 Đường Tam Trinh, Phường Mai Động, Quận Hoàng Mai, Thành Phố Hà Nội, Việt Nam</p>
+      <p>Văn phòng đại diện khu vực Miền Nam: 1060 đường 3/2, Phường 12, Quận 11, TP. Hồ Chí Minh.</p>
+      <p>Email: cskh@vutrudongho.com</p>
+    </div>
+
+    <div id="dieukhoanmuabanhanghoa" style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
+        <p>1. Hướng dẫn sử dụng Nền Tảng</p>
+        <p>- Khi truy cập website của chúng tôi, khách hàng phải đảm bảo đủ 18 tuổi, hoặc truy cập dưới sự giám sát của cha mẹ hay người giám hộ hợp pháp. Khách hàng đảm bảo có đầy đủ hành vi dân sự để thực hiện các hành vi đặt hàng theo quy định hiện hành của pháp luật Việt Nam.</p>
+        <p>- Chúng tôi cấp quyền sử dụng và truy cập Nền Tảng để bạn có thể đặt hàng trên Nền Tảng theo các điều khoản và điều kiện quy định tại Nền Tảng.</p>
+        <p>- Nghiêm cấm sử dụng bất kỳ phần nào của Nền Tảng với mục đích thương mại hoặc nhân danh bất kỳ đối tác thứ ba nào nếu không được Vũ Trụ Đồng Hồ cho phép bằng văn bản. Nếu vi phạm bất cứ điều nào trong đây, chúng tôi có quyền ngay lập tức thu hồi quyền sử dụng và/hoặc khóa quyền truy cập website của khách hàng bằng bất kỳ hình thức hợp pháp nào mà không cần thông báo trước.</p>
+        <p>- Khách hàng không cần đăng ký tài khoản với thông tin xác thực về bản thân để đặt được hàng.</p>
+        <p>2. Ý kiến khách hàng</p>
+        <p>- Tất cả nội dung hiển thị và đăng tải trên Nền Tảng, bao gồm cả ý kiến, nhận xét đóng góp của khách hàng, đều là tài sản của vutrudongho.com. Nếu chúng tôi phát hiện bất kỳ thông tin giả mạo, vu khống nào, chúng tôi có quyền ngay lập tức xóa phần bình luận của khách hàng và/ hoặc áp dụng các biện pháp khác theo quy định của pháp luật Việt Nam</p>
+        <p>3. Đặt hàng và xác nhận đơn hàng</p>
+        <p>Bước 1: Đặt hàng online bằng một trong các hình thức sau:</p>
+        <p>Đặt trực tiếp tại website: https://vutrudongho.com.</p>
+        <p>Gọi điện đến tổng đài: 19002091</p>
+        <p>Bình luận thông tin hoặc chat trực tuyến trên Facebook: https://facebook.com/vutrudonghooffical.</p>
+        <p>Gửi thông tin đặt hàng qua email: online@vutrudongho.com</p>
+    </div>
+
+    <div id="cauhoithuonggap" style="margin-top:20px;margin-bottom:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
+      <p>Câu hỏi thường gặp</p>
+      <p>Giải đáp 1 số thắc mắc của khách hàng:</p>
+      <p>1: Tại sao Vũ Trụ Đồng Hồ rẻ hơn so với các đại lý khác ?</p>
+      <p>Trả lời: Do chúng tôi lấy lợi nhuận thấp và cập nhật giá liên tục theo giờ với phương châm giá luôn phải tốt nhất trên thị trường. Chúng tôi luôn mong muốn khách hàng có được những sản phẩm tốt với giá rẻ nhất.</p>
+      <p>2: Cụ thể về chính sách bao xài đổi trả trong 15/30 ngày.</p>
+      <p>Trả lời:</p>
+      <p>A, Trường hợp được đổi trả :</p>
+      <p>Máy được bán ra từ Vũ Trụ Đồng Hồ và còn trong thời gian 15/30 ngày tùy theo sản phẩm. Tình trạng máy phải bị lỗi phần cứng từ phía nhà sản xuất. Vũ Trụ Đồng Hồ sẽ giải quyết đổi trả sau khi kiểm tra xác nhận máy lỗi phần cứng do nhà sản xuất và máy đủ điều kiện bảo hành đổi trả. Với một số trường hợp nhất định, Vũ Trụ Đồng Hồ sẽ gửi sản phẩm thẩm định lỗi tại trung tâm bảo hành của hãng và sẽ tiến hành đổi máy khi có xác nhận kết quả. Thời gian thẩm định tuỳ thuộc vào TTBH của hãng. Trong trường hợp hết máy, chúng tôi sẽ hoàn trả 100% tiền mua máy tại thời điểm mua cho khách hàng.</p>
+      <p>B, Trường hợp không được đổi trả:</p>
+      <p>+ Không phải máy của Vũ Trụ Đồng Hồ bán ra.</p>
+      <p>+ Thời gian sử dụng đã quá 15/30 ngày</p>
+      <p>+ Máy không phát sinh lỗi nhưng chủ máy không ưng và muốn trả lại : trường hợp này cửa hàng sẽ nhập lại máy với tối đa 85% tùy theo tình trạng mới, cũ của máy.</p>
+      <p>3:  Khách hàng ở tỉnh làm sao để mua được sản phẩm?</p>
+      <p>Trả lời : Bạn vui lòng sử dụng dịch vụ mua hàng Online để được ưu tiên. Vũ Trụ Đồng Hồ hỗ trợ miễn phí hoàn toàn chi phí vận chuyển khi mua hàng trên toàn quốc, thanh toán khi nhận hàng bạn nhé. Bên mình sẽ liên hệ lại với bạn ngay khi có sản phẩm để xác nhận thông tin nhé.</p>
     </div>
   </div>
 

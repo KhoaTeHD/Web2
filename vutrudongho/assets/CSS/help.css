@@ -26,8 +26,15 @@
     padding-bottom: 20px;
     padding-top: 20px;
 }
-#banhangonline,
-#chamsockhachhang,
+
+#muahangtragop,
+#huongdandathangvathanhtoan,
+#chinhsachbaohanh,
+#phamvidieukhoangoibaohanh,
+#chinhsachbaomat,
+#chinhsachgiaiquyetkhieunai,
+#dieukhoanmuabanhanghoa,
+#cauhoithuonggap,
 #hotrokythuat{
     font-family: 'Roboto';
     font-style: normal;
@@ -37,4 +44,8 @@
     letter-spacing: 0.5px;
     padding-bottom: 20px;
     padding-top: 20px;
+}
+#huongdandathangvathanhtoan > ul,
+#chinhsachbaohanh > ul{
+    margin-left: 5%;
 }
