@@ -12,16 +12,19 @@ echo '
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 4;" alt="">
     <p class="child-menu-header" style="width: auto;order: 5;"><a id="navbarAbout" class="navbartheA" href="about_us.php">Về chúng tôi</a></p>
     <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 6;" alt="">
-    <p class="child-menu-header" style="width: auto;order: 7;"><a class="navbartheA" href="">Liên hệ</a></p>
+    <p class="child-menu-header" style="width: auto;order: 7;"><a id="navbarContact" class="navbartheA" href="contact.php">Liên hệ</a></p>
 </div>
 <div id="avt-and-icons">
-    <img id="btnHelp" class="icon-header" src=".//assets/img/hoangImg/icons/icons8-help-24.png" style="order: 0;" alt="">
+    <img id="btnHelp" onclick="btnHelpClicked();" class="icon-header" src=".//assets/img/hoangImg/icons/icons8-help-24.png" style="order: 0;" alt="">
     <img class="line-header" src=".//assets/img/hoangImg/imgs/Line.png" style="order: 1;" alt="">
     <img id="btnCart" onclick="btnCartClicked();" class="icon-header" src=".//assets/img/hoangImg/icons/icons8-shopping-cart-24.png" style="order: 2;" alt="">
     <img class="line-header" src=".//assets/img/hoangImg/imgs/Line.png" style="order: 3;" alt="">
     <script>
     function btnCartClicked(){
         window.location = "cart.php";
+       }
+    function btnHelpClicked(){
+        window.location = "help.php";
        }
     </script>
 '; ?>

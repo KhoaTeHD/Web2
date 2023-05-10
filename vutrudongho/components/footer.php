@@ -6,7 +6,6 @@ echo '
         <a style="margin-top: 12px;" class="mediumtitlehomeFooter theAtrongFooter" href="#">Hỗ trợ - Dịch vụ</a>
         <a style="margin-top: 12px;" class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="#">Mua hàng trả góp</a>
         <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="#">Hướng dẫn đặt hàng và thanh toán</a>
-        <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="#">Tra cứu đơn hàng</a>
         <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="#">Chính sách bảo hành</a>
         <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="#">Phạm vi, điều khoản gói bảo hành</a>
         <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter"  href="#">Chính sách bảo mật</a>
@@ -19,8 +18,6 @@ echo '
         <a style="margin-top: 12px;" class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Bán hàng Online</a>
         <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Chăm sóc khách hàng</a>
         <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Hỗ trợ kỹ thuật</a>
-        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Hỗ trợ bảo hành và sữa chữa</a>
-        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Liên hệ khối văn phòng</a>
     </div>
     <div id="he-thong-cua-hang-toan-quoc">
         <a style="margin-top: 12px;" class="mediumtitlehomeFooter theAtrongFooter" href="about_us.php#He_thong_cua_hang_tren_toan_quoc">Hệ thống cửa hàng trên toàn quốc</a>

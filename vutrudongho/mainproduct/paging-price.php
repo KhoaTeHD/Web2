@@ -1,7 +1,7 @@
 <div id="main">
     <?php
-    include 'connect.php';
-    include("sidebar.php");
+    include '../config/connect.php';
+    include("../mainproduct/sidebar/sidebar.php");
     $pricefrom = isset($_GET['from']) ? $_GET['from'] : '';
     $priceto = isset($_GET['to']) ? $_GET['to'] : '';
     $query_run = mysqli_query($conn, "select * from product where PriceToSell between $pricefrom and $priceto");
@@ -28,18 +28,29 @@
                 <div class="card">
                     <div class="product-top">
                         <class="product-thumb">
-                            <img src=".//assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
-                            <button class="info-detail" onclick="location.href='detail_product.php?ProductID=<?php echo $value['ProductID'] ?>'">Xem Thêm</button>
+                            <img src="../assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
+                            <button class="info-detail"
+                                onclick="location.href='detail_product.php?ProductID=<?php echo $value['ProductID'] ?>'">Xem
+                                Thêm</button>
                         </class="product-thumb">
                     </div>
                     <p>
                         <?php echo $value['ProductName'] ?>
                     </p>
                     <span class="price">
-                        <strong>
-                            <?php echo number_format($value['PriceToSell'], 0, ",", ".") ?> đ
-                        </strong>
-                        <!-- <strike>40.990.000đ</strike> -->
+                        <?php if ($value['Discount'] == 0) { ?>
+                            <strong>
+                                <?php echo number_format($value['PriceToSell'], 0, ",", ".") ?> đ
+                            </strong>
+                        <?php } else { ?>
+                            <strong>
+                                <?php echo number_format($value['PriceToSell'] - $value['PriceToSell'] * $value['Discount'] / 100, 0, ",", ".") ?>
+                                đ
+                            </strong>
+                            <strike>
+                                <?php echo number_format($value['PriceToSell'], 0, ",", ".") ?> đ
+                            </strike>
+                        <?php } ?>  
                     </span>
                 </div>
             <?php endforeach ?>
@@ -61,7 +72,8 @@
                 <?php for ($num = 1; $num <= $total_page; $num++) { ?>
                     <?php if ($num != $cur_page) { ?>
                         <?php if ($num > $cur_page - 2 && $num < $cur_page + 2) { ?>
-                            <a class="page-item" href="?page=<?= $num ?><?php echo ($pricefrom!='') ? "&from=$pricefrom" : ''?><?php echo ($priceto!='') ? "&to=$priceto" : ''?>"><?= $num ?></a>
+                            <a class="page-item"
+                                href="?page=<?= $num ?><?php echo ($pricefrom != '') ? "&from=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to=$priceto" : '' ?>"><?= $num ?></a>
                         <?php } ?>
                     <?php } else { ?>
                         <strong class="cur-page page-item">
@@ -82,9 +94,8 @@
                 ?>
             </div>
         </div>
-<?php }else{
-    echo "Không tìm thấy sản phẩm";
-}
- 
-?>
-    
+    <?php } else {
+        echo "Không tìm thấy sản phẩm";
+    }
+
+    ?>

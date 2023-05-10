@@ -1,7 +1,7 @@
 <div id="main">
     <?php
-    include 'connect.php';
-    include("sidebar.php");
+    include '../config/connect.php';
+    include("../mainproduct/sidebar/sidebar.php");
     $item_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 9;
     $cur_page = !empty($_GET['page']) ? $_GET['page'] : 1;
     $offset = ($cur_page - 1) * $item_page;
@@ -23,18 +23,28 @@
             <div class="card">
                 <div class="product-top">
                     <class="product-thumb">
-                        <img src=".//assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
-                        <button class="info-detail" onclick="location.href='detail_product.php?ProductID=<?php echo $value['ProductID'] ?>'">Xem Thêm</button>
+                        <img src="../assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
+                        <button class="info-detail"
+                            onclick="location.href='detail_product.php?ProductID=<?php echo $value['ProductID'] ?>'">Xem
+                            Thêm</button>
                     </class="product-thumb">
                 </div>
                 <p>
                     <?php echo $value['ProductName'] ?>
                 </p>
                 <span class="price">
-                    <strong>
-                        <?php echo number_format($value['PriceToSell'], 0, ",", ".") ?> đ
-                    </strong>
-                    <!-- <strike>40.990.000đ</strike> -->
+                <?php if ($value['Discount'] == 0) { ?>
+                        <strong>
+                            <?php echo number_format($value['PriceToSell'], 0, ",", ".") ?> đ
+                        </strong>
+                    <?php } else { ?>
+                        <strong>
+                            <?php echo number_format($value['PriceToSell'] - $value['PriceToSell'] * $value['Discount'] / 100, 0, ",", ".") ?> đ
+                        </strong>
+                        <strike>
+                            <?php echo number_format($value['PriceToSell'], 0, ",", ".") ?> đ
+                        </strike>
+                    <?php } ?>
                 </span>
             </div>
         <?php endforeach ?>

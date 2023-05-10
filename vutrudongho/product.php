@@ -47,7 +47,11 @@
                             if (isset($_GET['model']) && isset($_GET['model']) > 0) {
                                 include(".//mainproduct/paging-model.php");
                             } else {
-                                include(".//mainproduct/main.php");
+                                if (isset($_GET['nang-cao']) && isset($_GET['nang-cao']) > 0) {
+                                    include("../mainproduct/search-advanced.php");
+                                } else {
+                                    include("../mainproduct/main.php");
+                                }
                             }
                         }
                     }
