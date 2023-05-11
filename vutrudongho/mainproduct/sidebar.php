@@ -10,6 +10,25 @@
     <title>Trang sản phẩm</title>
     <script>
         $(document).ready(function () {
+            $.ajax({
+                url: 'http://localhost/Web2ToSubmit/get_data.php',
+                type: 'GET',
+                dataType: 'json',
+                data: {
+                    id: 'US000002' // Tham số id truyền vào
+                },
+                success: function(data) {
+                    // Hiển thị dữ liệu lấy được
+                    var html = '';
+                    $.each(data, function(index, item) {
+                        html += '<p>' + item.UserID + ' - ' + item.FullName + '</p>';
+                    });
+                    $('#result').html(html);
+                },
+                error: function() {
+                    alert('Lỗi khi lấy dữ liệu');
+                }
+            });
             $("#slider-range").slider({
                 range: true,
                 min: 0,
@@ -45,17 +64,17 @@
     </script>
 </head>
 <?php
-include '../config/connect.php';
+include 'connect.php';
 $brand = mysqli_query($conn, "select * from brand where status = 1");
 $color = mysqli_query($conn, "select DISTINCT Color from product where status=1 ORDER BY Color ASC");
 $range_price = mysqli_query($conn, "select * from brand where status = 1");
 $gender = mysqli_query($conn, "select DISTINCT Gender from product where status=1 ORDER BY Gender ASC");
 $model = mysqli_query($conn, "select DISTINCT Model from product where status=1");
-// $max_price = mysqli_query($conn, "SELECT MAX(PriceToSell) FROM product where status = 1");
+$max_price = mysqli_query($conn, "SELECT MAX(PriceToSell) FROM product where status = 1");
 // $row_max = mysqli_fetch_array($max_price);
 // $a = intval($row_max[0]);
 // var_dump((int)$a);
-// $min_price = mysqli_query($conn, "SELECT MIN(PriceToSell) FROM product where status = 1");
+$min_price = mysqli_query($conn, "SELECT MIN(PriceToSell) FROM product where status = 1");
 // $row_min = mysqli_fetch_array($min_price);
 // $b = intval($row_min[0]);
 ?>

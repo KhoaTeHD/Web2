@@ -1,12 +1,12 @@
 <div id="main">
     <?php
-    include '../config/connect.php';
-    include("../mainproduct/sidebar/sidebar.php");
+    include 'connect.php';
+    include("sidebar.php");
     
     $item_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 9;
     $cur_page = !empty($_GET['page']) ? $_GET['page'] : 1;
     $offset = ($cur_page - 1) * $item_page;
-    $page = mysqli_query($conn, "select * from product where status=1 order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset);
+    $page = mysqli_query($conn, "select * from product where Status=1 order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset);
     $total = "select product.* from product inner join brand on product.BrandID=brand.BrandID where product.Status=1";
     // $total = $total->num_rows;
     // $total_page = ceil($total / $item_page);
@@ -41,7 +41,7 @@
             <div class="card">
                 <div class="product-top">
                     <class="product-thumb">
-                        <img src="../assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
+                        <img src="./assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
                         <button class="info-detail"
                             onclick="location.href='detail_product.php?ProductID=<?php echo $value['ProductID'] ?>'">Xem
                             Thêm</button>

@@ -48,9 +48,9 @@
                                 include(".//mainproduct/paging-model.php");
                             } else {
                                 if (isset($_GET['nang-cao']) && isset($_GET['nang-cao']) > 0) {
-                                    include("../mainproduct/search-advanced.php");
+                                    include(".//mainproduct/search-advanced.php");
                                 } else {
-                                    include("../mainproduct/main.php");
+                                    include("mainproduct/main.php");
                                 }
                             }
                         }

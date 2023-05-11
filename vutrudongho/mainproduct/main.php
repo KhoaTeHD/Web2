@@ -1,7 +1,7 @@
 <div id="main">
     <?php
-    include("../mainproduct/sidebar/sidebar.php");
-    include '../config/connect.php';
+    include("sidebar.php");
+    include 'connect.php';
 
     $item_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 9;
     $cur_page = !empty($_GET['page']) ? $_GET['page'] : 1;
@@ -31,12 +31,12 @@
     $run = mysqli_query($conn, $sort);
     ?>
     <div class="maincontent">
-        <?php if (isset($_GET['sort_num']) && ($_GET['sort_num'] > 0) && mysqli_num_rows($sort_run) > 0) { ?>
+        <?php if (isset($_GET['sort_num']) && ($_GET['sort_num'] > 0) && mysqli_num_rows($run) > 0) { ?>
             <?php foreach ($run as $key => $value): ?>
                 <div class="card">
                     <div class="product-top">
                         <class="product-thumb">
-                            <img src="../assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
+                            <img src="./assets/Img/productImg/<?php echo $value['ProductImg'] ?>"></img>
                             <button class="info-detail"
                                 onclick="location.href='detail_product.php?ProductID=<?php echo $value['ProductID'] ?>'">Xem
                                 Thêm</button>
@@ -106,7 +106,7 @@
             <div class="card">
                 <div class="product-top">
                     <class="product-thumb">
-                        <img src="../assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
+                        <img src="./assets/Img/productImg/<?php echo $value['ProductImg'] ?>"></img>
                         <button class="info-detail"
                             onclick="location.href='detail_product.php?ProductID=<?php echo $value['ProductID'] ?>'">Xem
                             Thêm</button>

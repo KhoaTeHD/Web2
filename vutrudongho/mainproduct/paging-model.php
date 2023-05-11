@@ -1,11 +1,11 @@
 <div id="main">
     <?php
-    include '../config/connect.php';
-    include("../mainproduct/sidebar/sidebar.php");
+    include 'connect.php';
+    include("sidebar.php");
     $item_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 9;
     $cur_page = !empty($_GET['page']) ? $_GET['page'] : 1;
     $offset = ($cur_page - 1) * $item_page;
-    $page = mysqli_query($conn, "select * from product where status=1 order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset);
+    $page = mysqli_query($conn, "select * from product where Status=1 order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset);
     $url = isset($_GET['model']) && ($_GET['model'] > 0) ? $_GET['model'] : '';
     $total = $conn->prepare("select * from product where Model = ?");
     $total->bind_param("s", $url);
@@ -13,7 +13,7 @@
     $total_a = $total->get_result();
     $total_a = $total_a->num_rows;
     $total_page = ceil($total_a / $item_page);
-    $stmt = $conn->prepare("select * from product where Model = ? order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset);
+    $stmt = $conn->prepare("select * from product where Status=1 and Model = ? order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset);
     $stmt->bind_param("s", $url);
     $stmt->execute();
     $abc = $stmt->get_result();
@@ -23,7 +23,7 @@
             <div class="card">
                 <div class="product-top">
                     <class="product-thumb">
-                        <img src="../assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
+                        <img src="./assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
                         <button class="info-detail"
                             onclick="location.href='detail_product.php?ProductID=<?php echo $value['ProductID'] ?>'">Xem
                             Thêm</button>

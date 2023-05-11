@@ -1,5 +1,5 @@
 <?php
-include '../config/connect.php';
+include 'connect.php';
 if (isset($_GET['idBrand']) && ($_GET['idBrand'] > 0)) {
     $slug = $_GET['idBrand'];
     $quantity = mysqli_query($conn, "select * from brand where BrandID = '$slug'");
