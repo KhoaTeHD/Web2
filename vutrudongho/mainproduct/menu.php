@@ -2,34 +2,34 @@
 include 'connect.php';
 if (isset($_GET['idBrand']) && ($_GET['idBrand'] > 0)) {
     $slug = $_GET['idBrand'];
-    $quantity = mysqli_query($conn, "select * from brand where BrandID = '$slug'");
+    $quantity = mysqli_query($conn, "select * from brand where Status = 1 and BrandID = '$slug'");
     $cate = mysqli_fetch_assoc($quantity);
     $data = $cate['BrandName'];
 } elseif (isset($_GET['from']) && isset($_GET['to'])) {
     $pricefrom = $_GET['from'];
     $priceto = $_GET['to'];
-    $quantity = mysqli_query($conn, "select * from product where PriceToSell between $pricefrom and $priceto");
+    $quantity = mysqli_query($conn, "select * from product where Status = 1 and PriceToSell - (PriceToSell*Discount)/100 between $pricefrom and $priceto");
     $from1 = number_format($pricefrom, 0, ",", ".");
     $from2 = number_format($priceto, 0, ",", ".");
     $data = "$from1 đ" . " đến $from2 đ";
 } elseif (isset($_GET['color']) && ($_GET['color'] > 0)) {
     $slug = $_GET['color'];
-    $quantity = mysqli_query($conn, "select * from product where Color = '$slug'");
+    $quantity = mysqli_query($conn, "select * from product where Status = 1 and Color = '$slug'");
     $cate = mysqli_fetch_assoc($quantity);
     $data = $cate['Color'];
 } elseif (isset($_GET['gender']) && ($_GET['gender'] > 0)) {
     $slug = $_GET['gender'];
-    $quantity = mysqli_query($conn, "select * from product where Gender = '$slug'");
+    $quantity = mysqli_query($conn, "select * from product where Status = 1 and Gender = '$slug'");
     $cate = mysqli_fetch_assoc($quantity);
     $data = $cate['Gender'];
 } elseif (isset($_GET['model']) && ($_GET['model'] > 0)) {
     $slug = $_GET['model'];
-    $quantity = mysqli_query($conn, "select * from product where Model = '$slug'");
+    $quantity = mysqli_query($conn, "select * from product where Status = 1 and Model = '$slug'");
     $cate = mysqli_fetch_assoc($quantity);
     $data = $cate['Model'];
 } elseif (isset($_GET['search']) && ($_GET['search'] > 0)) {
     $search = $_GET['search'];
-    $quantity = mysqli_query($conn, "select * from product where product.ProductName LIKE '%$search%'");
+    $quantity = mysqli_query($conn, "select * from product where Status = 1 and product.ProductName LIKE '%$search%'");
     $data = $search;
 } elseif (isset($_GET['nang-cao']) && ($_GET['nang-cao'])) {
     $data = "Tìm kiếm nâng cao";

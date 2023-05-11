@@ -6,8 +6,8 @@
     $item_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 9;
     $cur_page = !empty($_GET['page']) ? $_GET['page'] : 1;
     $offset = ($cur_page - 1) * $item_page;
-    $page = mysqli_query($conn, "select * from product where status=1 order by ProductID LIMIT " . $item_page . " OFFSET " . $offset);
-    $total = mysqli_query($conn, "select * from product");
+    $page = mysqli_query($conn, "select * from product where Status=1 order by ProductID LIMIT " . $item_page . " OFFSET " . $offset);
+    $total = mysqli_query($conn, "select * from product where Status=1");
     $total = $total->num_rows;
     $total_page = ceil($total / $item_page);
     //-----
@@ -27,7 +27,7 @@
             $bla = "ProductID,";
         }
     }
-    $sort = "select * from product order by $bla PriceToSell $sort_option LIMIT " . $item_page . " OFFSET " . $offset;
+    $sort = "select * from product where Status=1 order by $bla PriceToSell $sort_option LIMIT " . $item_page . " OFFSET " . $offset;
     $run = mysqli_query($conn, $sort);
     ?>
     <div class="maincontent">
@@ -66,13 +66,15 @@
                 if ($cur_page > 2) {
                     $first_page = 1;
                     ?>
-                    <a class="page-item" href="?page=<?= $first_page ?>">First</a>
+                    <a class="page-item" href="?page=<?= $first_page ?><?php if (isset($_GET['sort_num']) && ($_GET['sort_num'] > 0))
+                                  echo ($url != '') ? "&sort_num=$url" : '' ?>">First</a>
                     <?php
                 }
                 if ($cur_page > 1) {
                     $prev_page = $cur_page - 1;
                     ?>
-                    <a class="page-item" href="?page=<?= $prev_page ?>">Prev</a>
+                    <a class="page-item" href="?page=<?= $prev_page ?><?php if (isset($_GET['sort_num']) && ($_GET['sort_num'] > 0))
+                                  echo ($url != '') ? "&sort_num=$url" : '' ?>">Prev</a>
                 <?php }
                 ?>
 
@@ -91,12 +93,14 @@
                 <?php
                 if ($cur_page < $total_page - 1) {
                     $next_page = $cur_page + 1; ?>
-                    <a class="page-item" href="?page=<?= $next_page ?>">Next</a>
+                    <a class="page-item" href="?page=<?= $next_page ?><?php if (isset($_GET['sort_num']) && ($_GET['sort_num'] > 0))
+                                  echo ($url != '') ? "&sort_num=$url" : '' ?>">Next</a>
                 <?php }
                 if ($cur_page < $total_page - 2) {
                     $end_page = $total_page;
                     ?>
-                    <a class="page-item" href="?page=<?= $end_page ?>">Last</a>
+                    <a class="page-item" href="?page=<?= $end_page ?><?php if (isset($_GET['sort_num']) && ($_GET['sort_num'] > 0))
+                                  echo ($url != '') ? "&sort_num=$url" : '' ?>">Last</a>
                 <?php }
                 ?>
             </div>

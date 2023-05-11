@@ -7,7 +7,7 @@
     $offset = ($cur_page - 1) * $item_page;
     $page = mysqli_query($conn, "select * from product where Status=1 order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset);
     $url = isset($_GET['gender']) && ($_GET['gender'] > 0) ? $_GET['gender'] : '';
-    $total = $conn->prepare("select * from product where Gender = ?");
+    $total = $conn->prepare("select * from product where Status = 1 and Gender = ?");
     $total->bind_param("s", $url);
     $total->execute();
     $total_a = $total->get_result();

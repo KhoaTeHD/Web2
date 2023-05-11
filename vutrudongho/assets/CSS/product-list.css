@@ -416,25 +416,29 @@ ul.list-model {
 .card p {
     font-family: "Roboto";
     /* font-weight: 700; */
-    padding-bottom: 0px;
+    /* padding-bottom: 0px; */
     font-size: 18px;
     outline: none;
     text-decoration: none;
     line-height: 21px;
     height: 25px;
-    max-width: 100%;}
+    padding: 0px 10px 10px 10px;
+    max-width: 100%;
+}
 
 .price {
-    padding: 0;
     height: 30px;
     width: auto;
     display: block;
     /* position: absolute; */
     bottom: 15px;
-    margin-top: 60px;
+    margin-top: 70px;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    padding: 20px;
+    /* display: block; */
+    margin-bottom: 10px;
 }
 
 strong {

@@ -4,20 +4,20 @@
     include("sidebar.php");
     $pricefrom = isset($_GET['from']) ? $_GET['from'] : '';
     $priceto = isset($_GET['to']) ? $_GET['to'] : '';
-    $query_run = mysqli_query($conn, "select * from product where PriceToSell between $pricefrom and $priceto");
+    $query_run = mysqli_query($conn, "select * from product where PriceToSell - (PriceToSell*Discount)/100 between $pricefrom and $priceto");
 
     $item_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 9;
     $cur_page = !empty($_GET['page']) ? $_GET['page'] : 1;
     $offset = ($cur_page - 1) * $item_page;
     $page = mysqli_query($conn, "select * from product where Status=1 order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset);
-    $total = mysqli_query($conn, "select * from product where PriceToSell between $pricefrom and $priceto");
+    $total = mysqli_query($conn, "select * from product where Status = 1 and PriceToSell - (PriceToSell*Discount)/100 between $pricefrom and $priceto");
     $total = $total->num_rows;
     $total_page = ceil($total / $item_page);
     //---------
     if (isset($_GET['from']) && isset($_GET['to'])) {
         $pricefrom = $_GET['from'];
         $priceto = $_GET['to'];
-        $query = "select * from product where Status=1 and PriceToSell between $pricefrom and $priceto order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset;
+        $query = "select * from product where Status=1 and PriceToSell - (PriceToSell*Discount)/100 between $pricefrom and $priceto order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset;
     } else {
         $query = "select * from product where Status=1 order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset;
     }
@@ -59,13 +59,13 @@
                 if ($cur_page > 2) {
                     $first_page = 1;
                     ?>
-                    <a class="page-item" href="?page=<?= $first_page ?>">First</a>
+                    <a class="page-item" href="?page=<?= $first_page ?><?php echo ($pricefrom != '') ? "&from=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to=$priceto" : '' ?>">First</a>
                     <?php
                 }
                 if ($cur_page > 1) {
                     $prev_page = $cur_page - 1;
                     ?>
-                    <a class="page-item" href="?page=<?= $prev_page ?>">Prev</a>
+                    <a class="page-item" href="?page=<?= $prev_page ?><?php echo ($pricefrom != '') ? "&from=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to=$priceto" : '' ?>">Prev</a>
                 <?php }
                 ?>
 
@@ -84,12 +84,12 @@
                 <?php
                 if ($cur_page < $total_page - 1) {
                     $next_page = $cur_page + 1; ?>
-                    <a class="page-item" href="?page=<?= $next_page ?>">Next</a>
+                    <a class="page-item" href="?page=<?= $next_page ?><?php echo ($pricefrom != '') ? "&from=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to=$priceto" : '' ?>">Next</a>
                 <?php }
                 if ($cur_page < $total_page - 2) {
                     $end_page = $total_page;
                     ?>
-                    <a class="page-item" href="?page=<?= $end_page ?>">Last</a>
+                    <a class="page-item" href="?page=<?= $end_page ?><?php echo ($pricefrom != '') ? "&from=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to=$priceto" : '' ?>">Last</a>
                 <?php }
                 ?>
             </div>

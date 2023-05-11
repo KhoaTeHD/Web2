@@ -25,8 +25,8 @@
             $total .= " AND brand.BrandName LIKE '%$brand%'";
         }
         if ((isset($_GET['from-advanced']) && !empty($pricefrom)) && (isset($_GET['to-advanced']) && !empty($priceto))) {
-            $chuoiquery .= " AND product.PriceToSell between $pricefrom and $priceto";
-            $total .= " AND product.PriceToSell between $pricefrom and $priceto";
+            $chuoiquery .= " AND product.PriceToSell - (PriceToSell*Discount)/100 between $pricefrom and $priceto";
+            $total .= " AND product.PriceToSell - (PriceToSell*Discount)/100 between $pricefrom and $priceto";
         }
         $chuoiquery .= " order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset;
         $total_a =  mysqli_query($conn, $total);
@@ -72,13 +72,13 @@
             if ($cur_page > 2) {
                 $first_page = 1;
                 ?>
-                <a class="page-item" href="?page=<?= $first_page ?>">First</a>
+                <a class="page-item" href="?page=<?= $first_page ?><?php echo ($search != '') ? "&keyword=$search" : '' ?><?php echo ($brand != '') ? "&brandname=$brand" : '' ?><?php echo ($pricefrom != '') ? "&from-advanced=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to-advanced=$priceto" : '' ?>&nang-cao=Tìm+kiếm">First</a>
                 <?php
             }
             if ($cur_page > 1) {
                 $prev_page = $cur_page - 1;
                 ?>
-                <a class="page-item" href="?page=<?= $prev_page ?>">Prev</a>
+                <a class="page-item" href="?page=<?= $prev_page ?><?php echo ($search != '') ? "&keyword=$search" : '' ?><?php echo ($brand != '') ? "&brandname=$brand" : '' ?><?php echo ($pricefrom != '') ? "&from-advanced=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to-advanced=$priceto" : '' ?>&nang-cao=Tìm+kiếm">Prev</a>
             <?php }
             ?>
 
@@ -97,12 +97,12 @@
             <?php
             if ($cur_page < $total_page - 1) {
                 $next_page = $cur_page + 1; ?>
-                <a class="page-item" href="?page=<?= $next_page ?>">Next</a>
+                <a class="page-item" href="?page=<?= $next_page ?><?php echo ($search != '') ? "&keyword=$search" : '' ?><?php echo ($brand != '') ? "&brandname=$brand" : '' ?><?php echo ($pricefrom != '') ? "&from-advanced=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to-advanced=$priceto" : '' ?>&nang-cao=Tìm+kiếm">Next</a>
             <?php }
             if ($cur_page < $total_page - 2) {
                 $end_page = $total_page;
                 ?>
-                <a class="page-item" href="?page=<?= $end_page ?>">Last</a>
+                <a class="page-item" href="?page=<?= $end_page ?><?php echo ($search != '') ? "&keyword=$search" : '' ?><?php echo ($brand != '') ? "&brandname=$brand" : '' ?><?php echo ($pricefrom != '') ? "&from-advanced=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to-advanced=$priceto" : '' ?>&nang-cao=Tìm+kiếm">Last</a>
             <?php }
             ?>
         </div>
