@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href=".//assets/css/about_us.css">
-    <link rel="stylesheet" href=".//assets/css/header.css">
-    <link rel="stylesheet" href=".//assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/about_us.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap&amp;_cacheOverride=1679484892371"
         data-tag="font">
@@ -19,16 +19,16 @@
   <!--Start: Header-->
   <div id="bar-header">
     <?php
-    include(".//components/header.php");
+    include("components/header.php");
     ?>
   </div>
   <!--End: Header-->
 <body style="position: relative;">
     <div id="container-aboutUs" style="position: relative;top:50px;height: fit-content;width: 100%;display: flex;flex-direction: column;align-items: center;">
-        <img src=".//assets/Img/hoangImg/imgs/banner_about_us.png" width="100%" alt="">
+        <img src="assets/Img/hoangImg/imgs/banner_about_us.png" width="100%" alt="">
         <div id="main-aboutUs" style="display: flex;flex-direction: row;">
             <div id="img-aboutUs-div" style="">
-                <img id="img-aboutUs" src=".//assets/Img/hoangImg/imgs/apple_banner2.png" width="300" alt="">
+                <img id="img-aboutUs" src="assets/Img/hoangImg/imgs/apple_banner2.png" width="300" alt="">
             </div>
             <div id="content-aboutUs" style="display: flex;align-items: center;">
                 <p id="text-content-aboutUs" style="text-align: justify;margin-right: 20px;margin-left: 20px;">
@@ -46,164 +46,164 @@
         <a name="He_thong_cua_hang_mien_bacc"></a>
         <a name="He_thong_cua_hang_mien_trung"></a>
         <a name="He_thong_cua_hang_mien_nam"></a>
-        <img src=".//assets/Img/hoangImg/imgs/banner_hethongcuahang.png" width="100%" alt="">
+        <img src="assets/Img/hoangImg/imgs/banner_hethongcuahang.png" width="100%" alt="">
         <div id="container-hethongcuahang" style="display: flex;flex-direction: row;width: 100%;height: fit-content;">
             <div id="hethongcuahangmienBac" style="display: flex;flex-direction: column;width: calc(100%/3);height: fit-content;align-items: center;">
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
             </div>
             <div id="hethongcuahangmienTrung" style="display: flex;flex-direction: column;width: calc(100%/3);height: fit-content;align-items: center;">
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color:#fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
 
             </div>
             <div id="hethongcuahangmienNam" style="display: flex;flex-direction: column;width: calc(100%/3);height: fit-content;align-items: center;">
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color:#fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color:#fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color:#fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color:#fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color:#fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color:#fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color:#fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color:#fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color:#fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
                 <div style="display: flex;flex-direction: row;margin-top: 8px;">
-                    <img src=".//assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
+                    <img src="assets/Img/hoangImg/icons/icons8-location-24.png" alt="">
                     <p style="line-height: 24px;color: #fff;">VTDH: Q.10: 770F, Nguyễn Văn Cừ</p>
                 </div>
             </div>
@@ -212,7 +212,7 @@
       <!--Start: Footer-->
   <div id="my-footer" style="margin-top: 50px;">
     <?php
-    include(".//components/footer.php");
+    include("components/footer.php");
     ?>
   </div>
   <!--End: Footer-->

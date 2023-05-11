@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href=".//assets/css/help.css">
-  <link rel="stylesheet" href=".//assets/css/header.css">
-  <link rel="stylesheet" href=".//assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/help.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap&amp;_cacheOverride=1679484892371"
     data-tag="font">
@@ -19,7 +19,7 @@
 <!--Start: Header-->
 <div id="bar-header">
   <?php
-  include(".//components/header.php");
+  include("components/header.php");
   ?>
 </div>
 <!--End: Header-->
@@ -28,7 +28,7 @@
     background: linear-gradient(133deg, rgba(128,83,221,1) 2%, rgba(173,114,206,1) 50%, rgba(220,165,200,1) 100%);">
   <div id="container-aboutUs"
     style="position: relative;top:50px;height: fit-content;width: 100%;display: flex;flex-direction: column;align-items: center;">
-    <img src=".//assets/Img/hoangImg/imgs/banner_hotro.png" width="100%" alt="">
+    <img src="assets/Img/hoangImg/imgs/banner_hotro.png" width="100%" alt="">
     <a name="mua_hang_tra_gop"></a>
     <div id="muahangtragop"
       style="margin-top:50px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
@@ -102,7 +102,7 @@
       <p>Số lượng ngân hàng chấp nhận thanh toán: 29 ngân hàng</p>
       <p>Kỳ hạn trả góp 06 tháng</p>
       <div style="width: 100%;height: fit-content;text-align: center;">
-        <img src=".//assets/img/hoangImg/imgs/ngan-hang-nao-ho-tro-tra-gop (1)-800x327.jpg" alt="" width="700">
+        <img src="assets/img/hoangImg/imgs/ngan-hang-nao-ho-tro-tra-gop (1)-800x327.jpg" alt="" width="700">
       </div>
       <p>Trả góp qua thẻ tín dụng, khách hàng sẽ được hưởng lãi suất 0% hàng tháng. Khách hàng được mua hàng với giá ưu
         đãi + phí chuyển đổi trả góp (khoản phí duy nhất khách phải trả). Phí chuyển đổi trả góp là khoản phí được thu
@@ -423,7 +423,7 @@
   <!--Start: Footer-->
   <div id="my-footer" style="margin-top: 50px;">
     <?php
-    include(".//components/footer.php");
+    include("components/footer.php");
     ?>
   </div>
   <!--End: Footer-->

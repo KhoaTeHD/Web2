@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href=".//assets/css/account_registration_form.css">
-  <link rel="stylesheet" href=".//assets/css/header.css">
-  <link rel="stylesheet" href=".//assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/account_registration_form.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap&amp;_cacheOverride=1679484892371"
     data-tag="font">
@@ -25,7 +25,7 @@
   <!--Start: Header-->
   <div id="bar-header">
     <?php
-    include(".//components/header.php");
+    include("components/header.php");
     ?>
   </div>
 
@@ -33,7 +33,7 @@
   <div id="body" style=" height: fit-content;margin-top: 50px;">
     <div class="containerlogin-containerlogin">
     <div style="width: 40%;height: 100%;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-      <img src=".//assets/img/hoangImg/logo/logo_tron.png" alt="z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772"
+      <img src="assets/img/hoangImg/logo/logo_tron.png" alt="z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772"
         class="containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2" onclick="">
       <span class="containerlogin-text24 TitleMedium">
         <span>VŨ TRỤ ĐỒNG HỒ</span>
@@ -103,9 +103,9 @@
           <div>
             <div style="display: flex; flex-direction:row ;width: fit-content;">
               <p style="margin-bottom: 4px;">Nhập lại mật khẩu (*)</p>
-              <img id="khongtrungkhop" src=".//assets/img/hoangImg/icons/icons8-cancel-48.png" alt="" width="20px"
+              <img id="khongtrungkhop" src="assets/img/hoangImg/icons/icons8-cancel-48.png" alt="" width="20px"
                 height="20px" style="margin-left: 10px;display: none;">
-              <img id="trungkhop" src=".//assets/img/hoangImg/icons/icons8-ok.gif" alt="" width="20px" height="20px"
+              <img id="trungkhop" src="assets/img/hoangImg/icons/icons8-ok.gif" alt="" width="20px" height="20px"
                 style="margin-left: -20px;display: none;">
             </div>
             <input id="repeatPassword" name="repeatPassword" type="password"
@@ -156,7 +156,7 @@
   <!--Start: Footer-->
   <div id="my-footer" style="">
   <?php
-    include(".//components/footer.php");
+    include("components/footer.php");
     ?>
   </div>
   <!--End: Footer-->

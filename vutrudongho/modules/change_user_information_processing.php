@@ -26,8 +26,24 @@ if (isset($_REQUEST['btnSubmitEdit'])) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = sprintf("UPDATE `user` SET `FullName` = '%s', `NumberPhone` = '%s', `Email` = '%s', `HouseRoadAddress` = '%s', `Ward` = '%s', `District` = '%s', `Province` = '%s', `Status` = 1 WHERE `user`.`UserID` = '%s'", $fullName, $numberPhone, $email, $diaChiNha, $phuongXa, $quanHuyen, $tinh, $userID);
+        // Lấy thông tin mới từ form đăng ký
+        $newNumberPhone = $numberPhone;
+        $newEmail = $email;
 
+        // Kiểm tra trùng lặp
+        $sql22 = "SELECT * FROM `user` WHERE (NumberPhone = '$newNumberPhone' OR Email = '$newEmail') AND UserID != '$userID'";
+        $result22 = $conn->query($sql22);
+
+        if ($result22->num_rows > 0) {
+            //echo "Không được thay đổi thông tin vì trùng lặp NumberPhone hoặc Email.";
+            //echo 'Sai password';
+		    $errorChangeInfor = "Số điện thoại hoặc Email đã tồn tại!";
+		    $_SESSION['errorChangeInfor'] = $errorChangeInfor;
+            header("Location: ../../change_user_information.php");
+        } else {
+            $sql = sprintf("UPDATE `user` SET `FullName` = '%s', `NumberPhone` = '%s', `Email` = '%s', `HouseRoadAddress` = '%s', `Ward` = '%s', `District` = '%s', `Province` = '%s', `Status` = 1 WHERE `user`.`UserID` = '%s'", $fullName, $numberPhone, $email, $diaChiNha, $phuongXa, $quanHuyen, $tinh, $userID);
+        
+    
 
     if ($conn->query($sql) === TRUE) {
         //echo "The record editted successfully";
@@ -41,10 +57,9 @@ if (isset($_REQUEST['btnSubmitEdit'])) {
         $ward = $row['Ward'];
         $district = $row['District'];
         $province = $row['Province'];
-        if($_SESSION['current_numberPhone'] != $numberPhone || $_SESSION['current_email'] != $email){
+        if ($_SESSION['current_numberPhone'] != $numberPhone || $_SESSION['current_email'] != $email) {
             header("Location: ../../logout.php?isAdmin=1");
-        }
-        else{
+        } else {
             $_SESSION['current_fullName'] = $fullName;
             $_SESSION['current_numberPhone'] = $numberPhone;
             $_SESSION['current_email'] = $email;
@@ -55,11 +70,11 @@ if (isset($_REQUEST['btnSubmitEdit'])) {
             header("Location: ../../user_information.php");
             exit();
         }
-        
+
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
+        }
     mysqli_close($conn);
 } ?>
 

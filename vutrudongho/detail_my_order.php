@@ -70,9 +70,9 @@ global $tongtien1mathang;
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href=".//assets/css/detail_my_order.css">
-  <link rel="stylesheet" href=".//assets/css/header.css">
-  <link rel="stylesheet" href=".//assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/detail_my_order.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap&amp;_cacheOverride=1679484892371"
     data-tag="font">
@@ -85,13 +85,13 @@ global $tongtien1mathang;
   <!--Start: Header-->
   <div id="bar-header">
     <?php
-    include(".//components/header.php");
+    include("components/header.php");
     ?>
   </div>
   <!--End: Header-->
   <div id="main-user">
     <div id="imagelogo">
-      <img id="img-logo" src=".//assets/img/hoangImg/logo/logo_text_400x100.png" alt="">
+      <img id="img-logo" src="assets/img/hoangImg/logo/logo_text_400x100.png" alt="">
     </div>
     <div id="main-content">
       <div id="tab-bar-user">
@@ -131,7 +131,7 @@ global $tongtien1mathang;
           </div>
           <div class="main-component-order"
             style="display:flex;flex-direction: row;justify-content: space-between;align-items: center;width: 95%;margin-top: 4px;">
-            <div style="width: 15%;"><img src=".//assets/img/productImg/' . $urlPicture . '" width="75"
+            <div style="width: 15%;"><img src="assets/img/productImg/' . $urlPicture . '" width="75"
                 alt="" /></div>
             <p class="styleTextMyOrder" style="width: 35%;text-align: justify;">' . $productName . '</p>
             <p class="styleTextMyOrder" style="width: 13%; margin-left: 40px;">' . $model . '</p>
@@ -191,7 +191,7 @@ global $tongtien1mathang;
   <!--Start: Footer-->
   <div id="my-footer" style="margin-top: 50px;">
     <?php
-    include(".//components/footer.php");
+    include("components/footer.php");
     ?>
   </div>
   <!--End: Footer-->

@@ -9,9 +9,9 @@ require_once('lib_session.php');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href=".//assets/css/change_user_information_processing.css">
-  <link rel="stylesheet" href=".//assets/css/header.css">
-  <link rel="stylesheet" href=".//assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/change_user_information_processing.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap&amp;_cacheOverride=1679484892371" data-tag="font">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" data-tag="font">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
@@ -63,13 +63,13 @@ require_once('lib_session.php');
   <!--Start: Header-->
   <div id="bar-header">
     <?php
-    include(".//components/header.php");
+    include("components/header.php");
     ?>
   </div>
   <!--End: Header-->
   <div id="main-user">
     <div id="imagelogo">
-      <img id="img-logo" src=".//assets/img/hoangImg/logo/logo_text_400x100.png" alt="">
+      <img id="img-logo" src="assets/img/hoangImg/logo/logo_text_400x100.png" alt="">
     </div>
     <div id="main-content">
       <div id="tab-bar-user">
@@ -96,9 +96,18 @@ require_once('lib_session.php');
                     <p><?php echo $_SESSION['current_houseRoadAddress'] ?>, <?php echo $_SESSION['current_ward'] ?>, <?php echo $_SESSION['current_district'] ?>, <?php echo $_SESSION['current_province'] ?></p>
                 </div>
             </div> -->
-        <form name="frm" id="" action=".//modules/change_user_information_processing.php" method="POST" onsubmit="return kiemTra();" style="display: flex;flex-direction: row;width: 100%;">
-
-          <p id="titleEditInforUser" style="position: absolute;padding: 12px;" class="LabelMedium">Chỉnh sửa thông tin</p>
+        <form name="frm" id="" action="modules/change_user_information_processing.php" method="POST" onsubmit="return kiemTra();" style="display: flex;flex-direction: row;width: 100%;">
+          <div style="position: absolute;width: 100%;display: flex;flex-direction: row;height: fit-content;align-items: center;">
+          <p id="titleEditInforUser" style="padding: 12px;width: fit-content;" class="LabelMedium">Chỉnh sửa thông tin</p>
+          <div style="height: 100%; width: fit-content;">
+          <?php
+              if (isset($_SESSION['errorChangeInfor'])) {
+                echo '<p id="errorChangeInfor" style="font-size: 12px;line-height: 18.391px;color: red;font-weight: bold;">' . $_SESSION['errorChangeInfor'] . '</p>';
+                unset($_SESSION['errorChangeInfor']);
+              }
+          ?>
+          </div>
+          </div>
           <div id="edit_infor_user">
             <div>
               <p class="LabelMedium" style="margin-top: 30px;margin-bottom: 4px;">Họ và tên (*)</p>
@@ -160,7 +169,7 @@ require_once('lib_session.php');
   <!--Start: Footer-->
   <div id="my-footer" style="position: absolute;">
     <?php
-    include(".//components/footer.php");
+    include("components/footer.php");
     ?>
   </div>
   <!--End: Footer-->

@@ -9,9 +9,9 @@ require_once('lib_session.php');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href=".//assets/css/login.css">
-  <link rel="stylesheet" href=".//assets/css/header.css">
-  <link rel="stylesheet" href=".//assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap&amp;_cacheOverride=1679484892371"
     data-tag="font">
@@ -35,7 +35,7 @@ require_once('lib_session.php');
   <div id="bar-header">
     <?php
 
-    include(".//components/header.php");
+    include("components/header.php");
 
     ?>
   </div>
@@ -44,7 +44,7 @@ require_once('lib_session.php');
   <div id="body" style=" height: fit-content;margin-top: 50px;">
     <div class="containerlogin-containerlogin">
     <div style="width: 50%;height: 100%;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-      <img src=".//assets/img/hoangImg/logo/logo_tron.png" alt="z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772"
+      <img src="assets/img/hoangImg/logo/logo_tron.png" alt="z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed23772"
         class="containerlogin-z416347160358228d6ce2e5edbcf0ee0b207d1a4329bed2" onclick="showAlert();">
       <span class="containerlogin-text24 TitleMedium">
         <span>VŨ TRỤ ĐỒNG HỒ</span>
@@ -96,8 +96,8 @@ require_once('lib_session.php');
                 style="width:100%; height:42px; border-style: outset; border: 1px solid #674FA3; border-radius: 8px;"
                 placeholder="Mật khẩu">
                 <div id="container-eyes">
-                    <img id="btn-eyes" src=".//assets/img/hoangImg/icons/icons8-eye-24.png" alt="ClosedEye3772" class="containerlogin-closed-eye" onclick ="showHidePass();">
-                    <img id="btn-eyes-blind" style="display:none;" src=".//assets/img/hoangImg/icons/icons8-blind-24.png" alt="ClosedEye3772" class="containerlogin-closed-eye" onclick ="showHidePass();">
+                    <img id="btn-eyes" src="assets/img/hoangImg/icons/icons8-eye-24.png" alt="ClosedEye3772" class="containerlogin-closed-eye" onclick ="showHidePass();">
+                    <img id="btn-eyes-blind" style="display:none;" src="assets/img/hoangImg/icons/icons8-blind-24.png" alt="ClosedEye3772" class="containerlogin-closed-eye" onclick ="showHidePass();">
                 </div>
                 </div>
             </div>   
@@ -127,7 +127,7 @@ require_once('lib_session.php');
   <!--Start: Footer-->
   <div id="my-footer" style="">
     <?php
-    include(".//components/footer.php");
+    include("components/footer.php");
     ?>
   </div>
   <!--End: Footer-->
