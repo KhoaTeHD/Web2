@@ -62,11 +62,10 @@ require_once('lib_session.php');
 
         echo '
 
-      <img src=".//assets/img/hoangImg/imgs/rectangle23772-m91-500w.png" alt="Rectangle23772"
-        class="containerlogin-rectangle2">
-      <div class="containerlogin-frame12">
-        <div class="containerlogin-frame10"><p>Nhấn vào <a href="logout.php?isAdmin=1">đây</a> nếu bạn muốn đăng xuất!</p></div>
-      </div>
+        <div style="width: 50%;height: 100%;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <p>Nhấn vào <a href="logout.php?isAdmin=1">đây</a> nếu bạn muốn đăng xuất!</p>
+        </div>
+
         ';
       } else {
         echo '

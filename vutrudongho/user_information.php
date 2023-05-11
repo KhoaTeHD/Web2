@@ -39,7 +39,7 @@ require_once('lib_session.php');
         </p>
         <ul id="primary">
           <li style="margin-bottom: 16px;"><a href="user_information.php">Thông tin tài khoản</a></li>
-          <li><a href="my_order.php">Quản lý đơn hàng</a></li>
+          <li><a href="my_order.php?page=1">Quản lý đơn hàng</a></li>
         </ul>
 <!--         <p class="content-tab-bar-user"
           style="margin-bottom: 12px;color:#fff;width: 100%;height: 50px;text-align: center;line-height: 50px;"><a

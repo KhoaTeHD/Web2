@@ -77,7 +77,7 @@ $result = mysqli_query($conn, $query);
         </p>
         <ul id="primary3">
           <li style="margin-bottom: 16px;"><a href="user_information.php">Thông tin tài khoản</a></li>
-          <li><a href="my_order.php">Quản lý đơn hàng</a></li>
+          <li><a href="my_order.php?page=1">Quản lý đơn hàng</a></li>
         </ul>
 
       </div>

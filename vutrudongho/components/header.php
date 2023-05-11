@@ -33,7 +33,10 @@ echo '
 <?php
 //var_dump(isAdminLogged());
 if (isAdminLogged()) {
-    echo ' <img id="avt_user" onclick="avtClicked();" src=".//assets/img/hoangImg/icons/icons8-user-64.png" width="34" height="34" style="order: 4;" alt=""></div>
+    echo ' 
+    <p style="order: 4;color:#fff;">Xin chào ';echo $_SESSION['current_fullName'];
+    echo '</p>
+    <img id="avt_user" onclick="avtClicked();" src=".//assets/img/hoangImg/icons/icons8-user-64.png" width="34" height="34" style="order: 5;" alt=""></div>
    <div id="menu-options-user" style="position: absolute;
                                       top:37px;
                                       right:0;
@@ -59,7 +62,7 @@ if (isAdminLogged()) {
               
               ">
    <li style="padding-left:8px;display:flex;flex-direction:row;justify-content:left;margin-left:20px;" ><img style="position:absolute;left:0;" src=".//assets/img/hoangImg/icons/icons8-user-menu-male-24.png" width="22" alt=""></img><a class="the_a_Black_Purple" href="user_information.php">Thông tin tài khoản</a></li>
-   <li style="padding-left:8px;display:flex;flex-direction:row;justify-content:left;margin-left:20px;"><img style="position:absolute;left:0;" src=".//assets/img/hoangImg/icons/icons8-purchase-order-48.png" width="22" alt=""></img><a class="the_a_Black_Purple" href="my_order.php">Đơn hàng của tôi</a></li>
+   <li style="padding-left:8px;display:flex;flex-direction:row;justify-content:left;margin-left:20px;"><img style="position:absolute;left:0;" src=".//assets/img/hoangImg/icons/icons8-purchase-order-48.png" width="22" alt=""></img><a class="the_a_Black_Purple" href="my_order.php?page=1">Đơn hàng của tôi</a></li>
    <li style="padding-left:8px;display:flex;flex-direction:row;justify-content:left;margin-left:20px;"><img style="position:absolute;left:0;" src=".//assets/img/hoangImg/icons/icons8-password-100.png" width="22" alt=""></img><a class="the_a_Black_Purple" href="change_pass.php">Đổi mật khẩu</a></li>
    <li><hr></li>
    <li style="padding-left:8px;display:flex;flex-direction:row;justify-content:left;margin-left:20px;"><img style="position:absolute;left:0;" src=".//assets/img/hoangImg/icons/icons8-logout-48.png" width="22" alt=""></img><a class="the_a_Black_Purple" class="nav-link" href="logout.php?isAdmin=1">Đăng xuất</a></li>

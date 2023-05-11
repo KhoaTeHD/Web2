@@ -43,6 +43,9 @@
             </div>
         </div>
         <a name="He_thong_cua_hang_tren_toan_quoc"></a>
+        <a name="He_thong_cua_hang_mien_bacc"></a>
+        <a name="He_thong_cua_hang_mien_trung"></a>
+        <a name="He_thong_cua_hang_mien_nam"></a>
         <img src=".//assets/Img/hoangImg/imgs/banner_hethongcuahang.png" width="100%" alt="">
         <div id="container-hethongcuahang" style="display: flex;flex-direction: row;width: 100%;height: fit-content;">
             <div id="hethongcuahangmienBac" style="display: flex;flex-direction: column;width: calc(100%/3);height: fit-content;align-items: center;">

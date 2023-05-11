@@ -69,6 +69,7 @@
             $conn->rollback();
             header("Location: cart.php");
         }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +92,7 @@
         <div class="placement_body">
             <img src="assets/Img/icons/icons8-checkmark-200.png" alt="">
             <h2>Đặt hàng thành công!</h2>
-            <p>Cảm ơn bạn đã tin tưởng vutrudongho.vn</p>
+            <p>Cảm ơn bạn đã tin tưởng vutrudongho.com</p>
             <button>OK</button>
         </div>
     </div>
@@ -104,8 +105,8 @@
 </html>
 
 <?php
-    }
-    else {
-        header("Location: index.php");
-    }
+    //}
+    // else {
+    //     header("Location: index.php");
+    // }
 ?>

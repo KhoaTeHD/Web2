@@ -29,9 +29,10 @@
   <div id="container-aboutUs"
     style="position: relative;top:50px;height: fit-content;width: 100%;display: flex;flex-direction: column;align-items: center;">
     <img src=".//assets/Img/hoangImg/imgs/banner_hotro.png" width="100%" alt="">
+    <a name="mua_hang_tra_gop"></a>
     <div id="muahangtragop"
-      style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
-      <p>Mua hàng trả góp</p>
+      style="margin-top:50px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
+      <p style="font-weight: bold;font-size: 24px;margin-bottom: 4px;">Mua hàng trả góp</p>
       <p>Để thuận tiện cho việc mua sắm của quý khách, Vũ Trụ Đồng Hồ triển khai 2 hình thức hỗ trợ mua trả góp lãi suất
         0% với thủ tục đơn giản, thời gian xét duyệt nhanh chóng, chi tiết xem dưới đây:</p>
       <p>I. Trả góp qua Công ty tài chính (Home credit, FE Credit , Shinhan Finance)</p>
@@ -107,9 +108,10 @@
         đãi + phí chuyển đổi trả góp (khoản phí duy nhất khách phải trả). Phí chuyển đổi trả góp là khoản phí được thu
         trên số tiền mà khách hàng trả góp.</p>
     </div>
+    <a name="huong_dan_dat_hang_va_thanh_toan"></a>
     <div id="huongdandathangvathanhtoan"
-      style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
-      <p>Hướng dẫn đặt hàng và thanh toán</p>
+      style="margin-top:50px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
+      <p style="font-weight: bold;font-size: 24px;margin-bottom: 4px;">Hướng dẫn đặt hàng và thanh toán</p>
       <p> I.TIẾN HÀNH ĐẶT HÀNG</p>
       <p>Bước 1: Đặt hàng online bằng một trong các hình thức sau:</p>
       <ul>
@@ -172,9 +174,10 @@
           gian sớm nhất.</li>
       </ul>
     </div>
+    <a name="chinh_sach_bao_hanh"></a>
     <div id="chinhsachbaohanh"
-      style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
-      <p>Chính sách về bảo hành</p>
+      style="margin-top:50px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
+      <p style="font-weight: bold;font-size: 24px;margin-bottom: 4px;">Chính sách về bảo hành</p>
       <p>Vũ Trụ Đồng Hồ cam kết tất cả các sản phẩm bán ra tại Vũ Trụ Đồng Hồ đều là sản phẩm chính hãng, và nhận được
         các chế độ bảo hành chính hãng.</p>
       <p>Quý khách hàng có thể tới trực tiếp các Trung tâm bảo hành chính hãng hoặc tới các cửa hàng Vũ Trụ Đồng Hồ gần
@@ -212,9 +215,10 @@
       <p>Tại cửa hàng Vũ Trụ Đồng Hồ: Theo giờ làm việc của các cửa hàng Vũ Trụ Đồng Hồ trên cả nước.</p>
       <p>Tại TTBH Hãng: Theo giờ làm việc của TTBH hãng.</p>
     </div>
+    <a name="pham_vi_dieu_khoan_goi_bao_hanh"></a>
     <div id="phamvidieukhoangoibaohanh"
-      style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
-      <p>Phạm vi, điều khoản gói bảo hành</p>
+      style="margin-top:50px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
+      <p style="font-weight: bold;font-size: 24px;margin-bottom: 4px;">Phạm vi, điều khoản gói bảo hành</p>
       <table border="1" data-rows="4" data-cols="4" class="tve_table tcb-fixed tve_table_flat"
         data-css="tve-u-1735162f073" data-v="top">
         <thead data-css="tve-u-1735162f074">
@@ -328,8 +332,9 @@
         </tbody>
       </table>
     </div>
-    <div id="chinhsachbaomat" style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
-      <p>Chính sách bảo mật</p>
+    <a name="chinh_sach_bao_mat"></a>
+    <div id="chinhsachbaomat" style="margin-top:50px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
+      <p style="font-weight: bold;font-size: 24px;margin-bottom: 4px;">Chính sách bảo mật</p>
       <p>Vũ Trụ Đồng Hồ cam kết sẽ bảo mật những thông tin mang tính riêng tư của bạn. Bạn vui lòng đọc bản “Chính sách bảo mật” dưới đây để hiểu hơn những cam kết mà chúng tôi thực hiện, nhằm tôn trọng và bảo vệ quyền lợi của người truy cập:</p>
       <p>1. Mục đích và phạm vi thu thập</p>
       <p>- Để truy cập và sử dụng một số dịch vụ tại Vũ Trụ Đồng Hồ, bạn có thể sẽ được yêu cầu đăng ký với chúng tôi thông tin cá nhân (Email, Họ tên, Số ĐT liên lạc, địa chỉ giao hàng, địa chỉ email). Mọi thông tin khai báo phải đảm bảo tính chính xác và hợp pháp. Vũ Trụ Đồng Hồ không chịu mọi trách nhiệm liên quan đến pháp luật của thông tin khai báo. </p>
@@ -366,9 +371,9 @@
       <p>+ Khách hàng có quyền yêu cầu thay đổi hoặc huỷ bỏ thông tin cá nhân của mình.</p>
       <p>+ Thông tin cá nhân của thành viên được Vũ Trụ Đồng Hồ cam kết bảo mật tuyệt đối theo chính sách bảo vệ thông tin cá nhân của Vũ Trụ Đồng Hồ. Việc thu thập và sử dụng thông tin của mỗi thành viên chỉ được thực hiện khi có sự đồng ý của khách hàng đó trừ những trường hợp pháp luật có quy định khác.</p>
     </div>
-
-    <div id="chinhsachgiaiquyetkhieunai" style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
-      <p>Chính sách giải quyết khiếu nại</p>
+    <a name="chinh_sach_giai_quyet_khieu_nai"></a>
+    <div id="chinhsachgiaiquyetkhieunai" style="margin-top:50px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
+      <p style="font-weight: bold;font-size: 24px;margin-bottom: 4px;">Chính sách giải quyết khiếu nại</p>
       <p>Quy trình giải quyết tranh chấp, khiếu nại</p>
       <p>Vũ Trụ Đồng Hồ có trách nhiệm tiếp nhận và xử lý khiếu nại của khách hàng liên quan đến giao dịch tại website https://vutrudongho.com.</p>
       <p>Khách hàng có quyền gửi khiếu nại về việc chất lượng, dịch vụ, giá cả sản phẩm không đúng với mô tả, thông tin thanh toán bị tiết lộ gây thiệt hại cho mình đến Ban quản trị của Vũ Trụ Đồng Hồ. Khi tiếp nhận những phản hồi này, Vũ Trụ Đồng Hồ sẽ xác nhận lại thông tin, trường hợp đúng như phản ánh của khách hàng tùy theo mức độ, Vũ Trụ Đồng Hồ sẽ có những biện pháp xử lý kịp thời.</p>
@@ -378,8 +383,9 @@
       <p>Văn phòng đại diện khu vực Miền Nam: 1060 đường 3/2, Phường 12, Quận 11, TP. Hồ Chí Minh.</p>
       <p>Email: cskh@vutrudongho.com</p>
     </div>
-
-    <div id="dieukhoanmuabanhanghoa" style="margin-top:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
+    <a name="dieu_khoan_mua_ban_hang_hoa"></a>
+    <div id="dieukhoanmuabanhanghoa" style="margin-top:50px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
+        <p style="font-weight: bold;font-size: 24px;margin-bottom: 4px;">Điều khoản mua bán hàng hóa</p>
         <p>1. Hướng dẫn sử dụng Nền Tảng</p>
         <p>- Khi truy cập website của chúng tôi, khách hàng phải đảm bảo đủ 18 tuổi, hoặc truy cập dưới sự giám sát của cha mẹ hay người giám hộ hợp pháp. Khách hàng đảm bảo có đầy đủ hành vi dân sự để thực hiện các hành vi đặt hàng theo quy định hiện hành của pháp luật Việt Nam.</p>
         <p>- Chúng tôi cấp quyền sử dụng và truy cập Nền Tảng để bạn có thể đặt hàng trên Nền Tảng theo các điều khoản và điều kiện quy định tại Nền Tảng.</p>
@@ -394,9 +400,9 @@
         <p>Bình luận thông tin hoặc chat trực tuyến trên Facebook: https://facebook.com/vutrudonghooffical.</p>
         <p>Gửi thông tin đặt hàng qua email: online@vutrudongho.com</p>
     </div>
-
-    <div id="cauhoithuonggap" style="margin-top:20px;margin-bottom:20px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
-      <p>Câu hỏi thường gặp</p>
+    <a name="cau_hoi_thuong_gap"></a>
+    <div id="cauhoithuonggap" style="margin-top:50px;margin-bottom:50px;display: flex;flex-direction: column;width: 95%;background-color: #fff;height: fit-content;padding: 12px;">
+      <p style="font-weight: bold;font-size: 24px;margin-bottom: 4px;">Câu hỏi thường gặp</p>
       <p>Giải đáp 1 số thắc mắc của khách hàng:</p>
       <p>1: Tại sao Vũ Trụ Đồng Hồ rẻ hơn so với các đại lý khác ?</p>
       <p>Trả lời: Do chúng tôi lấy lợi nhuận thấp và cập nhật giá liên tục theo giờ với phương châm giá luôn phải tốt nhất trên thị trường. Chúng tôi luôn mong muốn khách hàng có được những sản phẩm tốt với giá rẻ nhất.</p>
