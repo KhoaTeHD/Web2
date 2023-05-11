@@ -12,8 +12,8 @@ include("menu.php");
     $item_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 9;
     $cur_page = !empty($_GET['page']) ? $_GET['page'] : 1;
     $offset = ($cur_page - 1) * $item_page;
-    $page = mysqli_query($conn, "select * from product where  product.Status = 1 order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset);
-    $total = mysqli_query($conn, "select * from product where  product.Status = 1 and product.ProductName LIKE '%$search%'");
+    $page = mysqli_query($conn, "select * from product where product.Status = 1 order by ProductID asc LIMIT " . $item_page . " OFFSET " . $offset);
+    $total = mysqli_query($conn, "select * from product where product.Status = 1 and product.ProductName LIKE '%$search%'");
     $total = $total->num_rows;
     $total_page = ceil($total / $item_page);
     //-----
@@ -59,13 +59,13 @@ include("menu.php");
             if ($cur_page > 2) {
                 $first_page = 1;
                 ?>
-                <a class="page-item" href="?page=<?= $first_page ?>">First</a>
+                <a class="page-item" href="?page=<?= $first_page ?><?php echo ($search!='') ? "&search=$search" : ''?>">First</a>
                 <?php
             }
             if ($cur_page > 1) {
                 $prev_page = $cur_page - 1;
                 ?>
-                <a class="page-item" href="?page=<?= $prev_page ?>">Prev</a>
+                <a class="page-item" href="?page=<?= $prev_page ?><?php echo ($search!='') ? "&search=$search" : ''?>">Prev</a>
             <?php }
             ?>
 
@@ -83,12 +83,12 @@ include("menu.php");
             <?php
             if ($cur_page < $total_page - 1) {
                 $next_page = $cur_page + 1; ?>
-                <a class="page-item" href="?page=<?= $next_page ?>">Next</a>
+                <a class="page-item" href="?page=<?= $next_page ?><?php echo ($search!='') ? "&search=$search" : ''?>">Next</a>
             <?php }
             if ($cur_page < $total_page - 2) {
                 $end_page = $total_page;
                 ?>
-                <a class="page-item" href="?page=<?= $end_page ?>">Last</a>
+                <a class="page-item" href="?page=<?= $end_page ?><?php echo ($search!='') ? "&search=$search" : ''?>">Last</a>
             <?php }
             ?>
         </div>

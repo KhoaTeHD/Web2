@@ -5,13 +5,13 @@ require_once('lib_session.php');
 echo '
 <div id="logo-header"></div>
 <div id="menu-header">
-    <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 0;" alt="">
+    <img class="line-header" src=".//assets/Img/hoangImg/imgs/Line.png" style="order: 0;" alt="">
     <p class="child-menu-header" style="width: auto;order: 1;"><a id="navbarHome" class="navbartheA" href="index.php">Trang chủ</a></p>
-    <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 2;" alt="">
+    <img class="line-header" src=".//assets/Img/hoangImg/imgs/Line.png" style="order: 2;" alt="">
     <p class="child-menu-header" style="width: auto;order: 3;"><a id="navbarProduct" class="navbartheA" href="product.php">Sản phẩm</a></p>
-    <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 4;" alt="">
+    <img class="line-header" src=".//assets/Img/hoangImg/imgs/Line.png" style="order: 4;" alt="">
     <p class="child-menu-header" style="width: auto;order: 5;"><a id="navbarAbout" class="navbartheA" href="about_us.php">Về chúng tôi</a></p>
-    <img class="line-header" src=".//assets/hoangImg/imgs/Line.png" style="order: 6;" alt="">
+    <img class="line-header" src=".//assets/Img/hoangImg/imgs/Line.png" style="order: 6;" alt="">
     <p class="child-menu-header" style="width: auto;order: 7;"><a id="navbarContact" class="navbartheA" href="contact.php">Liên hệ</a></p>
 </div>
 <div id="avt-and-icons">
