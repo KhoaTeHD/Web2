@@ -14,7 +14,7 @@ for (var i =0; i< add_btn.length; i++){
     
         //var quantity =document.getElementById(id);
 
-        var sumQuanty = parseInt(quantity.innerText) +1;
+        var sumQuanty = parseInt(quantity.value) +1;
 
         var xml = new XMLHttpRequest();
         xml.onreadystatechange = function (){
@@ -22,7 +22,7 @@ for (var i =0; i< add_btn.length; i++){
                 var s = String(this.responseText);
 
                 if(s == 1){
-                    quantity.innerText = sumQuanty;
+                    quantity.value = sumQuanty;
                     reload_ItemTotal(id, parent.children[3].getAttribute("data-id"), sumQuanty);
                 }
                 else if ( s !=0) {
@@ -48,7 +48,7 @@ for (var i =0; i< add_btn.length; i++){
         var parent = x.parentElement;
         //var quantity =document.getElementById(id);
 
-        var sumQuanty = parseInt(quantity.innerText) -1;
+        var sumQuanty = parseInt(quantity.value) -1;
         if(sumQuanty != 0){
             var xml = new XMLHttpRequest();
             xml.onreadystatechange = function (){
@@ -56,7 +56,7 @@ for (var i =0; i< add_btn.length; i++){
                     var s = String(this.responseText);
                     
                     if(s == 1){
-                        quantity.innerText = sumQuanty;
+                        quantity.value = sumQuanty;
                         reload_ItemTotal(id, parent.children[3].getAttribute("data-id"), sumQuanty);
                     }
                 }
@@ -84,7 +84,7 @@ function reload_Total(){
         var quanty = items[i].children[4].children[1];
 
         var unitPrice =  parseInt(price.getAttribute('data-id'));
-        var quantity = parseInt(quanty.innerText);
+        var quantity = parseInt(quanty.value);
 
         total += unitPrice *quantity;
     }
@@ -110,4 +110,43 @@ function deleteItem(ProductID, button){
     }
     xml.open("GET","modules/deleteCart.php?ProductID="+ProductID,true);
     xml.send();
+}
+
+function posNumber(){
+    var input = document.getElementById("quantity");
+    var value = parseInt(input.value);
+    if(value == 0 ||  isNaN(value)){
+        input.value = 1;
+    }
+
+    var id = input.getAttribute("data-id");
+
+    var xml = new XMLHttpRequest();
+    xml.onreadystatechange = function (){
+        if(this.readyState == 4 && this.status == 200){
+            var s = String(this.responseText);
+
+            if(s == 1){
+                input.value = value;
+                reload_ItemTotal(id, input.parentElement.parentElement.children[3].getAttribute("data-id"), value);
+            }
+            else if ( s !=0) {
+                swal(this.responseText.toString(), "", "warning");
+                input.value = 1;
+            }
+        }
+    }
+    xml.open("GET","modules/updateCart.php?ProductID="+id+"&Quantity="+value,true);
+    xml.send();
+}
+
+function isNumber(evt){
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}
+
+function payment(){
+    window.location = "payment.php";
 }

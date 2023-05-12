@@ -5,5 +5,6 @@ require_once('lib_session.php');
 		header('location: index.php');
 		unset($_SESSION['current_username']);
 		unset($_SESSION['isAdmin']);
+		unset($_SESSION['current_userID']);
 	}
 ?>

@@ -6,9 +6,9 @@
 
     session_start();
     // TEST
-    $_SESSION['current_userID'] = "US000001";
+    //$_SESSION['current_userID'] = "US000001";
 
-    if($_SESSION['current_userID']){
+    if(isset($_SESSION['current_userID'])){
         
         $userID = $_SESSION['current_userID'];
     
@@ -89,7 +89,8 @@
                             <div class="cart_item_unitprice" data-id="<?php echo $product["PriceToSell"] ?>"><?php echo number_format($product["PriceToSell"]) ?> đ</div>
                             <div class="cart_item_quantity">
                                 <span class="minus_btn material-symbols-outlined" data-id="<?php echo $item["ProductID"] ?>" >indeterminate_check_box</span>
-                                <p><?php echo $item["Quantity"] ?></p>
+                                <input type="text" name="Quantity" id="quantity" onkeypress="return isNumber(event)" onchange="posNumber()" value="<?php echo $item["Quantity"] ?>" data-id="<?php echo $item["ProductID"] ?>">
+                                <!-- <p><?php //echo $item["Quantity"] ?></p> -->
                                 <span class="add_btn material-symbols-outlined" data-id="<?php echo $item["ProductID"] ?>" >add_box</span>
                             </div>
                             <div class="cart_item_total" id="<?php echo $item["ProductID"] ?>" ><?php echo number_format(   $product["PriceToSell"]*$item["Quantity"]   ) ?> đ</div>
@@ -105,7 +106,7 @@
                 <p style="color: #6750A4; font-size: 1.375rem;">0 đ</p>
             </div>
             <div class="button">
-                <button class="confirm_button">Mua Ngay</button>
+                <button class="confirm_button" onclick="payment()">Mua Ngay</button>
             </div>
         </div>
     </div>
@@ -123,6 +124,8 @@
 </html>
 
 <?php
-
+    }
+    else{
+        header("location: login.php");
     }
 ?>

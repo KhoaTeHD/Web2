@@ -4,9 +4,9 @@
     session_start();
 
     // TEST
-    $_SESSION['current_userID'] = "US000001";
+    //$_SESSION['current_userID'] = "US000001";
 
-    if(isset($_SESSION)){
+    if(isset($_SESSION['current_userID'])){
         $userID = $_SESSION['current_userID'];
 
         $conn = connectDatabase();
@@ -16,7 +16,13 @@
             $user = mysqli_fetch_array($user);
         }
 
+        if($conn){
+            $cart = mysqli_query($conn,"select * from cart where UserID='$userID' ");
+        }
 
+        if(mysqli_num_rows($cart) <= 0){
+            header("location: cart.php");
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -170,7 +176,7 @@
                     <button class="submit_button">Áp dụng</button>
                 </div>
             </div>
-            <form action="checkout.php" method="post">
+            <form action="modules/place_order.php" method="post">
                 <div class="button">
                     <input type="hidden" id="UserID"        name="UserID"       value="<?php echo $userID ?>">
                     <input type="hidden" id="ShippingFee"   name="ShippingFee"  value="">
@@ -189,17 +195,12 @@
             </div>
             <div class="product_list">
                 <?php
-                    if($conn){
-                        $cart = mysqli_query($conn,"select * from cart where UserID='$userID' ");
-                    }
-
                     $sum = 0;
-
-                    if(mysqli_num_rows($cart) >0){
-                        while($item = mysqli_fetch_array($cart)){
-                            $product = get_product_by_id($item['ProductID']);
-                            $productPrice = (int) $product["PriceToSell"] - (int) $product["PriceToSell"]* (int) $product['Discount']/100 ;
-                            $sum += $productPrice * (int) $item['Quantity'];
+                    
+                    while($item = mysqli_fetch_array($cart)){
+                        $product = get_product_by_id($item['ProductID']);
+                        $productPrice = (int) $product["PriceToSell"] - (int) $product["PriceToSell"]* (int) $product['Discount']/100 ;
+                        $sum += $productPrice * (int) $item['Quantity'];
                 ?>
                 <div class="product_item">
                     <div class="product_item_img"><img src="assets/Img/productImg/<?php echo $product['ProductImg'] ?>" alt=""></div>
@@ -218,8 +219,8 @@
                     </div>
                 </div>
                 <?php
-                        }
                     }
+                    
                 ?>
             </div>
             <div class="payment_detail">
