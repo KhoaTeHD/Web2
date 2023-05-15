@@ -16,7 +16,7 @@
 
             // Lấy dữ liệu từ file get-data.php
             $.ajax({
-                url: 'http://localhost/Web2/vutrudongho/mainproduct/get-max-product-price.php',
+                url: `./mainproduct/get-max-product-price.php`,
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
@@ -208,7 +208,7 @@ var maxPrice;
 
 // Lấy dữ liệu từ file get-data.php
 $.ajax({
-    url: 'http://localhost/Web2/vutrudongho/mainproduct/get-max-product-price.php',
+    url: './mainproduct/get-max-product-price.php',
     type: 'GET',
     dataType: 'json',
     success: function(data) {

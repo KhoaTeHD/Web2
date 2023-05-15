@@ -42,7 +42,7 @@
                         include(".//mainproduct/paging-color.php");
                     } else {
                         if (isset($_GET['gender']) && isset($_GET['gender']) > 0) {
-                            include(".//mainproduct/paging-gen der.php");
+                            include(".//mainproduct/paging-gender.php");
                         } else {
                             if (isset($_GET['model']) && isset($_GET['model']) > 0) {
                                 include(".//mainproduct/paging-model.php");

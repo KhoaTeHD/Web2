@@ -645,3 +645,21 @@ strike {
     padding: 0;
     position: relative;
 }
+.alert-not-found{
+    max-width: 100%;
+    /* display: flex; */
+    text-align: center;
+    padding: 120px;
+}
+
+.ic-not-found{
+    max-width: 100%;
+
+}
+.not-found{
+    font-family: Roboto;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 2;
+    letter-spacing: 1px;
+}

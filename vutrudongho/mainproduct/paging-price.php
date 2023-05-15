@@ -24,13 +24,12 @@
     $query_run = mysqli_query($conn, $query);
     if (mysqli_num_rows($query_run) > 0) { ?>
         <div class="maincontent">
-            <?php foreach ($query_run as $key => $value): ?>
+            <?php foreach ($query_run as $key => $value) : ?>
                 <div class="card">
                     <div class="product-top">
                         <class="product-thumb">
                             <img src="./assets/img/productImg/<?php echo $value['ProductImg'] ?>"></img>
-                            <button class="info-detail"
-                                onclick="location.href='detail_product.php?ProductID=<?php echo $value['ProductID'] ?>'">Xem
+                            <button class="info-detail" onclick="location.href='detail_product.php?ProductID=<?php echo $value['ProductID'] ?>'">Xem
                                 Thêm</button>
                         </class="product-thumb">
                     </div>
@@ -50,7 +49,7 @@
                             <strike>
                                 <?php echo number_format($value['PriceToSell'], 0, ",", ".") ?> đ
                             </strike>
-                        <?php } ?>  
+                        <?php } ?>
                     </span>
                 </div>
             <?php endforeach ?>
@@ -58,13 +57,13 @@
                 <?php
                 if ($cur_page > 2) {
                     $first_page = 1;
-                    ?>
+                ?>
                     <a class="page-item" href="?page=<?= $first_page ?><?php echo ($pricefrom != '') ? "&from=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to=$priceto" : '' ?>">First</a>
-                    <?php
+                <?php
                 }
                 if ($cur_page > 1) {
                     $prev_page = $cur_page - 1;
-                    ?>
+                ?>
                     <a class="page-item" href="?page=<?= $prev_page ?><?php echo ($pricefrom != '') ? "&from=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to=$priceto" : '' ?>">Prev</a>
                 <?php }
                 ?>
@@ -72,8 +71,7 @@
                 <?php for ($num = 1; $num <= $total_page; $num++) { ?>
                     <?php if ($num != $cur_page) { ?>
                         <?php if ($num > $cur_page - 2 && $num < $cur_page + 2) { ?>
-                            <a class="page-item"
-                                href="?page=<?= $num ?><?php echo ($pricefrom != '') ? "&from=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to=$priceto" : '' ?>"><?= $num ?></a>
+                            <a class="page-item" href="?page=<?= $num ?><?php echo ($pricefrom != '') ? "&from=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to=$priceto" : '' ?>"><?= $num ?></a>
                         <?php } ?>
                     <?php } else { ?>
                         <strong class="cur-page page-item">
@@ -88,14 +86,18 @@
                 <?php }
                 if ($cur_page < $total_page - 2) {
                     $end_page = $total_page;
-                    ?>
+                ?>
                     <a class="page-item" href="?page=<?= $end_page ?><?php echo ($pricefrom != '') ? "&from=$pricefrom" : '' ?><?php echo ($priceto != '') ? "&to=$priceto" : '' ?>">Last</a>
                 <?php }
                 ?>
             </div>
         </div>
     <?php } else {
-        echo "Không tìm thấy sản phẩm";
-    }
+    ?>  
+        <div class="alert-not-found">
+        <img src="./assets/Img/icons/icons8-nothing-found-100.png" alt="Not found" class="ic-not-found">
+        <p class="not-found">Không tìm thấy sản phẩm</p>
+        </div>
+    <?php    }
 
     ?>
