@@ -3,27 +3,27 @@ echo '
 <div class="footer-footer">
 <div id="section-1">
     <div id="hotro-dichvu">
-        <a style="margin-top: 12px;" class="mediumtitlehomeFooter theAtrongFooter" href="#">Hỗ trợ - Dịch vụ</a>
-        <a style="margin-top: 12px;" class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="#">Mua hàng trả góp</a>
-        <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="#">Hướng dẫn đặt hàng và thanh toán</a>
-        <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="#">Chính sách bảo hành</a>
-        <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="#">Phạm vi, điều khoản gói bảo hành</a>
-        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter"  href="#">Chính sách bảo mật</a>
-        <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="#">Chính sách giải quyết khiếu nại</a>
-        <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="#">Điều khoản mua bán hàng hóa</a>
-        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter"  href="#">Câu hỏi thường gặp</a>
+        <a style="margin-top: 12px;" class="mediumtitlehomeFooter theAtrongFooter" href="help.php">Hỗ trợ - Dịch vụ</a>
+        <a style="margin-top: 12px;" class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="help.php#mua_hang_tra_gop">Mua hàng trả góp</a>
+        <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="help.php#huong_dan_dat_hang_va_thanh_toan">Hướng dẫn đặt hàng và thanh toán</a>
+        <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="help.php#chinh_sach_bao_hanh">Chính sách bảo hành</a>
+        <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="help.php#pham_vi_dieu_khoan_goi_bao_hanh">Phạm vi, điều khoản gói bảo hành</a>
+        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter"  href="help.php#chinh_sach_bao_mat">Chính sách bảo mật</a>
+        <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="help.php#chinh_sach_giai_quyet_khieu_nai">Chính sách giải quyết khiếu nại</a>
+        <a  class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="help.php#dieu_khoan_mua_ban_hang_hoa">Điều khoản mua bán hàng hóa</a>
+        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter"  href="help.php#cau_hoi_thuong_gap">Câu hỏi thường gặp</a>
     </div>
     <div id="thong-tin-lien-he">
-        <a style="margin-top: 12px;" class="mediumtitlehomeFooter theAtrongFooter" href="">Thông tin liên hệ</a>
-        <a style="margin-top: 12px;" class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Bán hàng Online</a>
-        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Chăm sóc khách hàng</a>
-        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Hỗ trợ kỹ thuật</a>
+        <a style="margin-top: 12px;" class="mediumtitlehomeFooter theAtrongFooter" href="contact.php">Thông tin liên hệ</a>
+        <a style="margin-top: 12px;" class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="contact.php#ban_hang_online">Bán hàng Online</a>
+        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="contact.php#cham_soc_khach_hang">Chăm sóc khách hàng</a>
+        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="contact.php#ho_tro_ky_thuat">Hỗ trợ kỹ thuật</a>
     </div>
     <div id="he-thong-cua-hang-toan-quoc">
         <a style="margin-top: 12px;" class="mediumtitlehomeFooter theAtrongFooter" href="about_us.php#He_thong_cua_hang_tren_toan_quoc">Hệ thống cửa hàng trên toàn quốc</a>
-        <a style="margin-top: 12px;" class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Danh sách các cửa hàng miền Bắc</a>
-        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Danh sách các cửa hàng miền Trung</a>
-        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="">Danh sách các cửa hàng miền Nam</a>
+        <a style="margin-top: 12px;" class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="about_us.php#He_thong_cua_hang_mien_bac">Danh sách các cửa hàng miền Bắc</a>
+        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="about_us.php#He_thong_cua_hang_tren_mien_trung">Danh sách các cửa hàng miền Trung</a>
+        <a class="theAtrongFooter smalltitlehomeFooter gianCachFooter" href="about_us.php#He_thong_cua_hang_tren_mien_nam">Danh sách các cửa hàng miền Nam</a>
     </div>
     <div id="thanh-toan-van-chuyen">
         <div id="img-cac-hinh-thuc-thanh-toan">

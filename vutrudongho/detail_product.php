@@ -83,7 +83,7 @@
                 <div class="product_policy">
                     <div class="product_policy_container">
                         <div class="product_policy_header">
-                            <p>Chính sách mua hàng tại vutrudongho.vn</p>
+                            <p>Chính sách mua hàng tại vutrudongho.com</p>
                         </div>
                         <div class="product_policy_content">
                             <div class="product_policy_group1">

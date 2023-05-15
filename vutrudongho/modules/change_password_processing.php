@@ -26,7 +26,15 @@ if (isset($_REQUEST['btnSubmitSaveNewPass'])) {
         $_SESSION['errorOldPass'] = $errorOldPass;
         header("Location: ../../change_pass.php?errorOldPass=" . urlencode($errorOldPass));
         exit();
-    } else {
+    }
+    elseif($oldPass == $newPass){
+        $errorOldPass = "Hãy thử lại. Mật khẩu mới giống mật khẩu cũ!";
+        session_start();
+        $_SESSION['errorOldPass'] = $errorOldPass;
+        header("Location: ../../change_pass.php?errorOldPass=" . urlencode($errorOldPass));
+        exit();
+    }
+    else {
         $sql = sprintf("UPDATE `user` SET `Password` = '%s' WHERE `user`.`UserID` = '%s'", $newPass, $userID);
         if ($conn->query($sql) === TRUE) {
             //echo "The record editted successfully";

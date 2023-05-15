@@ -9,10 +9,10 @@ require_once('lib_session.php');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vũ Trụ Di Động</title>
-  <link rel="shortcut icon" href=".//assets/icons/VUTRUDIDONG-icon.svg">
-  <link rel="stylesheet" href=".//assets/css/home.css">
-  <link rel="stylesheet" href=".//assets/css/header.css">
-  <link rel="stylesheet" href=".//assets/css/footer.css">
+  <link rel="shortcut icon" href="assets/icons/VUTRUDIDONG-icon.svg">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap&amp;_cacheOverride=1679484892371"
     data-tag="font">
@@ -25,9 +25,9 @@ require_once('lib_session.php');
 <body>
   <!--Start Nut di chuyen-->
   <div id="btnLenXuong" style="position: fixed;z-index: 999;display: flex;flex-direction: column;top:80%;right: 14px;">
-    <img id="btn-top" src=".//assets/img/hoangImg/icons/icons8-slide-up-32.png" alt=""
+    <img id="btn-top" src="assets/img/hoangImg/icons/icons8-slide-up-32.png" alt=""
       style="cursor: pointer;margin-bottom: 10px;">
-    <img id="scroll-to-bottom" onclick="scrollToBottom()" src=".//assets/img/hoangImg/icons/icons8-down-button-32.png"
+    <img id="scroll-to-bottom" onclick="scrollToBottom()" src="assets/img/hoangImg/icons/icons8-down-button-32.png"
       alt="" style="cursor: pointer;">
   </div>
 
@@ -35,7 +35,7 @@ require_once('lib_session.php');
   <!--Start: Header-->
   <div id="bar-header">
     <?php
-    include(".//components/header.php");
+    include("components/header.php");
     ?>
   </div>
   <!--End: Header-->
@@ -57,19 +57,19 @@ require_once('lib_session.php');
 
     <div id="ỉntroduction" style="display: flex;    background-color: rgba(103, 80, 164, 0.5);
     height: 100px;justify-content: center;">
-      <img id="vtdd-logotext" src=".//assets/img/hoangImg/logo/logo_text_ngang.png" alt="">
+      <img id="vtdd-logotext" src="assets/img/hoangImg/logo/logo_text_ngang.png" alt="">
     </div>
     <!--Begin: Slider-->
     <div class="slider">
       <div class="slide-wrapper">
         <div class="slide">
-          <img class="slide-img" src=".//assets/img/hoangImg/slider/slide1.png" alt="Slide1" />
+          <img class="slide-img" src="assets/img/hoangImg/slider/slide1.png" alt="Slide1" />
         </div>
         <div class="slide">
-          <img class="slide-img" src=".//assets/img/hoangImg/slider/slide2.png" alt="Slide2" />
+          <img class="slide-img" src="assets/img/hoangImg/slider/slide2.png" alt="Slide2" />
         </div>
         <div class="slide">
-          <img class="slide-img" src=".//assets/img/hoangImg/slider/slide3.png" alt="Slide3" />
+          <img class="slide-img" src="assets/img/hoangImg/slider/slide3.png" alt="Slide3" />
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@ require_once('lib_session.php');
             <div
               style="display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 9;background-color: #B3A7D1;">
             </div>
-            <img src=".//assets/img/productImg/118_AEQ-110W-3AVDF-699x699.png" style="opacity: 0.9;" alt=""
+            <img src="assets/img/productImg/118_AEQ-110W-3AVDF-699x699.png" style="opacity: 0.9;" alt=""
               width="180px">
           </div>
         </div>
@@ -111,7 +111,7 @@ require_once('lib_session.php');
               <div
                 style="display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 9;background-color: #B3A7D1;">
               </div>
-              <img src=".//assets/img/productImg/0011842_midnight_550.png" style="opacity: 0.9;" alt="" width="180px">
+              <img src="assets/img/productImg/0011842_midnight_550.png" style="opacity: 0.9;" alt="" width="180px">
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@ require_once('lib_session.php');
             <div
               style="display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 9;background-color: #B3A7D1;">
             </div>
-            <img src=".//assets/img/productImg/AN8195-58E-699x699.png" style="opacity: 0.9;" alt="" width="180px">
+            <img src="assets/img/productImg/AN8195-58E-699x699.png" style="opacity: 0.9;" alt="" width="180px">
           </div>
         </div>
 
@@ -147,7 +147,7 @@ require_once('lib_session.php');
             <div
               style="display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 9;background-color: #B3A7D1;">
             </div>
-            <img src=".//assets/img/productImg/FAC08003A0-1-699x699.png" style="opacity: 0.9;" s alt="" width="180px">
+            <img src="assets/img/productImg/FAC08003A0-1-699x699.png" style="opacity: 0.9;" s alt="" width="180px">
           </div>
         </div>
 
@@ -165,7 +165,7 @@ require_once('lib_session.php');
             <div
               style="display: flex;width: 180px;height: 28px;position: absolute;top:50%;transform: translateY(-50%);z-index: 9;background-color: #B3A7D1;">
             </div>
-            <img src=".//assets/img/productImg/SRPG41K1.png" style="opacity: 0.9;" alt="" width="180px">
+            <img src="assets/img/productImg/SRPG41K1.png" style="opacity: 0.9;" alt="" width="180px">
           </div>
         </div>
 
@@ -179,7 +179,7 @@ require_once('lib_session.php');
       <div id="productBC">
         <div class="clockBrandContent">
           <div class="col30">
-            <img src=".//assets/img/hoangImg/imgs/118_AEQ-110W-3AVDF-699x699.png" alt="" width="250px" alt="">
+            <img src="assets/img/hoangImg/imgs/118_AEQ-110W-3AVDF-699x699.png" alt="" width="250px" alt="">
           </div>
           <p style="text-align: justify;display: flex;align-items: center;" class="col70 smalltitlehome">Đồng hồ Casio
             là một trong những thương hiệu đồng hồ nổi tiếng và được yêu thích trên toàn
@@ -190,9 +190,9 @@ require_once('lib_session.php');
             hợp lý, đồng hồ Casio là một lựa chọn tuyệt vời cho bất kỳ ai đang tìm kiếm một chiếc đồng hồ đa năng và
             thời trang.</p>
         </div>
-        <img src=".//assets/img/hoangImg/imgs/banerCasioBaby.png" alt="" width="250px"
+        <img src="assets/img/hoangImg/imgs/banerCasioBaby.png" alt="" width="250px"
           style="width: 100%;margin-top: 12px;">
-        <img src=".//assets/img/hoangImg/imgs/banerCasioGsock.png" alt="" width="250px"
+        <img src="assets/img/hoangImg/imgs/banerCasioGsock.png" alt="" width="250px"
           style="width: 100%;margin-top: 14px;">
 
         <hr id="appleBrandInfo" style="margin-top: 50px;margin-bottom: 50px;">
@@ -200,7 +200,7 @@ require_once('lib_session.php');
         <p class="bigtitlehome" style="text-align:center ;">APPLE</p>
         <div class="clockBrandContent">
           <div class="col30">
-            <img src=".//assets/img/productImg/0011842_midnight_550.png" alt="" width="250px" alt="">
+            <img src="assets/img/productImg/0011842_midnight_550.png" alt="" width="250px" alt="">
           </div>
           <p style="text-align: justify;display: flex;align-items: center;" class="col70 smalltitlehome">Apple Watch là
             một trong những sản phẩm đồng hồ thông minh được yêu thích nhất hiện nay. Với thiết kế đẹp mắt, tính năng
@@ -212,15 +212,15 @@ require_once('lib_session.php');
             một cách thuận tiện hơn. Với chất lượng và độ tin cậy của thương hiệu Apple, Apple Watch là một sự lựa chọn
             tuyệt vời cho những ai muốn sở hữu một chiếc đồng hồ thông minh đẳng cấp và hiện đại.</p>
         </div>
-        <img src=".//assets/img/hoangImg/imgs/apple_baner.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
-        <img src=".//assets/img/hoangImg/imgs/apple_banner3.jpg" alt="" style="width: 100%;">
+        <img src="assets/img/hoangImg/imgs/apple_baner.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
+        <img src="assets/img/hoangImg/imgs/apple_banner3.jpg" alt="" style="width: 100%;">
 
         <hr id="citizenBrandInfo" style="margin-top: 50px;margin-bottom: 50px;">
 
         <p class="bigtitlehome" style="text-align:center ;">CITIZEN</p>
         <div class="clockBrandContent">
           <div class="col30">
-            <img src=".//assets/img/hoangImg/imgs/AN8195-58E-699x699.png" alt="" width="250px" alt="">
+            <img src="assets/img/hoangImg/imgs/AN8195-58E-699x699.png" alt="" width="250px" alt="">
           </div>
           <p style="text-align: justify;display: flex;align-items: center;" class="col70 smalltitlehome">Đồng hồ Citizen
             là một trong những thương hiệu đồng hồ nổi tiếng và được yêu thích trên toàn thế giới. Với hơn 100 năm kinh
@@ -232,16 +232,16 @@ require_once('lib_session.php');
             Với chất lượng và độ tin cậy của thương hiệu Citizen, đồng hồ Citizen là sự lựa chọn hoàn hảo cho những ai
             đang tìm kiếm một chiếc đồng hồ đa năng và bền vững.</p>
         </div>
-        <img src=".//assets/img/hoangImg/imgs/citizen_banner1.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
-        <img src=".//assets/img/hoangImg/imgs/citizen_banner2.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
-        <img src=".//assets/img/hoangImg/imgs/citizen_banner4.jpg" alt="" style="width: 100%;">
+        <img src="assets/img/hoangImg/imgs/citizen_banner1.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
+        <img src="assets/img/hoangImg/imgs/citizen_banner2.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
+        <img src="assets/img/hoangImg/imgs/citizen_banner4.jpg" alt="" style="width: 100%;">
 
         <hr id="orientBrandInfo" style="margin-top: 50px;margin-bottom: 50px;">
 
         <p class="bigtitlehome" style="text-align:center ;">ORIENT</p>
         <div class="clockBrandContent">
           <div class="col30">
-            <img src=".//assets/img/hoangImg/imgs/FAC08003A0-1-699x699.png" alt="" width="250px" alt="">
+            <img src="assets/img/hoangImg/imgs/FAC08003A0-1-699x699.png" alt="" width="250px" alt="">
           </div>
           <p style="text-align: justify;display: flex;align-items: center;" class="col70 smalltitlehome">Đồng hồ Orient
             là một trong những thương hiệu đồng hồ nổi tiếng và được đánh giá cao trong ngành công nghiệp đồng hồ. Với
@@ -254,15 +254,15 @@ require_once('lib_session.php');
             năng lượng và kéo dài tuổi thọ của pin. Với chất lượng và độ tin cậy của thương hiệu Orient, đồng hồ Orient
             là sự lựa chọn tuyệt vời cho những ai đang tìm kiếm một chiếc đồng hồ chất lượng cao và đáng tin cậy.</p>
         </div>
-        <img src=".//assets/img/hoangImg/imgs/orient_banner1.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
-        <img src=".//assets/img/hoangImg/imgs/orient_banner2.jpg" alt="" style="width: 100%;">
+        <img src="assets/img/hoangImg/imgs/orient_banner1.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
+        <img src="assets/img/hoangImg/imgs/orient_banner2.jpg" alt="" style="width: 100%;">
 
         <hr id="seikoBrandInfo" style="margin-top: 50px;margin-bottom: 50px;">
 
         <p class="bigtitlehome" style="text-align:center ;">SEIKO</p>
         <div class="clockBrandContent">
           <div class="col30">
-            <img src=".//assets/img/hoangImg/imgs/SRPG41K1.png" alt="" width="250px" alt="">
+            <img src="assets/img/hoangImg/imgs/SRPG41K1.png" alt="" width="250px" alt="">
           </div>
           <p style="text-align: justify;display: flex;align-items: center;" class="col70 smalltitlehome">Đồng hồ Seiko
             là một trong những thương hiệu đồng hồ nổi tiếng và được yêu thích trên toàn thế giới. Với hơn 130 năm kinh
@@ -275,9 +275,9 @@ require_once('lib_session.php');
             giúp tiết kiệm năng lượng và kéo dài tuổi thọ của pin. Với chất lượng và độ tin cậy của thương hiệu Seiko,
             đồng hồ Seiko là sự lựa chọn hoàn hảo cho những ai đang tìm kiếm một chiếc đồng hồ đa năng và bền vững.</p>
         </div>
-        <img src=".//assets/img/hoangImg/imgs/seiko_banner1.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
-        <img src=".//assets/img/hoangImg/imgs/seiko_banner2.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
-        <img src=".//assets/img/hoangImg/imgs/seiko_banner3.jpg" alt="" style="width: 100%;">
+        <img src="assets/img/hoangImg/imgs/seiko_banner1.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
+        <img src="assets/img/hoangImg/imgs/seiko_banner2.jpg" alt="" style="width: 100%;margin-bottom: 14px;">
+        <img src="assets/img/hoangImg/imgs/seiko_banner3.jpg" alt="" style="width: 100%;">
 
       </div>
     </div>
@@ -288,7 +288,7 @@ require_once('lib_session.php');
   <!--Start: Footer-->
   <div id="my-footer">
     <?php
-    include(".//components/footer.php");
+    include("components/footer.php");
     ?>
   </div>
   <!--End: Footer-->
