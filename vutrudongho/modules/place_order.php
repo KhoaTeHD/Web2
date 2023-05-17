@@ -2,7 +2,7 @@
     include 'connectDatabase.php';
     include 'get_product_by_id.php';
     include 'cartFunction.php';
-    date_default_timezone_set('Etc/GMT+7');
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
 
     if(isset($_POST['UserID'])){
         $conn = connectDatabase();
@@ -26,7 +26,7 @@
 
         $cart = mysqli_query($conn,"SELECT * FROM `cart` where UserID ='$userID'");
 
-        if($voucherID === "NULL"){
+        if($voucherID == "NULL"){
             $sqlOrder = "INSERT INTO `order` (`OrderID`, `UserID`, `OderDate`, `ShippingFee`, `OrderDiscount`, `OrderTotal`, `Address`, `PaymentID`, `VoucherID`, `OrderStatus`) VALUES ('$orderID', '$userID', '$orderDate', '$shippingFee', '$orderDiscount', '$orderTotal', '$address', '$paymentID', $voucherID, 'S01')";
         }
         else{
@@ -34,6 +34,7 @@
         }
     
         try {
+            // start Transaction
             $conn->begin_transaction();
 
             $rs1 = $conn->query($sqlOrder);
@@ -42,8 +43,12 @@
                 $conn->rollback();
                 header("Location: ../cart.php");
             }
+            else{
+                $conn->commit();
+            }
 
             while($item = mysqli_fetch_array($cart)){
+                $conn->begin_transaction();
                 $product = get_product_by_id($item['ProductID']);
 
                 if($product['CanDel'] == 1){
@@ -65,14 +70,17 @@
                     header("Location: ../cart.php");
                 }
                 else{
-                    $rs3 = $conn->query("INSERT INTO `product_quantity` (`ProductID`, `Date`, `Quantity`) VALUES ('". $product['ProductID'] ."', '$orderDate', '$lastInStock')");
+                    // $rs3 = $conn->query("INSERT INTO `product_quantity` (`ProductID`, `Date`, `Quantity`) VALUES ('". $product['ProductID'] ."', '$orderDate', '$lastInStock')");
                 }
 
                 $product_Price = $product["PriceToSell"] - (int) $product["PriceToSell"]* (int) $product['Discount']/100;
                 
                 $rs4 = $conn->query("INSERT INTO `order_line` (`OrderID`, `ProductID`, `Quantity`, `UnitPrice`) VALUES ('$orderID', '". $product['ProductID'] ."', '". $item['Quantity'] ."', '$product_Price')");
 
-                if($rs3 && $rs4){
+                $rs5 = $conn->query("DELETE from `cart` where UserID ='$userID'");
+                // $rs3 &&
+                if($rs4 && $rs5){
+                    // commit transaction
                     $conn->commit();
                     header("Location: ../checkout.php",true,303);
                 }
