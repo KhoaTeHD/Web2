@@ -25,7 +25,7 @@
     width: calc(100% - 60px);
     height: 7rem;
     background-color: white;
-    margin: 50px 30px 50px 30px;
+    margin: 4rem 3rem 2rem 3rem;
     border-radius: 12px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
     display: flex;
@@ -69,7 +69,7 @@
     align-items: center;
 }
 
-.date_revenue > button {
+.button_filter {
     padding: 0px 20px;
     border: none;
     background-color: transparent;
@@ -80,7 +80,7 @@
     cursor: pointer;
 }
 
-.date_revenue > button:hover {
+.button_filter_clicked {
     color: #6750A4;
     border-bottom: 3px solid #6750A4;
 }
@@ -101,7 +101,25 @@
 .revenue_card {
     width: calc(100% - 30px);
     height: calc( (100% / 5) - 30px );
-    background-image: linear-gradient(#6750A4,#422393);
     border-radius: 10px;
     margin: 0px 30px 20px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.revenue_card h1 {
+    font-family: 'roboto';
+    font-size: 1vw;
+    color: white;
+    padding: 20px 0px 0px 2rem;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.4);
+    height: 45%;
+}
+
+.revenue_card p {
+    font-family: 'roboto';
+    font-size: 1.4vw;
+    color: white;
+    text-align: end;
+    padding: 0px 2rem 0px 0px;
 }

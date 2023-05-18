@@ -70,7 +70,7 @@
                     header("Location: ../cart.php");
                 }
                 else{
-                    // $rs3 = $conn->query("INSERT INTO `product_quantity` (`ProductID`, `Date`, `Quantity`) VALUES ('". $product['ProductID'] ."', '$orderDate', '$lastInStock')");
+                    $rs3 = $conn->query("INSERT INTO `product_quantity` (`ProductID`, `Date`, `Quantity`) VALUES ('". $product['ProductID'] ."', '$orderDate', '$lastInStock')");
                 }
 
                 $product_Price = $product["PriceToSell"] - (int) $product["PriceToSell"]* (int) $product['Discount']/100;
@@ -79,7 +79,7 @@
 
                 $rs5 = $conn->query("DELETE from `cart` where UserID ='$userID'");
                 // $rs3 &&
-                if($rs4 && $rs5){
+                if( $rs3 && $rs4 && $rs5){
                     // commit transaction
                     $conn->commit();
                     header("Location: ../checkout.php",true,303);
