@@ -3,7 +3,8 @@
     padding: 0 48px;
 }
 
-.statistic-stock__header {
+.statistic-stock__header,
+.statistic-product-sale__header {
     margin-top: 24px;
     font-size: 1.6rem;
     color: #6750A4;
@@ -109,8 +110,8 @@
     outline: none;
 }
 
-.statistic-stock__btn {
-    margin-left: 12px;
+.statistic-stock__btn, .product-sale-search___btn {
+    margin-left: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,7 +123,7 @@
     background-color: #6750A4;
 }
 
-.statistic-stock__btn:hover {
+.statistic-stock__btn:hover, .product-sale-search___btn:hover {
     cursor: pointer;
     background-color: #ccc;
     color: #000;
@@ -230,4 +231,61 @@
 .modal-statistic-container-content__date-re, .modal-statistic-container-content__quantity-re {
     color: #6750A4;
     font-weight: 600;
+}
+
+.statistic__product-sale {
+    font-size: 1.4rem;
+}
+
+.statistic-product-sale__search {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.statistic-product-sale__search > label {
+    font-weight: 600;
+    color: #6750A4;
+    min-width: 100px;
+}
+
+.statistic-product-sale__search > span {
+    margin: 0 12px;
+    font-size: 2rem;
+    color: #6750A4;
+}
+
+.statistic-product-sale__search > input {
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.statistic-product-sale__table {
+    margin-top: 24px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.statistic-product-sale__table th, .statistic-product-sale__table td {
+    font-size: 1.3rem;
+    border: 1px solid #ccc;
+}
+
+.statistic-product-sale__table th, .statistic-product-sale__table td  {
+    padding: 4px;
+}
+
+.statistic-product-sale__table th {
+    color: #6750A4;
+}
+
+.statistic-product-sale__table td {
+    max-width: 150px;
+    text-overflow: ellipsis; /* thêm dấu '...' nếu nội dung quá dài */
+    overflow: hidden; /* ẩn nội dung dài */
+    white-space: nowrap; /* ngăn cách các dòng văn bản */
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
 }

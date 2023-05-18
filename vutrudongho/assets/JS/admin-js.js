@@ -1590,3 +1590,13 @@ var displayModalStatistic = () => {
     }
     
 }
+
+var checkDateForStatisticSearch = () => {
+    let dateFrom = document.querySelector('.product-sale-search__date-from').valueAsDate;
+    let dateTo = document.querySelector('.product-sale-search__date-to').valueAsDate;
+    if(dateFrom > dateTo) {
+        alert('Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc!');
+        return false;
+    }
+    return true;
+}

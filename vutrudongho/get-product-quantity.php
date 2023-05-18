@@ -12,7 +12,7 @@ $id = $_GET['ProductID'];
 $date = $_GET['Date'];
 
 // Truy vấn dữ liệu từ cơ sở dữ liệu với id tương ứng
-$sql = "select Quantity from `product_quantity` where ProductID = '$id' and Date(Date) = '$date' order by Date desc limit 1;";
+$sql = "select Quantity from `product_quantity` where ProductID = '$id' and Date(Date) <= '$date' order by Date desc limit 1;";
 $result = mysqli_query($con, $sql);
 
 // Tạo một mảng chứa dữ liệu trả về
