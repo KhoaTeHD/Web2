@@ -1,6 +1,13 @@
 <?php
 include './sidebar.php';
 include './container-header.php';
+//Information to search
+$dateFrom = !empty($_GET['date-from']) ? $_GET['date-from'] : date('Y-m-d');
+$dateTo = !empty($_GET['date-to']) ? $_GET['date-to'] : date('Y-m-d');
+$province = !empty($_GET['order-province']) ? $_GET['order-province'] : "";
+$district = !empty($_GET['order-district']) ? $_GET['order-district'] : "";
+$ward = !empty($_GET['order-ward']) ? $_GET['order-ward'] : "";
+$status = !empty($_GET['order-status']) ? $_GET['order-status'] : "";
 ?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -13,7 +20,7 @@ include './container-header.php';
 <div class="order">
     <form class="order__search" method="GET" action="order-manager.php">
         <div class="order-search__date">
-            <label for="">Ngày lọc</label>
+            <label for="">Ngày Lọc</label>
             <input name="date-from" type="date" class="order-search__date-from">
             <span class="material-symbols-outlined">arrow_forward</span>
             <input name="date-to" type="date" class="order-search__date-to">
@@ -34,15 +41,15 @@ include './container-header.php';
             <label for="">Tỉnh (Thành)</label>
             <select id="order-province" name="order-province">
             </select>
-            
+
             <label for="" style="margin-right: 24px;">Quận (Huyện)</label>
             <select id="order-district" name="order-district">
-                <option value="">-- Quận (Huyện) ---</option>
+                <option disable value="">-- Chọn --</option>
             </select>
-            
+
             <label for="" style="margin-right: 24px;">Xã (Phường, Thị Trấn)</label>
             <select id="order-ward" name="order-ward">
-                <option value="">-- Xã (Phường, Thị Trấn) ---</option>
+                <option disable value="">-- Chọn --</option>
             </select>
         </div>
 
@@ -77,17 +84,17 @@ include './container-header.php';
             }
 
             var eventForAddressCombobox = () => {
-                $("#order-province").on('input', function () {
-                    if($("#order-province option:selected").val() != '') {
+                $("#order-province").on('input', function() {
+                    if ($("#order-province option:selected").val() != '') {
                         callApiDistrict(host + "p/" + $("#order-province").val().split('/')[0] + "?depth=2");
                     } else {
                         document.querySelector("#order-district").innerHTML = '<option disable value="">-- Chọn --</option>';
                         document.querySelector("#order-ward").innerHTML = '<option disable value="">-- Chọn --</option>';
                     }
                 });
-                
-                $("#order-district").on('input', function () {
-                    if($("#order-district option:selected").val() != '') {
+
+                $("#order-district").on('input', function() {
+                    if ($("#order-district option:selected").val() != '') {
                         callApiWard(host + "d/" + $("#order-district").val().split('/')[0] + "?depth=2");
                     } else {
                         document.querySelector("#order-ward").innerHTML = '<option disable value="">-- Chọn --</option>';
@@ -100,25 +107,58 @@ include './container-header.php';
         </script>
 
         <div class="order-search__status">
-            <label for="">Trạng thái</label>
+            <label for="">Tình Trạng</label>
 
-            <select name="order-status">
+            <select name="order-status" id="order-status">
                 <option value="">-- Tất cả --</option>
                 <?php
                     include "./connectdb.php";
                     $result = mysqli_query($con, "select * from `orderstatus`");
-                    while($row = mysqli_fetch_array($result)) {
+                    while ($row = mysqli_fetch_array($result)) {
                         ?>
-                            <option value="<?= $row['StatusID'] ?>_<?= $row['StatusName'] ?>"><?=$row['StatusName']?></option>
+                            <option value="<?= $row['StatusID'] ?>_<?= $row['StatusName'] ?>"><?= $row['StatusName'] ?></option>
                         <?php
                     }
                     mysqli_close($con);
                 ?>
             </select>
 
-            <button type="submit" name="submit" class="order-search__filter">Lọc</button>
+            <button type="submit" name="submit" class="order-search__filter" onclick="return checkOrderDateSearch();">Lọc</button>
         </div>
+        <script>
+            //Set up
+            var queryString = window.location.search;
+            var params = new URLSearchParams(queryString);
+            if (params.has("submit")) {
+                var dateFromUi = document.querySelector('.order-search__date-from');
+                var dateToUi = document.querySelector('.order-search__date-to');
+                var provinceUi = document.getElementById('order-province');
+                var districtUi = document.getElementById('order-district');
+                var wardUi = document.getElementById('order-ward');
+                var statusUi = document.getElementById('order-status');
+
+                dateFromUi.value = params.get("date-from");
+                dateToUi.value = params.get("date-to");
+
+                callAPI('https://provinces.open-api.vn/api/?depth=1').then(() => {
+                    provinceUi.value = params.get("order-province");
+                    if (provinceUi.value != '') {
+                        callApiDistrict(host + "p/" + provinceUi.value.split('/')[0] + "?depth=2").then(() => {
+                            districtUi.value = params.get("order-district");
+                            if (districtUi.value != '') {
+                                callApiWard(host + "d/" + districtUi.value.split('/')[0] + "?depth=2").then(() => {
+                                    wardUi.value = params.get("order-ward");
+                                });
+                            }
+                        });
+                    }
+                });
+
+                statusUi.value = params.get("order-status");
+            }
+        </script>
     </form>
+
     <table class="order__table">
         <thead>
             <th>Mã đơn</th>
@@ -131,76 +171,113 @@ include './container-header.php';
             <th>Mã giảm giá</th>
             <th>Giảm giá</th>
             <th>Thành tiền</th>
+            <th>Tình trạng</th>
             <th>Chi tiết</th>
         </thead>
         <tbody>
             <!-- Load danh sach orderlen tu db -->
             <?php
-                include './connectdb.php';
-                //Khoi tao cac bien phan trang
-                $sql = "select * from `order` as o, `payment` as p where o.PaymentID = p.PaymentID";
-                $item_per_page = 8;
-                $current_page = !empty($_GET['page']) ? $_GET['page']: 1;
-                $offset = ($current_page - 1) * $item_per_page;
-                $records = mysqli_query($con, "select * from `order`;");
-                $num_page = ceil($records->num_rows/$item_per_page);
-
-                $result = mysqli_query($con, "select * from `order` as o, `payment` as p where o.PaymentID = p.PaymentID  order by OrderID desc limit {$item_per_page} offset {$offset};");
-                
-                if($result->num_rows > 0) {
-                    while($row = mysqli_fetch_array($result)) {
-                        ?>
-                        <tr id="<?= $row['OrderID'] ?>">
-                            <td><?= $row['OrderID'] ?></td>
-                            <td><?= $row['UserID'] ?></td>
-                            <td><?= $row['OderDate'] ?></td>
-                            <td><?= $row['Address'] ?></td>
-                            <td paymentid = "<?= $row['PaymentID'] ?>"><?= $row['PaymentName'] ?></td>
-                            <td><?= $row['ShippingFee'] ?></td>
-                            <td><?= $row['OrderTotal'] ?></td>
-                            <td><?= $row['VoucherID'] ?></td>
-                            <td><?= $row['OrderDiscount'] ?></td>
-                            <td><?= $row['OrderTotal'] -  $row['OrderDiscount'] ?></td>
-                            <td><span class="material-symbols-outlined">visibility</span></td>
-                        </tr>
-                        <?php
+            include './connectdb.php';
+            //Khoi tao cac bien phan trang
+            $sql = "select * from `order` as o, `payment` as p where o.PaymentID = p.PaymentID and (Date(o.OderDate) between '$dateFrom' and '$dateTo')";
+            if ($province != '') {
+                $search_province = explode('/', $_GET['order-province'])[1];
+                $sql .= " and o.Address like '%$search_province%'";
+                if ($district != '') {
+                    $search_district = explode('/', $_GET['order-district'])[1];
+                    $sql .= " and o.Address like '%$search_district%'";
+                    if ($ward != '') {
+                        $search_ward = explode('/', $_GET['order-ward'])[1];
+                        $sql .= " and o.Address like '%$search_ward%'";
                     }
-                } else {
-                    ?>
-                    <tr>
-                        <td colspan="11" style="padding: 16px;">Không có đơn hàng nào để hiển thị!</td>
+                }
+            }
+            if ($status != '') {
+                $search_status = explode('_', $_GET['order-status'])[0];
+                $sql .= " and o.OrderStatus = '$search_status'";
+            }
+            $item_per_page = 8;
+            $current_page = !empty($_GET['page']) ? $_GET['page'] : 1;
+            $offset = ($current_page - 1) * $item_per_page;
+            $records = mysqli_query($con, $sql);
+            $num_page = ceil($records->num_rows / $item_per_page);
+
+            $result = mysqli_query($con,  $sql . " order by OrderID desc limit {$item_per_page} offset {$offset};");
+
+            if ($result->num_rows > 0) {
+                while ($row = mysqli_fetch_array($result)) {
+            ?>
+                    <tr id="<?= $row['OrderID'] ?>">
+                        <td><?= $row['OrderID'] ?></td>
+                        <td><?= $row['UserID'] ?></td>
+                        <td><?= $row['OderDate'] ?></td>
+                        <td><?= str_replace("#", ", ", $row['Address']) ?></td>
+                        <td paymentid="<?= $row['PaymentID'] ?>"><?= $row['PaymentName'] ?></td>
+                        <td><?= number_format($row['ShippingFee']) ?></td>
+                        <td><?= number_format($row['OrderTotal']) ?></td>
+                        <td><?= $row['VoucherID'] ?></td>
+                        <td><?= number_format($row['OrderDiscount']) ?></td>
+                        <td><?= number_format($row['OrderTotal'] -  $row['OrderDiscount']) ?></td>
+                        <td>
+                            <select onchange="updateOrder(this);" orderId="<?= $row['OrderID'] ?>" style="outline: none; padding: 2px; border-radius: 8px; border: 1px solid #ccc; color: rgba(0, 0, 0, 0.7);">
+                                <?php
+                                    include "./connectdb.php";
+                                    $resultt = mysqli_query($con, "select * from `orderstatus`");
+                                    while ($roww = mysqli_fetch_array($resultt)) {
+                                        if($row['OrderStatus'] == $roww['StatusID']) {
+                                            ?>
+                                                <option value="<?= $roww['StatusID'] ?>_<?= $roww['StatusName'] ?>" selected><?= $roww['StatusName'] ?></option>
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <option value="<?= $roww['StatusID'] ?>_<?= $roww['StatusName'] ?>"><?= $roww['StatusName'] ?></option>
+                                            <?php
+                                        }
+                                        }
+                                       
+                                ?>
+                            </select>
+                        </td>
+                        <td><span class="material-symbols-outlined" onclick="displayOrderDetailModal('<?= $row['OrderID'] ?>');">visibility</span></td>
                     </tr>
                 <?php
                 }
-                mysqli_close($con);
+            } else {
+                ?>
+                <tr>
+                    <td colspan="12" style="padding: 16px;">Không có đơn hàng nào để hiển thị!</td>
+                </tr>
+            <?php
+            }
+            mysqli_close($con);
             ?>
         </tbody>
     </table>
 
     <div class="paging">
         <?php
-        if($current_page > 3) {
-            ?>
-                <a href="?page=1" class="paging__item paging__item--hover">First</a>
+        if ($current_page > 3) {
+        ?>
+            <a href="?page=1&date-from=<?= $dateFrom ?>&date-to=<?= $dateTo ?>&order-province=<?= $province ?>&order-district=<?= $district ?>&order-ward=<?= $ward ?>&order-status=<?= $status ?>" class="paging__item paging__item--hover">First</a>
             <?php
         }
         for ($num = 1; $num <= $num_page; $num++) {
-            if($num != $current_page) {
-                if($num > $current_page - 3 && $num < $current_page + 3) {
-                ?>
-                    <a href="?page=<?= $num ?>" class="paging__item paging__item--hover"><?= $num ?></a>
+            if ($num != $current_page) {
+                if ($num > $current_page - 3 && $num < $current_page + 3) {
+            ?>
+                    <a href="?page=<?= $num ?>&date-from=<?= $dateFrom ?>&date-to=<?= $dateTo ?>&order-province=<?= $province ?>&order-district=<?= $district ?>&order-ward=<?= $ward ?>&order-status=<?= $status ?>" class="paging__item paging__item--hover"><?= $num ?></a>
                 <?php
                 }
             } else {
                 ?>
-                <a href="?page=<?= $num ?>" class="paging__item paging__item--active"><?= $num ?></a>
-                <?php
+                <a href="?page=<?= $num ?>&date-from=<?= $dateFrom ?>&date-to=<?= $dateTo ?>&order-province=<?= $province ?>&order-district=<?= $district ?>&order-ward=<?= $ward ?>&order-status=<?= $status ?>" class="paging__item paging__item--active"><?= $num ?></a>
+            <?php
             }
         }
-        if($current_page < $num_page - 2) {
+        if ($current_page < $num_page - 2) {
             ?>
-                <a href="?page=<?= $num_page ?>" class="paging__item paging__item--hover">Last</a>
-            <?php
+            <a href="?page=<?= $num_page ?>&date-from=<?= $dateFrom ?>&date-to=<?= $dateTo ?>&order-province=<?= $province ?>&order-district=<?= $district ?>&order-ward=<?= $ward ?>&order-status=<?= $status ?>" class="paging__item paging__item--hover">Last</a>
+        <?php
         }
         ?>
     </div>
@@ -211,7 +288,7 @@ include './container-header.php';
                 <span class="material-symbols-outlined">close</span>
             </div>
             <div class="modal-order-container__content">
-                <p class="modal-order-container-content__heading">Chi tiết đơn hàng</p>
+                <p class="modal-order-container-content__heading">Chi Tiết Đơn Hàng</p>
 
                 <div class="modal-order-container-content__info">
                     <div class="modal-order-container-content-info__left">
@@ -219,32 +296,32 @@ include './container-header.php';
                             <p class="modal-order-container-content-info__inid">Mã đơn hàng</p>
                             <input class="modal-order-container-content-info__inid-re" readonly style="background-color: #e0dfdf; outline: none;">
                         </div>
-    
+
                         <div>
-                            <p class="modal-order-container-content-info__inid">Người dùng</p>
-                            <input class="modal-order-container-content-info__inid-re" readonly style="background-color: #e0dfdf; outline: none;">
+                            <p class="modal-order-container-content-info__user">Người dùng</p>
+                            <input class="modal-order-container-content-info__user-re" readonly style="background-color: #e0dfdf; outline: none;">
                         </div>
-    
+
                         <div>
-                            <p class="modal-order-container-content-info__inid">Ngày đặt</p>
-                            <input class="modal-order-container-content-info__inid-re" readonly style="background-color: #e0dfdf; outline: none;">
+                            <p class="modal-order-container-content-info__date">Ngày đặt</p>
+                            <input class="modal-order-container-content-info__date-re" readonly style="background-color: #e0dfdf; outline: none;">
                         </div>
                     </div>
 
                     <div class="modal-order-container-content-info__right">
                         <div>
-                            <p class="modal-order-container-content-info__inid">Hình thức</p>
-                            <input class="modal-order-container-content-info__inid-re" readonly style="background-color: #e0dfdf; outline: none;">
+                            <p class="modal-order-container-content-info__payment">Hình thức</p>
+                            <input class="modal-order-container-content-info__payment-re" readonly style="background-color: #e0dfdf; outline: none;">
                         </div>
-    
+
                         <div>
-                            <p class="modal-order-container-content-info__inid">Tình trạng</p>
-                            <input class="modal-order-container-content-info__inid-re" readonly style="background-color: #e0dfdf; outline: none;">
+                            <p class="modal-order-container-content-info__state">Tình trạng</p>
+                            <input class="modal-order-container-content-info__state-re" readonly style="background-color: #e0dfdf; outline: none;">
                         </div>
-    
+
                         <div>
-                            <p class="modal-order-container-content-info__inid">Địa chỉ</p>
-                            <input class="modal-order-container-content-info__inid-re" readonly style="background-color: #e0dfdf; outline: none;">
+                            <p class="modal-order-container-content-info__address">Địa chỉ</p>
+                            <input class="modal-order-container-content-info__address-re" readonly style="background-color: #e0dfdf; outline: none;">
                         </div>
                     </div>
                 </div>
@@ -258,47 +335,8 @@ include './container-header.php';
                             <th>Số lượng</th>
                             <th>Tổng (VND)</th>
                         </thead>
-    
+
                         <tbody>
-                            <tr>
-                                <td>Mã sản phẩm</td>
-                                <td>Tên sản phẩm</td>
-                                <td>Đơn giá</td>
-                                <td>Số lượng</td>
-                                <td>Tổng (VND)</td>
-                            </tr>
-
-                            <tr>
-                                <td>Mã sản phẩm</td>
-                                <td>Tên sản phẩm</td>
-                                <td>Đơn giá</td>
-                                <td>Số lượng</td>
-                                <td>Tổng (VND)</td>
-                            </tr>
-
-                            <tr>
-                                <td>Mã sản phẩm</td>
-                                <td>Tên sản phẩm</td>
-                                <td>Đơn giá</td>
-                                <td>Số lượng</td>
-                                <td>Tổng (VND)</td>
-                            </tr>
-
-                            <tr>
-                                <td>Mã sản phẩm</td>
-                                <td>Tên sản phẩm</td>
-                                <td>Đơn giá</td>
-                                <td>Số lượng</td>
-                                <td>Tổng (VND)</td>
-                            </tr>
-
-                            <tr>
-                                <td>Mã sản phẩm</td>
-                                <td>Tên sản phẩm</td>
-                                <td>Đơn giá</td>
-                                <td>Số lượng</td>
-                                <td>Tổng (VND)</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -306,29 +344,29 @@ include './container-header.php';
                 <div class="modal-order-container-content__total-container">
                     <div>
                         <p class="modal-order-container-content__total">Tổng đơn</p>
-                        <p class="modal-order-container-content__total-re">: 70,000 VND</p>
+                        <p class="modal-order-container-content__total-re">0 VND</p>
                     </div>
 
                     <div>
-                        <p class="modal-order-container-content__total">Phí ship</p>
-                        <p class="modal-order-container-content__total-re">: 70,000 VND</p>
+                        <p class="modal-order-container-content__fee">Phí giao hàng</p>
+                        <p class="modal-order-container-content__fee-re">0 VND</p>
                     </div>
 
                     <div>
-                        <p class="modal-order-container-content__total">Mã giảm giá</p>
-                        <p class="modal-order-container-content__total-re">: 70,000 VND</p>
+                        <p class="modal-order-container-content__voucher">Mã giảm giá</p>
+                        <p class="modal-order-container-content__voucher-re">0 VND</p>
                     </div>
 
                     <div>
-                        <p class="modal-order-container-content__total">Tổng giảm</p>
-                        <p class="modal-order-container-content__total-re">: 70,000 VND</p>
+                        <p class="modal-order-container-content__discount">Tổng giảm</p>
+                        <p class="modal-order-container-content__discount-re">0 VND</p>
                     </div>
 
                     <div>
-                        <p class="modal-order-container-content__total">Thành tiền</p>
-                        <p class="modal-order-container-content__total-re">: 70,000 VND</p>
+                        <p class="modal-order-container-content__payment">Thành tiền</p>
+                        <p class="modal-order-container-content__payment-re">0 VND</p>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

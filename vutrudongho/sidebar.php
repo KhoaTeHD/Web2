@@ -33,7 +33,7 @@
             </div>
             <ul class="sidebar__nav">
                 <li class="sidebar-nav__item">
-                    <a href="#" class="sidebar-nav-item__link"><span class="sidebar-nav-item__icon material-symbols-outlined">signal_cellular_alt</span>Thống Kê<span></a>
+                    <a href="statistic.php" class="sidebar-nav-item__link"><span class="sidebar-nav-item__icon material-symbols-outlined">signal_cellular_alt</span>Thống Kê<span></a>
                 </li>
                 <li class="sidebar-nav__item">
                     <a href="sale.php" class="sidebar-nav-item__link"><span class="sidebar-nav-item__icon material-symbols-outlined">auto_graph</span>Doanh Thu<span></a>

@@ -71,7 +71,7 @@
 }
 
 .order__table th, .order__table td  {
-    padding: 14px;
+    padding: 12px;
 }
 
 .order__table th {
@@ -102,7 +102,7 @@
 }
 
 .modal-order {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -116,7 +116,8 @@
 .modal-order__container {
     position: relative;
     width: 60%;
-    height: 90%;
+    min-height: 65%;
+    max-height: 93%;
     background-color: #fff;
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
@@ -159,6 +160,7 @@
 .modal-order-container-content__info > div > div {
     margin-top: 12px;
     display: flex;
+    align-items: center;
 }
 
 .modal-order-container-content__info > div > div > p {
@@ -176,8 +178,13 @@
     outline: none;
 }
 
-.modal-order-container-content__table {
+.modal-order-container-content__table-wrapper {
+    max-height: 283px;
     margin-top: 28px;
+    overflow: auto;
+}
+
+.modal-order-container-content__table {
     width: 100%;
     border-collapse: collapse;
 }
@@ -201,13 +208,30 @@
 }
 
 .modal-order-container-content__total-container {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: end;
 }
 
 .modal-order-container-content__total-container > div {
+    margin-top: 16px;
     display: flex;
+}
+
+.modal-order-container-content__total-container > div > p {
+    color: #6750A4;
+}
+
+.modal-order-container-content__total-container > div > p:first-child {
+    text-align: left;
+    width: 120px;
+    font-weight: 600;
+}
+
+.modal-order-container-content__total-container > div > p:last-child {
+    text-align: right;
+    width: 120px;
 }
 
 

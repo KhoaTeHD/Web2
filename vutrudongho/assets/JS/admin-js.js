@@ -1397,3 +1397,196 @@ var checkValidationReceivingVoucher = () => {
     }
     return err;
 }
+
+var displayOrderDetailModal = (OrderID) => {
+    //Display
+    let modal = document.querySelector('.modal-order');
+    modal.classList.add('open');
+
+    //Set up information of order
+    //Tao doi tuong xmlrequest
+    let xhr = new XMLHttpRequest();
+
+    //Thiet lap thong tin yeu cau
+    xhr.open('GET', `get-order.php?OrderID=${OrderID}`, true);
+
+    // Thiết lập header cho request
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    // Xử lý response khi server trả về kết quả
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            var data = JSON.parse(this.responseText);
+            data.forEach(function(order) {
+                let orderId_ui = document.querySelector('.modal-order-container-content-info__inid-re');
+                let user_ui = document.querySelector('.modal-order-container-content-info__user-re');
+                let date_ui = document.querySelector('.modal-order-container-content-info__date-re');
+                let payment_ui = document.querySelector('.modal-order-container-content-info__payment-re');
+                let state_ui = document.querySelector('.modal-order-container-content-info__state-re');
+                let address_ui = document.querySelector('.modal-order-container-content-info__address-re');
+                let total = document.querySelector('.modal-order-container-content__total-re');
+                let fee_ship = document.querySelector('.modal-order-container-content__fee-re');
+                let voucher = document.querySelector('.modal-order-container-content__voucher-re');
+                let discount = document.querySelector('.modal-order-container-content__discount-re');
+                let total_final = document.querySelector('.modal-order-container-content__payment-re');
+
+                orderId_ui.value = order.OrderID;
+                user_ui.value = order.UserID + "_" + order.FullName;
+                date_ui.value = order.OderDate;
+                payment_ui.value = order.PaymentName;
+                state_ui.value = order.StatusName;
+                address_ui.value = order.Address.replace(/#/g, ", ");
+                total.innerText = Number(order.OrderTotal).toLocaleString('en-US') + "  VND";
+                fee_ship.innerText = Number(order.ShippingFee).toLocaleString('en-US') + "  VND";
+                voucher.innerText = order.VoucherID;
+                discount.innerText = Number(order.OrderDiscount).toLocaleString('en-US') + "    VND";
+                total_final.innerText = (Number(order.OrderTotal )+ Number(order.ShippingFee) - Number(order.OrderDiscount)).toLocaleString('en-US') + "    VND";
+            })
+        } else if (this.readyState === XMLHttpRequest.DONE) {
+            alert('Lỗi khi lấy dữ liệu');
+        }
+    };
+
+    // Gửi request kèm theo dữ liệu
+    xhr.send();
+
+    //Load detail
+    //Tao doi tuong xmlrequest
+    let xhrr = new XMLHttpRequest();
+
+    //Thiet lap thong tin yeu cau
+    xhrr.open('GET', `get-detail-orders.php?OrderID=${OrderID}`, true);
+
+    // Thiết lập header cho request
+    xhrr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    // Xử lý response khi server trả về kết quả
+    xhrr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            let tbody = document.querySelector('.modal-order-container-content__table tbody');
+            let data = JSON.parse(this.responseText);
+            let html = '';
+            data.forEach(function(detail) {
+                html += '<tr>';
+                html += `   <td>${detail.ProductID}</td>
+                    <td>${detail.ProductName}</td>
+                    <td>${Number(detail.UnitPrice).toLocaleString('en-US')}</td>
+                    <td>${detail.Quantity}</td>
+                    <td>${(detail.UnitPrice*detail.Quantity).toLocaleString('en-US')}</td>`;
+                html += '</tr>';
+            });
+            tbody.innerHTML = html;
+        } else if (this.readyState === XMLHttpRequest.DONE) {
+            alert('Lỗi khi lấy dữ liệu');
+        }
+    };
+
+    // Gửi request kèm theo dữ liệu
+    xhrr.send();
+}
+
+var checkOrderDateSearch = () => {
+    let dateFrom = document.querySelector('.order-search__date-from').valueAsDate;
+    let dateTo = document.querySelector('.order-search__date-to').valueAsDate;
+    if(dateFrom > dateTo) {
+        alert('Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc!');
+        return false;
+    }
+    return true;
+}
+
+var updateOrder = (select) => {
+    if(confirm("Bạn có chắc chắn muốn cập nhật tình trạng đơn hàng này?")) {
+        //Tao doi tuong xmlrequest
+        let xhr = new XMLHttpRequest();
+
+        //Thiet lap thong tin yeu cau
+        xhr.open('GET', `update-order-status.php?OrderID=${select.getAttribute("orderId")}&OrderStatusID=${select.value.split('_')[0]}`, true);
+
+        // Thiết lập header cho request
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        // Xử lý response khi server trả về kết quả
+        xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                var data = JSON.parse(this.responseText);
+                alert(data['message']);
+                window.location.reload();
+            } else if (this.readyState === XMLHttpRequest.DONE) {
+                alert('Lỗi khi lấy dữ liệu');
+            }
+        };
+
+        // Gửi request kèm theo dữ liệu
+        xhr.send();
+    }
+}
+
+var displayModalStatistic = () => {
+    let search_input = document.querySelector('.statistic-stock-search__input');
+    let currentDate = new Date();
+    let year = currentDate.getFullYear();
+    let month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    let day = String(currentDate.getDate()).padStart(2, '0');
+
+    let formattedDate = year + '-' + month + '-' + day;
+    if(new Date(document.querySelector('.statistic-stock__date').value) > new Date(formattedDate)) {
+        alert("Ngày được chọn phải nhỏ hơn hoặc bằng ngày hiện tại!");
+    } else if(search_input.disabled) {
+        let modal = document.querySelector('.modal-statistic');
+        modal.classList.add('open');
+
+        //Set up
+        let search_value_arr = search_input.value.split('_');
+        let heading = document.querySelector('.modal-statistic-container-content__heading');
+        let img = document.querySelector('.modal-statistic-container-content_img > img');
+        let product_name = document.querySelector('.modal-statistic-container-content__name');
+        let date = document.querySelector('.modal-statistic-container-content__date-re');
+        let quantity = document.querySelector('.modal-statistic-container-content__quantity-re');
+
+        heading.innerText = search_value_arr[1];
+        img.src = `./assets/Img/productImg/${search_value_arr[2]}`;
+        product_name.innerText = search_value_arr[0];
+        let date_input = document.querySelector('.statistic-stock__date');
+        let selectedDate = new Date(date_input.value);
+  
+        let day = String(selectedDate.getDate()).padStart(2, '0');
+        let month = String(selectedDate.getMonth() + 1).padStart(2, '0');
+        let year = selectedDate.getFullYear();
+        
+        let formattedDate = day + '-' + month + '-' + year;
+        date.innerText = ": " + formattedDate;
+
+        //Tao doi tuong xmlrequest
+        let xhr = new XMLHttpRequest();
+
+        //Thiet lap thong tin yeu cau
+        xhr.open('GET', `get-product-quantity.php?ProductID=${search_value_arr[1]}&Date=${date_input.value}`, true);
+
+        // Thiết lập header cho request
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        // Xử lý response khi server trả về kết quả
+        xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                var data = JSON.parse(this.responseText);
+                if(data.length === 0) {
+                    quantity.innerText = ': không có dữ liệu tồn kho tại thời điểm này';
+                } else {
+                    data.forEach(function(item) {
+                        quantity.innerText = ': ' + item.Quantity;
+                    })
+                }
+            } else if (this.readyState === XMLHttpRequest.DONE) {
+                alert('Lỗi khi lấy dữ liệu');
+            }
+        };
+
+    // Gửi request kèm theo dữ liệu
+    xhr.send();
+
+    } else {
+        alert("Vui lòng chọn một sản phẩm để xem tồn kho!");
+    }
+    
+}

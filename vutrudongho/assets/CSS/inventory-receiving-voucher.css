@@ -287,7 +287,7 @@
 }
 
 .modal-inventory-container-content__table-wrapper {
-    max-height: 361px;
+    max-height: 320px;
     margin-top: 12px;
     overflow: auto;
 }

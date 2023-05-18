@@ -110,7 +110,7 @@ $keyWord = !empty($_GET['inventory-receiving-voucher-search']) ? str_replace("\\
     </div>
 
     <div class="modal-inventory">
-        <div class="modal-inventory__container" autocomplete="off">
+        <div class="modal-inventory__container">
             <div class="modal-inventory-container__close">
                 <span class="material-symbols-outlined">close</span>
             </div>
