@@ -27,7 +27,7 @@ echo '
     </div>
     <div id="thanh-toan-van-chuyen">
         <div id="img-cac-hinh-thuc-thanh-toan">
-            <p style="margin-top: 12px;" class="mediumtitlehomeFooter theAtrongFooter">Thanh toán miễn phí</p>
+            <p style="margin-top: 12px;color:#fff;" class="mediumtitlehomeFooter">Thanh toán miễn phí</p>
             <div id="img-logo-footer">
                 <img style="margin-top: 12px;" src=".//assets/Img/hoangImg/imgs/logovisa13136-61f-200h.png" alt="">
                 <img style="margin-top: 12px;" src=".//assets/Img/hoangImg/imgs/logojcb13136-whon-200h.png" alt="">
@@ -37,7 +37,7 @@ echo '
             </div>
         </div>
         <div id="img-hinh-thuc-van-chuyen">
-            <p style="margin-top: 18px;" class="mediumtitlehomeFooter theAtrongFooter">Hình thức vận chuyển</p>
+            <p style="margin-top: 18px;color:#fff;" class="mediumtitlehomeFooter">Hình thức vận chuyển</p>
             <div id="img-logo-htvc" style="display:flex;flex-direction: row;">
                 <img style="margin-top: 12px;" src=".//assets/Img/hoangImg/imgs/nhattin13136-6dx-200h.png" alt="">
                 <img style="margin-top:12px;margin-left: 12px;" src=".//assets/Img/hoangImg/imgs/vnpost13136-xu3-200h.png" alt="">

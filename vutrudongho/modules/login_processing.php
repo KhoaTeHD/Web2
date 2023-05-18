@@ -58,7 +58,13 @@ if (mysqli_num_rows($result) == 1 || mysqli_num_rows($resultMail) == 1 ) {
 		$_SESSION['current_district'] = $district;
 		$_SESSION['current_province'] = $province;
 		$_SESSION['current_status'] = $status;
-		header('location: ../../index.php');}
+
+		//
+		session_start();
+        $_SESSION['loginSuccess'] = true;
+		//
+		header('location: ../../index.php');
+	}
 		//nếu status = 0 tức là tk bị khóa
 		else{
 			$errorLogin = "Tài khoản của bạn bị khóa!";

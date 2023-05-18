@@ -39,7 +39,7 @@ if (isset($_REQUEST['btnSubmitEdit'])) {
             //echo 'Sai password';
 		    $errorChangeInfor = "Số điện thoại hoặc Email đã tồn tại!";
 		    $_SESSION['errorChangeInfor'] = $errorChangeInfor;
-            header("Location: ../../change_user_information.php");
+            header("Location: ../change_user_information.php");
         } else {
             $sql = sprintf("UPDATE `user` SET `FullName` = '%s', `NumberPhone` = '%s', `Email` = '%s', `HouseRoadAddress` = '%s', `Ward` = '%s', `District` = '%s', `Province` = '%s', `Status` = 1 WHERE `user`.`UserID` = '%s'", $fullName, $numberPhone, $email, $diaChiNha, $phuongXa, $quanHuyen, $tinh, $userID);
         
@@ -58,7 +58,11 @@ if (isset($_REQUEST['btnSubmitEdit'])) {
         $district = $row['District'];
         $province = $row['Province'];
         if ($_SESSION['current_numberPhone'] != $numberPhone || $_SESSION['current_email'] != $email) {
-            header("Location: ../../logout.php?isAdmin=1");
+            //
+		    session_start();
+            $_SESSION['changeUserInfor'] = true;
+		    //
+            header("Location: ../logout.php?isAdmin=1");
         } else {
             $_SESSION['current_fullName'] = $fullName;
             $_SESSION['current_numberPhone'] = $numberPhone;
@@ -67,7 +71,11 @@ if (isset($_REQUEST['btnSubmitEdit'])) {
             $_SESSION['current_ward'] = $ward;
             $_SESSION['current_district'] = $district;
             $_SESSION['current_province'] = $province;
-            header("Location: ../../user_information.php");
+                        //
+		    session_start();
+            $_SESSION['changeUserInforNoChange'] = true;
+		    //
+            header("Location: ../user_information.php");
             exit();
         }
 

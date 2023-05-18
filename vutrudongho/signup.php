@@ -215,14 +215,20 @@
       var phoneNumber = numberPhone.value;
       
       // Hiển thị thông báo tương ứng
+      if(phoneNumber.trim().length == 0){
+        numberPhoneMessage.innerText = ' ';
+        numberPhoneMessage.style.display = "block";
+      }
+      else{
       if (isValidPhoneNumber(phoneNumber) == true) {
         numberPhoneMessage.innerText = "Số điện thoại hợp lệ";
         numberPhoneMessage.style.display = "block";
+        numberPhoneMessage.style.color = "#00CC00";
       } 
       else {
         numberPhoneMessage.innerText = "Số điện thoại không hợp lệ";
         numberPhoneMessage.style.display = "block";
-      }
+      }}
     });
   </script>
   <!--End check phone-->
@@ -248,19 +254,27 @@
       strength += regex.test(password) ? 1 : 0;
 
       // Hiển thị thông báo tương ứng
-      if (password.length < 8 || strength < 2) {
+      if(password.length == 0){
+        errorMessagepass.innerText = ' ';
+        errorMessagepass.style.display = "block";
+      }
+      else if (password.length < 8 || strength < 2) {
         errorMessagepass.innerText = "Mật khẩu yếu";
         errorMessagepass.style.display = "block";
+        errorMessagepass.style.color = "#99CC00";
       } else if (password.length < 12 || strength < 3) {
         errorMessagepass.innerText = "Mật khẩu trung bình";
         errorMessagepass.style.display = "block";
+        errorMessagepass.style.color = "#33CCFF";
       } else if (password.length < 16 || strength < 3) {
         errorMessagepass.innerText = "Mật khẩu mạnh";
         errorMessagepass.style.display = "block";
+        errorMessagepass.style.color = "#00CC99";
       }
       else if (password.length < 21 || strength < 4) {
         errorMessagepass.innerText = "Mật khẩu rất mạnh";
         errorMessagepass.style.display = "block";
+        errorMessagepass.style.color = "#00CC00";
       }
       else {
         errorMessagepass.style.display = "none";

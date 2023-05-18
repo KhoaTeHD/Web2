@@ -85,7 +85,8 @@ body {
     width: 60%;
     height: fit-content;
     display: flex;
-    padding: 8px;
+    padding: 24px;
+    border-radius: 12px;
     flex-direction: column;
     flex-wrap: wrap;
     align-self: auto;
@@ -96,7 +97,6 @@ body {
     border-style: none;
     border-width: 0;
     margin-right: 0;
-    border-radius: 0px 0px 0px 0px;
     margin-bottom: 0;
     justify-content: flex-start;
     background-color: transparent;
