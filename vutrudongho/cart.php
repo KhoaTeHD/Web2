@@ -88,8 +88,7 @@
                             <div class="cart_item_unitprice" data-id="<?php echo $product["PriceToSell"] ?>"><?php echo number_format($product["PriceToSell"]) ?> đ</div>
                             <div class="cart_item_quantity">
                                 <span class="minus_btn material-symbols-outlined" data-id="<?php echo $item["ProductID"] ?>" >indeterminate_check_box</span>
-                                <input type="text" name="Quantity" id="quantity" onkeypress="return isNumber(event)" onchange="posNumber()" value="<?php echo $item["Quantity"] ?>" data-id="<?php echo $item["ProductID"] ?>">
-                                <!-- <p><?php //echo $item["Quantity"] ?></p> -->
+                                <input type="text" name="Quantity" id="quantity" onkeypress="return isNumber(event)" onchange="posNumber(this)" value="<?php echo $item["Quantity"] ?>" data-id="<?php echo $item["ProductID"] ?>">
                                 <span class="add_btn material-symbols-outlined" data-id="<?php echo $item["ProductID"] ?>" >add_box</span>
                             </div>
                             <div class="cart_item_total" id="<?php echo $item["ProductID"] ?>" ><?php echo number_format(   $product["PriceToSell"]*$item["Quantity"]   ) ?> đ</div>
