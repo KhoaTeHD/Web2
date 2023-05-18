@@ -5,13 +5,12 @@
     //include 'lib_session.php';
 
     session_start();
-    // TEST
-    //$_SESSION['current_userID'] = "US000001";
 
     if(isset($_SESSION['current_userID'])){
         
         $userID = $_SESSION['current_userID'];
-    
+        
+
         if($conn = connectDatabase()){
             $cart = mysqli_query($conn,"select * from cart where UserID='$userID' ");
         }

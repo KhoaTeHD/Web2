@@ -1,12 +1,11 @@
 <?php
 include("connectDatabase.php");
 include("cartFunction.php");
+session_start();
 
 
 if(isset($_GET['ProductID'])){
 
-    // tài khoản Thiều Việt Hoàng
-    $_SESSION['current_userID'] = "US000001";
 
     $userID =  $_SESSION['current_userID'];
 

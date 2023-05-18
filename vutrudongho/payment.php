@@ -181,7 +181,7 @@
                     <input type="hidden" id="UserID"        name="UserID"       value="<?php echo $userID ?>">
                     <input type="hidden" id="ShippingFee"   name="ShippingFee"  value="">
                     <input type="hidden" id="OrderDiscount" name="OrderDiscount"value="0">
-                    <input type="hidden" id="Address"       name="Address"      value="<?php echo $user['HouseRoadAddress'] ?>, <?php echo $user['Ward'] ?>, <?php echo $user['District'] ?>, <?php echo $user['Province'] ?>">
+                    <input type="hidden" id="Address"       name="Address"      value="<?php echo $user['HouseRoadAddress'] ?>#<?php echo $user['Ward'] ?>#<?php echo $user['District'] ?>#<?php echo $user['Province'] ?>">
                     <input type="hidden" id="PaymentID"     name="PaymentID"    value="PA01">
                     <input type="hidden" id="VoucherID"     name="VoucherID"    value="NULL">
                     <input type="hidden" id="Total" name="Total" value="">
