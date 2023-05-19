@@ -89,8 +89,12 @@ if (($rowPhoneNumber['count'] > 0 || $rowEmail['count'] > 0) ||($rowPhoneNumber[
 
   $sql = sprintf("INSERT INTO `user` (`UserID`, `FullName`, `NumberPhone`, `Email`, `Password`, `HouseRoadAddress`, `Ward`, `District`, `Province`, `Status`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',1);", checkQuantityUS(), $fullName, $numberPhone, $email, $passWord, $diaChiNha, $phuongXa, $quanHuyen, $tinh);
   if ($conn->query($sql) === TRUE) {
-    header('location: ../../index.php');
-    die();
+    		
+    session_start();
+    $_SESSION['signupSuccess'] = true;
+
+    header('location: ../../login.php');
+
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }

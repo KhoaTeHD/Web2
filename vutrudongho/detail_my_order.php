@@ -42,8 +42,21 @@ $paymentID = $row5['PaymentID'];
 $phuongthucThanhToan = "";
 if ($paymentID == "PA01") {
   $phuongthucThanhToan = "Thanh toán khi nhận hàng";
-} else {
+}
+elseif($paymentID == "PA02"){
   $phuongthucThanhToan = "Internet Banking";
+}
+elseif($paymentID == "PA03"){
+  $phuongthucThanhToan = "Thẻ tín dụng/Ghi nợ";
+}
+elseif($paymentID == "PA04"){
+  $phuongthucThanhToan = "Ví điện tử MoMo";
+}
+elseif($paymentID == "PA05"){
+  $phuongthucThanhToan = "Ví điện tử ZaloPay";
+}
+ else {
+  $phuongthucThanhToan = "VNPAY-QR";
 }
 $voucherID = $row5['VoucherID'];
 $orderStatus = $row5['OrderStatus'];

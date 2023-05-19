@@ -57,7 +57,7 @@ $result = mysqli_query($conn, $query);
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
     data-tag="font">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
   <script src="sweetalert2.min.js"></script>
   <link rel="stylesheet" href="sweetalert2.min.css">
@@ -87,8 +87,10 @@ $result = mysqli_query($conn, $query);
 
       </div>
       <div id="content-user">
-        <p class="styleTextMyOrder" style="margin-bottom: 16px;margin-top: 4px;margin-left: 4px;">Tổng số đơn hàng (<?php echo $total_items;?>)</p>
-        <?php if($total_items == 0){
+        <p class="styleTextMyOrder" style="margin-bottom: 16px;margin-top: 4px;margin-left: 4px;">Tổng số đơn hàng (
+          <?php echo $total_items; ?>)
+        </p>
+        <?php if ($total_items == 0) {
           echo '<p class="styleTextMyOrder">Bấm<a class="hoverTheA3" href="product.php">vào đây</a> để mua hàng.</p>';
         }
         ?>
@@ -104,28 +106,31 @@ $result = mysqli_query($conn, $query);
           $address = $row['Address'];
           $paymentID = $row['PaymentID'];
           $phuongthucThanhToan = "";
-          if($paymentID == "PA01"){
+          if ($paymentID == "PA01") {
             $phuongthucThanhToan = "Thanh toán khi nhận hàng";
-          }
-          else{
+          } elseif ($paymentID == "PA02") {
             $phuongthucThanhToan = "Internet Banking";
+          } elseif ($paymentID == "PA03") {
+            $phuongthucThanhToan = "Thẻ tín dụng/Ghi nợ";
+          } elseif ($paymentID == "PA04") {
+            $phuongthucThanhToan = "Ví điện tử MoMo";
+          } elseif ($paymentID == "PA05") {
+            $phuongthucThanhToan = "Ví điện tử ZaloPay";
+          } else {
+            $phuongthucThanhToan = "VNPAY-QR";
           }
           $voucherID = $row['VoucherID'];
           $orderStatus = $row['OrderStatus'];
           $trangThaiDonHang = "";
-          if($orderStatus =="S01"){
+          if ($orderStatus == "S01") {
             $trangThaiDonHang = "Chưa xác nhận";
-          }
-          elseif($orderStatus == "S02"){
+          } elseif ($orderStatus == "S02") {
             $trangThaiDonHang = "Đã xác nhận";
-          }
-          elseif($orderStatus == "S03"){
+          } elseif ($orderStatus == "S03") {
             $trangThaiDonHang = "Đang giao hàng";
-          }
-          elseif($orderStatus == "S04"){
+          } elseif ($orderStatus == "S04") {
             $trangThaiDonHang = "Đã giao hàng";
-          }
-          else{
+          } else {
             $trangThaiDonHang = "Đã hủy";
           }
           $userID = $row['UserID'];
@@ -135,16 +140,16 @@ $result = mysqli_query($conn, $query);
           style="display: flex;flex-direction: column;width: 100%;height: fit-content;align-items: center;background-color: #fff;margin-bottom: 8px;padding-bottom: 8px;">
           <div class="header-component-order"
             style="display: inline-flex;padding: 8px 8px 8px 8px;align-items: left;width: 100%;position:relative;">
-            <a class="hoverTheA2" style="display:block;text-align: right;" href="detail_my_order.php?id='.$orderID.'">Xem chi tiết</a>';
-           if($orderStatus != "S04" && $orderStatus != "S03" && $orderStatus != "S05"){ 
+            <a class="hoverTheA2" style="display:block;text-align: right;" href="detail_my_order.php?id=' . $orderID . '">Xem chi tiết</a>';
+          if ($orderStatus != "S04" && $orderStatus != "S03" && $orderStatus != "S05") {
             echo '<form style="display:flex;flex-direction: row;" name="frmHuy" id="" action="modules/cancel_Order.php" method="POST" onsubmit="return checkHuy();">';
-           echo '<label style="display:flex;flex-direction: row;margin-left: 20px;" class="hoverTheA22">Nhấn nút bên cạnh để hủy đơn hàng -></label> <input id="myInput" name="valueID" type="submit" value="'.$orderID.'" onclick="myFunction();" style="margin-left:4px;width:fit-content;display:block;text-align: right;">';
-           echo '</form>';
-           
-           }
-           
+            echo '<label style="display:flex;flex-direction: row;margin-left: 20px;" class="hoverTheA22">Nhấn nút bên cạnh để hủy đơn hàng -></label> <input id="myInput" name="valueID" type="submit" value="' . $orderID . '" onclick="myFunction();" style="margin-left:4px;width:fit-content;display:block;text-align: right;">';
+            echo '</form>';
 
-           echo '<p class="styleTextMyOrder" style="display:block;position: absolute;right:8px;">Mã đơn hàng: '.$orderID.'</p>';  
+          }
+
+
+          echo '<p class="styleTextMyOrder" style="display:block;position: absolute;right:8px;">Mã đơn hàng: ' . $orderID . '</p>';
           echo '</div>
           <hr style="width: 100%;">
           <div class="main-component-order-title"
@@ -158,12 +163,12 @@ $result = mysqli_query($conn, $query);
           </div>
           <div class="main-component-order"
             style="display:flex;flex-direction: row;justify-content: space-between;align-items: center;width: 95%;margin-top: 4px;">
-            <p class="styleTextMyOrder" style="width: 20%;">'.$orderDate.'</p>
-            <p class="styleTextMyOrder" style="width: 14%;">'.number_format($shippingFee, 0, ',', '.').' đ</p>
-            <p class="styleTextMyOrder" style="width: 14%;">'.number_format($orderDiscount, 0, ',', '.').' đ</p> 
-            <p class="styleTextMyOrder" style="width: 14%;">'.number_format($orderTotal, 0, ',', '.').' đ</p>
-            <p class="styleTextMyOrder" style="width: 24%;">'.$phuongthucThanhToan.'</p>
-            <p id="statusDonHang" class="styleTextMyOrder" style="width: 14%;">'.$trangThaiDonHang.'</p>
+            <p class="styleTextMyOrder" style="width: 20%;">' . $orderDate . '</p>
+            <p class="styleTextMyOrder" style="width: 14%;">' . number_format($shippingFee, 0, ',', '.') . ' đ</p>
+            <p class="styleTextMyOrder" style="width: 14%;">' . number_format($orderDiscount, 0, ',', '.') . ' đ</p> 
+            <p class="styleTextMyOrder" style="width: 14%;">' . number_format($orderTotal, 0, ',', '.') . ' đ</p>
+            <p class="styleTextMyOrder" style="width: 24%;">' . $phuongthucThanhToan . '</p>
+            <p id="statusDonHang" class="styleTextMyOrder" style="width: 14%;">' . $trangThaiDonHang . '</p>
           </div>
         </div>
           
@@ -256,8 +261,8 @@ $result = mysqli_query($conn, $query);
     currentElement.style.color = '#fff';
   </script>
   <?php
-    if (isset($_SESSION['cancelSuccess'])) {
-      echo "<script>
+  if (isset($_SESSION['cancelSuccess'])) {
+    echo "<script>
       Swal.fire({
         title: 'Thông báo!',
         text: 'Hủy đơn hàng thành công!',
@@ -265,8 +270,8 @@ $result = mysqli_query($conn, $query);
         confirmButtonText: 'Xác nhận'
       })
       </script>";
-      unset($_SESSION['cancelSuccess']);
-    }
+    unset($_SESSION['cancelSuccess']);
+  }
   ?>
 </body>
 

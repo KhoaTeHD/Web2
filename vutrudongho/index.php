@@ -375,6 +375,19 @@ require_once('lib_session.php');
       unset($_SESSION['changePassWordSuccess']);
     }
   ?>
+   <?php
+    if (isset($_SESSION['signupSuccess'])) {
+      echo "<script>
+      Swal.fire({
+        title: 'Thông báo!',
+        text: 'Đăng ký tài khoản thành công!',
+        icon: 'success',
+        confirmButtonText: 'Xác nhận'
+      })
+      </script>";
+      unset($_SESSION['signupSuccess']);
+    }
+  ?>
 </body>
 
 </html>
