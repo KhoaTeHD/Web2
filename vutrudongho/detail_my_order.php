@@ -117,6 +117,7 @@ global $tongtien1mathang;
           $gender = $row['Gender'];
           $price = $row['PriceToSell'];
           $quantity = $row['Quantity'];
+          $addressOrder = $row['Address'];
           echo '<div class="component_order"
           style="display: flex;flex-direction: column;width: 100%;height: fit-content;align-items: center;background-color: #fff;margin-bottom: 8px;padding-bottom: 8px;">
           <div class="main-component-order-title"
@@ -158,7 +159,7 @@ global $tongtien1mathang;
             <div id="name_address_phone"
               style="width: 50%;height: fit-content;display: flex;flex-direction: column;background-color: #fff;margin-right: 16px;padding: 16px;">
               <p class="styleTextMyOrder">Người nhận: <?php echo $_SESSION['current_fullName'];?></p>
-              <p class="styleTextMyOrder">Địa chỉ: <?php echo $_SESSION['current_houseRoadAddress'].', '.$_SESSION['current_ward'].', '.$_SESSION['current_district'].', '.$_SESSION['current_province'];?></p>
+              <p class="styleTextMyOrder">Địa chỉ: <?php echo str_replace('#', ', ', $addressOrder);?></p>
               <p class="styleTextMyOrder">Số điện thoại: <?php echo $_SESSION['current_numberPhone'];?></p>
             </div>
             <div id="total_detail_order" style="width: 50%;height:fit-content;display: flex;flex-direction: row;">
