@@ -2,7 +2,7 @@
 require_once('../lib_session.php');
 
 $valueID = $_REQUEST['valueID'];
-
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 $servername = "localhost";
 $username = "root";
@@ -37,7 +37,8 @@ while ($row = mysqli_fetch_array($result4)) {
 
     $newQ = $qtt + $quantity;
 
-    $sqlUD = sprintf("UPDATE `product_quantity` SET `Quantity` = $newQ  WHERE `ProductID` = '$prdtID' ORDER BY `Date` DESC LIMIT 1");
+    $now = date('Y-m-d H:i:s');
+    $sqlUD = sprintf("INSERT INTO `product_quantity` (`ProductID`, `Date`, `Quantity`) values ($prdtID, $now, $newQ)");
     $resultUD = mysqli_query($conn, $sqlUD);
 }
 //
