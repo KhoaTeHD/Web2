@@ -115,8 +115,14 @@ function deleteItem(ProductID, button){
 function posNumber(ele){
     var input = ele;
     var value = parseInt(input.value);
-    if(value == 0 ||  isNaN(value)){
+
+    if(isNaN(value)){
         input.value = 1;
+        value = 1;
+    }
+    else if (value == 0){
+        input.value = 1;
+        value = 1;
     }
 
     var id = input.getAttribute("data-id");
