@@ -467,3 +467,22 @@
         /*End: Hover thẻ a*/
 
 
+
+        /*Start: Hover thẻ a22*/
+        .hoverTheA22 {
+            margin-left: 4px;
+            text-decoration: none;
+            display: block;
+            width: fit-content;
+            padding: 0px 0;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 20px;            
+            letter-spacing: 0.1px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: grey;
+        }

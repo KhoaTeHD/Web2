@@ -8,8 +8,8 @@ require_once('lib_session.php');
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vũ Trụ Di Động</title>
-  <link rel="shortcut icon" href="assets/icons/VUTRUDIDONG-icon.svg">
+  <title>Vũ Trụ Đồng Hồ</title>
+  <link rel="shortcut icon" href="assets/Img/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="assets/css/home.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/footer.css">
