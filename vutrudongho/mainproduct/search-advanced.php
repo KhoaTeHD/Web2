@@ -24,7 +24,7 @@
             $chuoiquery .= " AND brand.BrandName LIKE '%$brand%'";
             $total .= " AND brand.BrandName LIKE '%$brand%'";
         }
-        if ((isset($_GET['from-advanced']) && !empty($pricefrom)) && (isset($_GET['to-advanced']) && !empty($priceto))) {
+        if (isset($_GET['from-advanced']) && isset($_GET['to-advanced'])) {
             $chuoiquery .= " AND product.PriceToSell - (PriceToSell*Discount)/100 between $pricefrom and $priceto";
             $total .= " AND product.PriceToSell - (PriceToSell*Discount)/100 between $pricefrom and $priceto";
         }
