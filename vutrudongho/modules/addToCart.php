@@ -4,7 +4,7 @@ include("cartFunction.php");
 session_start();
 
 
-if(isset($_GET['ProductID'])){
+if(isset($_GET['ProductID']) && isset($_SESSION['current_userID'])){
 
 
     $userID =  $_SESSION['current_userID'];
@@ -44,6 +44,10 @@ if(isset($_GET['ProductID'])){
         }
     }
     closeDatabase($conn);
+}
+else{
+    echo 2;
+    return;
 }
 
 ?>

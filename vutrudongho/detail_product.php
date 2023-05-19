@@ -146,6 +146,9 @@
                     else if(s == 0){
                         swal("Đã có lỗi xảy ra! vui lòng thử lại sau", "", "error");
                     }
+                    else if(s == 2){
+                        window.location = "login.php";
+                    }
                     else{
                         swal(this.responseText.toString(), "", "warning");
                     }
