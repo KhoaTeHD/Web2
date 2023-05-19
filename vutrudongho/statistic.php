@@ -152,7 +152,7 @@ $dateTo = !empty($_GET['date-to']) ? $_GET['date-to'] : date('Y-m-d');
                                 <td><?= $row['ProductName'] ?></td>
                                 <td><img src="./assets/img/productImg/<?= $row['ProductImg'] ?>" alt="Ảnh đồng hồ" style="width: 35px; height: 35px;"></td>
                                 <td><?= $row['quantity'] ?></td>
-                                <td><?= $row['total'] ?></td>
+                                <td><?= number_format($row['total']) ?></td>
                             </tr>
                         <?php
                         }
