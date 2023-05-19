@@ -178,7 +178,6 @@ $result = mysqli_query($conn, $query);
            function myFunction() {
             let statusDonHang = document.getElementById("statusDonHang");
              if (confirm("Bạn thực sự muốn hủy đơn hàng này?") == true) {
-              statusDonHang.innerHTML = "Đã hủy";
               coHieu = true;
              }
              else{
