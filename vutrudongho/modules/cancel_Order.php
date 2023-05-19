@@ -38,7 +38,7 @@ while ($row = mysqli_fetch_array($result4)) {
     $newQ = $qtt + $quantity;
 
     $now = date('Y-m-d H:i:s');
-    $sqlUD = sprintf("INSERT INTO `product_quantity` (`ProductID`, `Date`, `Quantity`) values ($prdtID, $now, $newQ)");
+    $sqlUD = sprintf("INSERT INTO `product_quantity` (`ProductID`, `Date`, `Quantity`) values ('$prdtID', '$now', '$newQ')");
     $resultUD = mysqli_query($conn, $sqlUD);
 }
 //
