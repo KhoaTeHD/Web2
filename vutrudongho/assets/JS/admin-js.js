@@ -1220,7 +1220,7 @@ var insertReceivingDetailUi = (ProductId, ProductName, ImportPrice) => {
     html += `   <td>${ProductId}</td>
                 <td>${ProductName}</td>
                 <td>${ImportPrice}</td>
-                <td><input type="number" min = "1" value="1" style="width: 50px; text-align: center; border: 1px solid #ccc; border-radius: 4px;" oninput = "eventChangeForInputQuantiyInventoryModel(this);" onkeydown="eventKeyDownForInputQuantiyInventoryModel(event);"></td>
+                <td><input type="number" min = "1" value="1" style="width: 50px; text-align: center; border: 1px solid #ccc; border-radius: 4px;" oninput = "eventChangeForInputQuantiyInventoryModel(this);" onkeydown="eventKeyDownForInputNumber(event);"></td>
                 <td>${ImportPrice}</td>
                 <td><span class="material-symbols-outlined del" onclick = "removeReceivingDetail(this);">delete</span></td>
             `;
@@ -1247,7 +1247,7 @@ var removeReceivingDetail = (tag) => {
     updateReceivingVoucherTotal();
 }
 
-var eventKeyDownForInputQuantiyInventoryModel = (event) => {
+var eventKeyDownForInputNumber = (event) => {
     if (event.key === '-' || event.keyCode === 189 || event.which === 189 || event.key === 'e' || event.key === 'E') {
         event.preventDefault();
     }

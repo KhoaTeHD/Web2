@@ -373,15 +373,15 @@ $keyWord = !empty($_GET['product-search']) ? str_replace("\\", "", $_GET['produc
                     <p style="display: none;" class="err modal-product-container-content__err-gender"></p>
 
                     <label class="modal-product-container-content_label" for="modal-product-container-content__import-price">Giá nhập *</label>
-                    <input class="modal-product-container-content_input" type="number" min="0" name="import-price" id="modal-product-container-content__import-price">
+                    <input class="modal-product-container-content_input" type="number" min="0" name="import-price" id="modal-product-container-content__import-price" onkeydown="eventKeyDownForInputNumber(event);">
                     <p style="display: none;" class="err modal-product-container-content__err-import-price"></p>
 
                     <label class="modal-product-container-content_label" for="modal-product-container-content__price-to-sell">Giá bán *</label>
-                    <input class="modal-product-container-content_input" type="number" min="0" name="price-to-sell" id="modal-product-container-content__price-to-sell">
+                    <input class="modal-product-container-content_input" type="number" min="0" name="price-to-sell" id="modal-product-container-content__price-to-sell" onkeydown="eventKeyDownForInputNumber(event);">
                     <p style="display: none;" class="err modal-product-container-content__err-price-to-sell"></p>
 
                     <label class="modal-product-container-content_label" for="modal-product-container-content__discount">Giảm giá (%)</label>
-                    <input class="modal-product-container-content_input" type="number" name="discount" id="modal-product-container-content__discount">
+                    <input class="modal-product-container-content_input" type="number" name="discount" id="modal-product-container-content__discount" onkeydown="eventKeyDownForInputNumber(event);">
                     <p style="display: none;" class="err modal-product-container-content__err-discount"></p>
 
                     <label class="modal-product-container-content_label"  for="modal-product-container-content__desc">Mô tả *</label>

@@ -168,7 +168,7 @@ $keyWord = !empty($_GET['supplier-search']) ? str_replace("\\", "", $_GET['suppl
                 <p style="display: none;" class="err modal-supplier-container-content-name__err"></p>
 
                 <label for="modal-supplier-container-content-phone">Số điện thoại *</label>
-                <input name="supplier-phone" type="number" id="modal-supplier-container-content-phone">
+                <input name="supplier-phone" type="number" id="modal-supplier-container-content-phone" onkeydown="eventKeyDownForInputNumber(event);">
                 <p style="display: none;" class="err modal-supplier-container-content-phone__err"></p>
 
                 <label for="modal-supplier-container-content-email">Email *</label>

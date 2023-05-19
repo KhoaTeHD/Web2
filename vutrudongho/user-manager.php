@@ -13,6 +13,28 @@
         $user_houseAndRoadAddress = trim($_POST['user-houseAndRoadAddress']);
         $user_status = $_POST['status'];
 
+        $emails = mysqli_query($con, "select Email from `user`");
+        while ($row = mysqli_fetch_assoc($emails)) {
+            if($row['Email'] == $user_email) {
+                echo "<script>
+                    alert('Thêm người dùng không thành công do email đã tồn tại trong hệ thống! Hãy thử một email khác!');
+                    window.location.href = 'user-manager.php';
+                </script>";
+                return;
+            }
+        }
+
+        $phones = mysqli_query($con, "select NumberPhone from `user`");
+        while ($row = mysqli_fetch_assoc($phones)) {
+            if($row['NumberPhone'] == $user_phone) {
+                echo "<script>
+                    alert('Thêm người dùng không thành công do số điện thoại đã tồn tại trong hệ thống! Hãy thử một số điện thoại khác!');
+                    window.location.href = 'user-manager.php';
+                </script>";
+                return;
+            }
+        }
+
         $result = mysqli_query($con, "insert into `user` (`UserID`, `FullName`, `NumberPhone`, `Email`, `Password`, `HouseRoadAddress`, `Ward`, `District`, `Province`, `Status`) values ('{$user_id}', '{$user_name}', '{$user_phone}', '{$user_email}', '{$user_password}', '{$user_houseAndRoadAddress}', '{$user_ward}', '{$user_district}', '{$user_province}', {$user_status});");
         mysqli_close($con);
         if($result) {
@@ -36,6 +58,28 @@
         $user_ward = explode('/', $_POST['user-ward'])[1];
         $user_houseAndRoadAddress = trim($_POST['user-houseAndRoadAddress']);
         $user_status = $_POST['status'];
+
+        $emails = mysqli_query($con, "select UserID, Email from `user`");
+        while ($row = mysqli_fetch_assoc($emails)) {
+            if($row['UserID'] != $user_id && $row['Email'] == $user_email) {
+                echo "<script>
+                    alert('Thêm người dùng không thành công do email đã tồn tại trong hệ thống! Hãy thử một email khác!');
+                    window.location.href = 'user-manager.php';
+                </script>";
+                return;
+            }
+        }
+
+        $phones = mysqli_query($con, "select UserID, NumberPhone from `user`");
+        while ($row = mysqli_fetch_assoc($phones)) {
+            if($row['UserID'] != $user_id && $row['NumberPhone'] == $user_phone) {
+                echo "<script>
+                    alert('Sửa người dùng không thành công do số điện thoại đã tồn tại trong hệ thống! Hãy thử một số điện thoại khác!');
+                    window.location.href = 'user-manager.php';
+                </script>";
+                return;
+            }
+        }
 
         $result = mysqli_query($con, "update `user` 
                                       set `FullName` = '{$user_name}', `NumberPhone` = '{$user_phone}', `Email` = '{$user_email}', `Password` = '{$user_password}', `HouseRoadAddress` = '{$user_houseAndRoadAddress}', `Ward` = '{$user_ward}', `District` = '{$user_district}', `Province` = '{$user_province}', `Status` = {$user_status} 
@@ -184,7 +228,7 @@ $keyWord = !empty($_GET['user-search']) ? str_replace("\\", "", $_GET['user-sear
                 <p style="display: none;" class="err modal-user-container-content-name__err"></p>
 
                 <label for="modal-user-container-content-phone">Số Điện Thoại *</label>
-                <input name="user-phone" type="number" id="modal-user-container-content-phone">
+                <input name="user-phone" type="number" id="modal-user-container-content-phone" onkeydown="eventKeyDownForInputNumber(event);">
                 <p style="display: none;" class="err modal-user-container-content-phone__err">*Trường này không được để trống</p>
 
                 <label for="modal-user-container-content-email">Email *</label>
