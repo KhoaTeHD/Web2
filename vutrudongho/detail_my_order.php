@@ -69,7 +69,8 @@ global $tongtien1mathang;
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Vũ Trụ Đồng Hồ</title>
+  <link rel="shortcut icon" href="assets/Img/logo.png" type="image/x-icon">
   <link rel="stylesheet" href="assets/css/detail_my_order.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/footer.css">
