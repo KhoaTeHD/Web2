@@ -1,7 +1,5 @@
 
 //const myChart = new Chart(ctx, config);
-var myChart;
-renderChart("date","","");
 function renderChart(option, dateFrom, dateTo){
     var xml = new XMLHttpRequest();
     xml.onreadystatechange = function (){
@@ -65,7 +63,15 @@ function renderChart(option, dateFrom, dateTo){
             myChart = new Chart(ctx, config);
         }
     }
-    xml.open("GET","modules/query_revenue.php?option="+option,true);
+    xml.open("GET","modules/query_revenue.php?option="+option+"&dateFrom="+dateFrom+"&dateTo="+dateTo,true);
     xml.send();
 }
 
+function clicked(ele){
+    all_element = document.getElementsByClassName('date_revenue');
+
+    for(var i = 0; i < all_element[0].children.length ; i++){
+        all_element[0].children[i].setAttribute('class',"button_filter");
+    }
+    ele.setAttribute('class',"button_filter button_filter_clicked");
+}

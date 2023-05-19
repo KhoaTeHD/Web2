@@ -20,7 +20,7 @@
             <img src="assets/Img/icons/icons8-checkmark-200.png" alt="">
             <h2>Đặt hàng thành công!</h2>
             <p>Cảm ơn bạn đã tin tưởng vutrudongho.com</p>
-            <button>OK</button>
+            <a style="text-decoration: none; color: white;" href="index.php"><button>OK</button></a>
         </div>
     </div>
     <div id="my-footer">

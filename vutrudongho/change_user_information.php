@@ -231,13 +231,20 @@ require_once('lib_session.php');
       var phoneNumber = numberPhone.value;
 
       // Hiển thị thông báo tương ứng
+      if(phoneNumber.trim().length == 0){
+        numberPhoneMessage.innerText = ' ';
+        numberPhoneMessage.style.display = "block";
+      }
+      else{
       if (isValidPhoneNumber(phoneNumber) == true) {
         numberPhoneMessage.innerText = "Số điện thoại hợp lệ";
         numberPhoneMessage.style.display = "block";
-      } else {
+        numberPhoneMessage.style.color = "#00CC00";
+      } 
+      else {
         numberPhoneMessage.innerText = "Số điện thoại không hợp lệ";
         numberPhoneMessage.style.display = "block";
-      }
+      }}
     });
   </script>
   <!--End check phone-->

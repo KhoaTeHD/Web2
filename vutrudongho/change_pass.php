@@ -151,16 +151,20 @@
         if (password.length < 8 || strength < 2) {
         errorMessagepass.innerText = "Mật khẩu yếu";
         errorMessagepass.style.display = "block";
+        errorMessagepass.style.color = "#99CC00";
       } else if (password.length < 12 || strength < 3) {
         errorMessagepass.innerText = "Mật khẩu trung bình";
         errorMessagepass.style.display = "block";
+        errorMessagepass.style.color = "#33CCFF";
       } else if (password.length < 16 || strength < 3) {
         errorMessagepass.innerText = "Mật khẩu mạnh";
         errorMessagepass.style.display = "block";
+        errorMessagepass.style.color = "#00CC99";
       }
       else if (password.length < 21 || strength < 4) {
         errorMessagepass.innerText = "Mật khẩu rất mạnh";
         errorMessagepass.style.display = "block";
+        errorMessagepass.style.color = "#00CC00";
       }
       else {
         errorMessagepass.style.display = "none";
@@ -223,7 +227,7 @@
       if(document.frmdoipass.passWord.value.length < 8){
         Swal.fire({
         title: 'Thông báo!',
-        text: 'Mật khẩu tối thiểu 8 ký tự!',
+        text: 'Mật khẩu mới tối thiểu 8 ký tự!',
         icon: 'warning',
         confirmButtonText: 'Xác nhận'
       })

@@ -59,7 +59,7 @@
             <div class="user_address">
                 <p><?php echo $user['FullName'] ?> - <?php echo $user['NumberPhone'] ?></p>
                 <span><?php echo $user['HouseRoadAddress'] ?>, <?php echo $user['Ward'] ?>, <?php echo $user['District'] ?>, <?php echo $user['Province'] ?></span>
-                <a href="">Thay đổi</a>
+                <a href="change_user_information.php">Thay đổi</a>
             </div>
             <div class="delivery_cards">
                 <?php 

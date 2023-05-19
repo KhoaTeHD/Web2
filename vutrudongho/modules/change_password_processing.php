@@ -43,6 +43,10 @@ if (isset($_REQUEST['btnSubmitSaveNewPass'])) {
             $row = mysqli_fetch_assoc($result);
             $newPassWord = $row['Password'];
             $_SESSION['current_password'] = $newPassWord;
+            //
+		    session_start();
+            $_SESSION['changePassWordSuccess'] = true;
+		    //
             header("Location: ../../logout.php?isAdmin=1");
             exit();
         } else {

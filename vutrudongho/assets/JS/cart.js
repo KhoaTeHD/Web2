@@ -112,8 +112,8 @@ function deleteItem(ProductID, button){
     xml.send();
 }
 
-function posNumber(){
-    var input = document.getElementById("quantity");
+function posNumber(ele){
+    var input = ele;
     var value = parseInt(input.value);
     if(value == 0 ||  isNaN(value)){
         input.value = 1;

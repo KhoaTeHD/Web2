@@ -18,6 +18,10 @@ require_once('lib_session.php');
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
     data-tag="font">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+  <script src="sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 
 <body>
@@ -84,6 +88,19 @@ require_once('lib_session.php');
     ?>
   </div>
   <!--End: Footer-->
+  <?php
+    if (isset($_SESSION['changeUserInforNoChange'])) {
+      echo "<script>
+      Swal.fire({
+        title: 'Thông báo!',
+        text: 'Đã lưu!',
+        icon: 'success',
+        confirmButtonText: 'Xác nhận'
+      })
+      </script>";
+      unset($_SESSION['changeUserInforNoChange']);
+    }
+  ?>
 </body>
 
 </html>
