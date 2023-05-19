@@ -1496,7 +1496,14 @@ var checkOrderDateSearch = () => {
 }
 
 var updateOrder = (select) => {
-    if(confirm("Bạn có chắc chắn muốn cập nhật tình trạng đơn hàng này?")) {
+    let notification = '';
+    if(select.value.split('_')[0] == 'S05') {
+        notification = "Khi đơn hàng đã hủy thì không thể khôi phục! Bạn có chắc chắn muốn hủy đơn hàng này?";
+    } else {
+        notification = "Bạn có chắc chắn muốn cập nhật tình trạng đơn hàng này?";
+    }
+
+    if(confirm(notification)) {
         //Tao doi tuong xmlrequest
         let xhr = new XMLHttpRequest();
 
@@ -1537,7 +1544,7 @@ var displayModalStatistic = () => {
         modal.classList.add('open');
 
         //Set up
-        let search_value_arr = search_input.value.split('_');
+        let search_value_arr = search_input.value.split('@@');
         let heading = document.querySelector('.modal-statistic-container-content__heading');
         let img = document.querySelector('.modal-statistic-container-content_img > img');
         let product_name = document.querySelector('.modal-statistic-container-content__name');

@@ -51,7 +51,7 @@
         <div class="background">
         </div>
         <div class="container">
-            <form class="login" method="POST" action="admin-login.php?enableQuery" autocomplete="off" onsubmit="return checkAdminLoginForm();">
+            <form class="login" method="POST" action="admin-login.php?enableQuery" onsubmit="return checkAdminLoginForm();">
                 <p class="login__heading">Chào Mừng Bạn Đến Với Trang Quản Trị Viên!</p>
 
                 <label for="username">Email *</label>

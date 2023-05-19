@@ -70,7 +70,7 @@ $dateTo = !empty($_GET['date-to']) ? $_GET['date-to'] : date('Y-m-d');
                     });
 
                     var setValueSearchForInput = (ProductId, ProductImg, ProductName) => {
-                        $('.statistic-stock-search__input').val(ProductName + "_" + ProductId + "_" + ProductImg);
+                        $('.statistic-stock-search__input').val(ProductName + "@@" + ProductId + "@@" + ProductImg);
                         $('.statistic-stock-search__ul').hide();
                         $('.statistic-stock-search__input').prop("disabled", true);
                     }
@@ -109,7 +109,7 @@ $dateTo = !empty($_GET['date-to']) ? $_GET['date-to'] : date('Y-m-d');
                 date_to.value = currentDate;
 
             
-                if (params.has("submit")) {
+                if (params.has("date-from")) {
                     date_from.value = params.get("date-from");
                     date_to.value = params.get("date-to");
                 } else {
