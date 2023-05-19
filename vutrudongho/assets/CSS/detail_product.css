@@ -33,7 +33,7 @@ body {
 .product_img img {
     height: 30rem;
     display: block;
-    width: auto;
+    width: 100%;
     margin: auto;
     padding: 0%;
 }
