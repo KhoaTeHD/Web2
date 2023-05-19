@@ -232,7 +232,7 @@ $.ajax({
             }
         });
         $("#amount-2").val("đ" + addPlus($("#slider-range-2").slider("values", 0)) +
-            " - đ" + addPlus($("#slider-range").slider("values", 1)));
+            " - đ" + addPlus($("#slider-range-2").slider("values", 1)));
     },
     error: function() {
         alert('Lỗi khi lấy dữ liệu');
