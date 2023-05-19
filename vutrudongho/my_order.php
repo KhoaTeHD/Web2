@@ -127,8 +127,11 @@ $result = mysqli_query($conn, $query);
           style="display: flex;flex-direction: column;width: 100%;height: fit-content;align-items: center;background-color: #fff;margin-bottom: 8px;padding-bottom: 8px;">
           <div class="header-component-order"
             style="display: inline-flex;padding: 8px 8px 8px 8px;align-items: left;width: 100%;position:relative;">
-            <a class="hoverTheA2" style="display:block;text-align: right;" href="detail_my_order.php?id='.$orderID.'">Xem chi tiết</a>
-            <p class="styleTextMyOrder" style="display:block;position: absolute;right:8px;">Mã đơn hàng: '.$orderID.'</p>';  
+            <a class="hoverTheA2" style="display:block;text-align: right;" href="detail_my_order.php?id='.$orderID.'">Xem chi tiết</a>';
+           if($orderStatus != "S04" && $orderStatus != "S03"){ 
+           echo '<a class="hoverTheA2" style="display:block;text-align: right;margin-left:16px;" href="">Hủy đơn hàng</a>';
+           }
+           echo '<p class="styleTextMyOrder" style="display:block;position: absolute;right:8px;">Mã đơn hàng: '.$orderID.'</p>';  
           echo '</div>
           <hr style="width: 100%;">
           <div class="main-component-order-title"
